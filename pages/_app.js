@@ -10,9 +10,9 @@ import MultiDropdownNavbar from "@Components/multidropdown.jsx";
 
 import "@Static/css/main.scss";
 import "rc-texty/assets/index.css";
-import "@Static/css/less/antMotionStyle.css";
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "@Static/css/less/antMotionStyle.css";
 
 export default class MyApp extends App {
 	static async getInitialProps({ Component, ctx }) {

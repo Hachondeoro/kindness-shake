@@ -527,7 +527,7 @@ export const Teams30DataSource = {
               name: "image",
               className: "teams3-top-image",
               children:
-                "https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*--rVR4hclJYAAAAAAAAAAABjARQnAQ",
+                "/static/img/ks-logo-transparent.png",
             },
             {
               name: "title",
@@ -542,7 +542,7 @@ export const Teams30DataSource = {
             {
               name: "content1",
               className: "teams3-top-content",
-              children: "Ben Poveda Description",
+              children: "Ben Poveda Description something else",
             },
           ],
         },
@@ -783,90 +783,6 @@ export const Teams30DataSource = {
           ],
         },
       },
-      {
-        name: "block6",
-        className: "block",
-        md: 8,
-        xs: 24,
-        image: {
-          name: "image",
-          className: "teams3-image",
-          children:
-            "https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*--rVR4hclJYAAAAAAAAAAABjARQnAQ",
-        },
-        titleWrapper: {
-          className: "teams3-textWrapper",
-          children: [
-            { name: "title", className: "teams3-title", children: "叶秀英" },
-            {
-              name: "content",
-              className: "teams3-job",
-              children: "公司+职位 信息暂缺",
-            },
-            {
-              name: "content1",
-              className: "teams3-content",
-              children: "AntV 是蚂蚁金服全新一代数据可视化解决方案。",
-            },
-          ],
-        },
-      },
-      {
-        name: "block7",
-        className: "block",
-        md: 8,
-        xs: 24,
-        image: {
-          name: "image",
-          className: "teams3-image",
-          children:
-            "https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*njqxS5Ky7CQAAAAAAAAAAABjARQnAQ",
-        },
-        titleWrapper: {
-          className: "teams3-textWrapper",
-          children: [
-            { name: "title", className: "teams3-title", children: "韩勇" },
-            {
-              name: "content",
-              className: "teams3-job",
-              children: "公司+职位 信息暂缺",
-            },
-            {
-              name: "content1",
-              className: "teams3-content",
-              children: "语雀是一款优雅高效的在线文档编辑与协同工具。",
-            },
-          ],
-        },
-      },
-      {
-        name: "block8",
-        className: "block",
-        md: 8,
-        xs: 24,
-        image: {
-          name: "image",
-          className: "teams3-image",
-          children:
-            "https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*--rVR4hclJYAAAAAAAAAAABjARQnAQ",
-        },
-        titleWrapper: {
-          className: "teams3-textWrapper",
-          children: [
-            { name: "title", className: "teams3-title", children: "叶秀英" },
-            {
-              name: "content",
-              className: "teams3-job",
-              children: "公司+职位 信息暂缺",
-            },
-            {
-              name: "content1",
-              className: "teams3-content",
-              children: "AntV 是蚂蚁金服全新一代数据可视化解决方案。",
-            },
-          ],
-        },
-      },
     ],
   },
 };
@@ -925,7 +841,7 @@ export const Pricing10DataSource = {
             children: (
               <span>
                 14500-5Gbps
-                </span>
+              </span>
             ),
           },
           line: { className: "pricing1-line" },
@@ -962,11 +878,11 @@ export const Pricing10DataSource = {
                 145TB流量包
                 <br />
                 14国内按峰值宽带账单
-                    <br />
+                <br />
                 14弹性计算
                 <br />
                 14云服务器 ECS
-                </span>
+              </span>
             ),
           },
           line: { className: "pricing1-line" },

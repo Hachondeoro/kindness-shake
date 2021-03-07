@@ -2,6 +2,9 @@ const withOffline = require('next-offline')
 
 module.exports = withOffline({
 	target: process.env.NEXT_TARGET || 'serverless',
+	images: {
+		domains: ['gw.alipayobjects.com'],
+	},
 	workboxOpts: {
 		swDest: 'static/service-worker.js',
 		runtimeCaching: [

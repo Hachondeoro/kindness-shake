@@ -3,6 +3,7 @@ import QueueAnim from "rc-queue-anim";
 import { Row, Col, Divider } from "antd";
 import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
 import { getChildrenToRender, isImg } from "@Components/utils";
+import Image from 'next/image';
 
 class Teams3 extends React.PureComponent {
     getBlockChildren = data =>
@@ -13,7 +14,7 @@ class Teams3 extends React.PureComponent {
                     <Row>
                         <Col span={7}>
                             <div {...image}>
-                                <img src={image.children} alt="img" />
+                                <Image src={image.children} width="100%" height="100%" alt="img" />
                             </div>
                         </Col>
                         <Col span={17}>
