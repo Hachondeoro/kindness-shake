@@ -3,8 +3,16 @@ import ReactDOM from 'react-dom'
 import Head from 'next/head'
 import App from 'next/app'
 import { createMuiTheme } from '@material-ui/core/styles'
-import { ThemeProvider } from '@material-ui/styles'
-import CssBaseline from '@material-ui/core/CssBaseline'
+import Footer1 from "@Pages/Footer1.jsx";
+import { Footer10DataSource } from "@Pages/data.source";
+import { enquireScreen } from "enquire-js";
+import MultiDropdownNavbar from "@Pages/multidropdown.jsx";
+
+import "@Static/css/main.scss";
+import "rc-texty/assets/index.css";
+import "@Static/css/less/antMotionStyle.css";
+import "antd/dist/antd.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default class MyApp extends App {
 	static async getInitialProps({ Component, ctx }) {
@@ -42,17 +50,20 @@ export default class MyApp extends App {
 		return (
 			<>
 				<Head>
-					<title>Todo App</title>
+					<title>Kindness Shake</title>
 					<meta
 						name="viewport"
 						content="width=device-width, initial-scale=1.0"
 					/>
 				</Head>
-				<ThemeProvider theme={theme}>
-					<CssBaseline>
+						<MultiDropdownNavbar />
 						<Component {...pageProps} />
-					</CssBaseline>
-				</ThemeProvider>
+						<Footer1
+							id="Footer1_0"
+							key="Footer1_0"
+							dataSource={Footer10DataSource}
+							// isMobile={}
+						/>
 			</>
 		)
 	}
