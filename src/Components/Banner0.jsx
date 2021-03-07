@@ -3,7 +3,7 @@ import { Button } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import QueueAnim from "rc-queue-anim";
 import TweenOne from "rc-tween-one";
-import { isImg } from "./utils";
+import { isImg } from "@Components/utils";
 import Image from 'next/image'
 
 class Banner extends React.PureComponent {

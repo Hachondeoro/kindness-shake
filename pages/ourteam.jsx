@@ -2,9 +2,9 @@
 /* eslint arrow-parens: 0 */
 import React from "react";
 import { enquireScreen } from "enquire-js";
-import Teams3 from "./Teams3";
+import Teams3 from "@Components/Teams3";
 
-import { Teams30DataSource } from "./data.source";
+import { Teams30DataSource } from "@Components/data.source";
 
 let isMobile;
 enquireScreen(b => {

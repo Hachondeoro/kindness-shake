@@ -4,16 +4,16 @@ import React from "react";
 import { enquireScreen } from "enquire-js";
 
 // import YouTube from "react-youtube";
-import Banner0 from "./Banner0";
-import Feature6 from "./Feature6";
-import Contact0 from "./Contact0";
+import Banner0 from "@Components/Banner0";
+import Feature6 from "@Components/Feature6";
+import Contact0 from "@Components/Contact0";
 
 
 import {
 	Banner00DataSource,
 	Feature60DataSource,
 	Contact00DataSource,
-} from "./data.source";
+} from "@Components/data.source";
 
 let isMobile;
 enquireScreen(b => {

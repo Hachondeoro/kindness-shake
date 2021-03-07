@@ -2,7 +2,7 @@ import React from "react";
 import QueueAnim from "rc-queue-anim";
 import { Row, Col, Divider } from "antd";
 import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
-import { getChildrenToRender, isImg } from "./utils";
+import { getChildrenToRender, isImg } from "@Components/utils";
 
 class Teams3 extends React.PureComponent {
     getBlockChildren = data =>

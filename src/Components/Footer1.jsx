@@ -3,7 +3,7 @@ import TweenOne from "rc-tween-one";
 import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
 import QueueAnim from "rc-queue-anim";
 import { Row, Col } from "antd";
-import { getChildrenToRender, isImg } from "./utils";
+import { getChildrenToRender, isImg } from "@Components/utils";
 
 class Footer extends React.Component {
     static defaultProps = {

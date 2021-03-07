@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom'
 import Head from 'next/head'
 import App from 'next/app'
 import { createMuiTheme } from '@material-ui/core/styles'
-import Footer1 from "@Pages/Footer1.jsx";
-import { Footer10DataSource } from "@Pages/data.source";
+import Footer1 from "@Components/Footer1.jsx";
+import { Footer10DataSource } from "@Components/data.source";
 import { enquireScreen } from "enquire-js";
-import MultiDropdownNavbar from "@Pages/multidropdown.jsx";
+import MultiDropdownNavbar from "@Components/multidropdown.jsx";
 
 import "@Static/css/main.scss";
 import "rc-texty/assets/index.css";
