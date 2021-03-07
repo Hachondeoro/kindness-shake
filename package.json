@@ -40,7 +40,8 @@
 		"react": "^16.13.1",
 		"react-axe": "^3.5.3",
 		"react-dom": "^16.13.1",
-		"reactstrap": "^8.9.0"
+		"reactstrap": "^8.9.0",
+		"sass": "^1.32.8"
 	},
 	"devDependencies": {
 		"babel-eslint": "^10.1.0",
