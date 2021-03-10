@@ -3,10 +3,9 @@ import ReactDOM from 'react-dom'
 import Head from 'next/head'
 import App from 'next/app'
 import { createMuiTheme } from '@material-ui/core/styles'
-import Footer1 from "@Components/Footer1.jsx";
-import { Footer10DataSource } from "@Components/data.source";
 import { enquireScreen } from "enquire-js";
 import MultiDropdownNavbar from "@Components/multidropdown.jsx";
+import Footer from "@Components/Footer.jsx";
 
 import "@Static/css/main.scss";
 import "rc-texty/assets/index.css";
@@ -58,12 +57,7 @@ export default class MyApp extends App {
 				</Head>
 						<MultiDropdownNavbar />
 						<Component {...pageProps} />
-						<Footer1
-							id="Footer1_0"
-							key="Footer1_0"
-							dataSource={Footer10DataSource}
-							// isMobile={}
-						/>
+						<Footer/>
 			</>
 		)
 	}

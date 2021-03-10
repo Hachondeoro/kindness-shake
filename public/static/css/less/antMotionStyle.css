@@ -41,6 +41,14 @@ h6 {
 #multidropdown body {
   color: #ffffff;
 }
+.footer {
+  font-size: 14px;
+  color: #919191;
+  background-color: #001529;
+}
+.footer h1 {
+  color: #919191;
+}
 .home-page-wrapper {
   width: 100%;
   position: relative;
@@ -573,8 +581,8 @@ h6 {
 .teams3-wrapper .teams3-top-title,
 .teams3-wrapper .teams3-top-job,
 .teams3-wrapper .teams3-top-content {
-  width: 200px;
-  margin: auto;
+  width: 350px;
+  margin: 30px;
   line-height: 1.5;
 }
 .teams3-wrapper .teams3-top-image {
@@ -585,10 +593,6 @@ h6 {
 }
 .teams3-wrapper .teams3-top-title {
   font-size: 24px;
-  margin: 24px auto 8px;
-}
-.teams3-wrapper .teams3-top-job {
-  margin: 8px auto;
 }
 .teams3-wrapper .teams3-top-job,
 .teams3-wrapper .teams3-top-content {

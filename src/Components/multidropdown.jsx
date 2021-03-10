@@ -43,7 +43,7 @@ class MultiDropdownNavbar extends React.Component {
                             title="About us "
                         >
                             <Menu.Item key="story" icon={<AppstoreOutlined />}>
-                                <Link href="/ourteam" passHref>
+                                <Link href="/ourstory" passHref>
                                     Our Story
                                 </Link>
                             </Menu.Item>
@@ -56,7 +56,7 @@ class MultiDropdownNavbar extends React.Component {
                                 key="supporters"
                                 icon={<AppstoreOutlined />}
                             >
-                                <Link href="/ourteam" passHref>
+                                <Link href="/oursupporters" passHref>
                                     Our supporters
                                 </Link>
                             </Menu.Item>
@@ -64,16 +64,8 @@ class MultiDropdownNavbar extends React.Component {
                                 key="achievements"
                                 icon={<AppstoreOutlined />}
                             >
-                                <Link href="/ourteam" passHref>
+                                <Link href="/ourachievements" passHref>
                                     Our achievements
-                                </Link>
-                            </Menu.Item>
-                            <Menu.Item
-                                key="committee"
-                                icon={<AppstoreOutlined />}
-                            >
-                                <Link href="/ourteam" passHref>
-                                    Committee
                                 </Link>
                             </Menu.Item>
                         </SubMenu>
@@ -109,7 +101,7 @@ class MultiDropdownNavbar extends React.Component {
                             key="socialmedia"
                             icon={<AppstoreOutlined />}
                         >
-                            <Link href="/" passHref>
+                            <Link href="/socialmedia" passHref>
                                 Our social media
                             </Link>
                         </Menu.Item>
@@ -126,23 +118,19 @@ class MultiDropdownNavbar extends React.Component {
                                     Become a member
                                 </Link>
                             </Menu.Item>
-                            <Menu.ItemGroup title="Be local Buy local">
-                                <Menu.Item key="setting:1">Option 1</Menu.Item>
-                                <Menu.Item key="setting:2">Option 2</Menu.Item>
-                            </Menu.ItemGroup>
                             <Menu.Item
-                                key="vendors"
+                                key="belocalbuylocal"
                                 icon={<AppstoreOutlined />}
                             >
-                                <Link href="/volunteerwithus" passHref>
-                                    Vendors
+                                <Link href="/belocalbuylocal" passHref>
+                                    Be Local Buy Local
                                 </Link>
                             </Menu.Item>
                             <Menu.Item
                                 key="becomevendor"
                                 icon={<AppstoreOutlined />}
                             >
-                                <Link href="/volunteerwithus" passHref>
+                                <Link href="/becomeavendor" passHref>
                                     Become a vendor
                                 </Link>
                             </Menu.Item>

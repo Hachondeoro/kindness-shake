@@ -16,29 +16,37 @@
 @template-text-color-light: #fff;
 @template-footer-text-color: #999;
 
-@animate-duration: .45s;
+@animate-duration: 0.45s;
 
 /* 详细页图片或框框的样式;
 */
 .page-shadow() {
-  box-shadow: 0 5px 8px @shadow-color;
+	box-shadow: 0 5px 8px @shadow-color;
 }
 
 .page-pro() {
-  border-radius: 6px;
-  border: 1px solid @line-color;
-  transform: translateY(0);
-  transition: transform .3s @ease-out, box-shadow .3s @ease-out;
-  &:hover {
-    .page-shadow();
-    transform: translateY(-5px);
-  }
+	border-radius: 6px;
+	border: 1px solid @line-color;
+	transform: translateY(0);
+	transition: transform 0.3s @ease-out, box-shadow 0.3s @ease-out;
+	&:hover {
+		.page-shadow();
+		transform: translateY(-5px);
+	}
 }
 
 #multidropdown {
-  background-color: #0d1a26;
-  & body{
-    color:rgb(255, 255, 255)
-  }
+	background-color: #0d1a26;
+	& body {
+		color: rgb(255, 255, 255);
+	}
 }
 
+.footer {
+	font-size: 14px;
+	color: #919191;
+	background-color: #001529;
+	h1 {
+		color: #919191;
+	}
+}

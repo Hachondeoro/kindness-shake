@@ -6,3 +6,11 @@
 #multidropdown body {
   color: #ffffff;
 }
+.footer {
+  font-size: 14px;
+  color: #919191;
+  background-color: #001529;
+}
+.footer h1 {
+  color: #919191;
+}
