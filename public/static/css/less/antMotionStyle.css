@@ -49,6 +49,22 @@ h6 {
 .footer h1 {
   color: #919191;
 }
+.two-rows-label .ant-form-item-label {
+  padding: 4px 0 !important;
+}
+.two-rows-label .ant-form-item-label label {
+  white-space: normal;
+  display: inline-block;
+  text-align: center;
+  line-height: 16px;
+}
+.two-rows-label .ant-form-item-label label:after {
+  content: none !important;
+}
+.two-rows-label .ant-form-item-label label.ant-form-item-required:before {
+  position: absolute;
+  left: -7px;
+}
 .home-page-wrapper {
   width: 100%;
   position: relative;
