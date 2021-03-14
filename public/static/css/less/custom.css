@@ -2,6 +2,8 @@
 */
 #multidropdown {
   background-color: #0d1a26;
+  display: flex;
+  justify-content: center;
 }
 #multidropdown body {
   color: #ffffff;

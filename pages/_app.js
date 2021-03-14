@@ -7,6 +7,7 @@ import { enquireScreen } from "enquire-js";
 import MultiDropdownNavbar from "@Components/multidropdown.jsx";
 import Footer from "@Components/Footer.jsx";
 
+import 'react-tabs/style/react-tabs.css';
 import "@Static/css/main.scss";
 import "rc-texty/assets/index.css";
 import "antd/dist/antd.css";

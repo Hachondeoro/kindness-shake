@@ -37,6 +37,8 @@
 
 #multidropdown {
 	background-color: #0d1a26;
+	display: flex;
+	justify-content: center;
 	& body {
 		color: rgb(255, 255, 255);
 	}
@@ -52,20 +54,20 @@
 }
 
 .two-rows-label .ant-form-item-label {
-    padding: 4px 0 !important;
-    label {
-      white-space: normal;
-    //   margin-right: 12px;
-      display: inline-block;
-      text-align: center;
-      line-height: 16px;
-    //   width: 50px;
-      &:after {
-        content: none !important;
-      }
-      &.ant-form-item-required:before {
-        position: absolute;
-        left: -7px;
-      }
-    }
-  }
+	padding: 4px 0 !important;
+	label {
+		white-space: normal;
+		//   margin-right: 12px;
+		display: inline-block;
+		text-align: center;
+		line-height: 16px;
+		//   width: 50px;
+		&:after {
+			content: none !important;
+		}
+		&.ant-form-item-required:before {
+			position: absolute;
+			left: -7px;
+		}
+	}
+}
