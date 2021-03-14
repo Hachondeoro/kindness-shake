@@ -101,7 +101,7 @@ const Membership = () => {
 								alt="frontcard"
 							/>
 							<img
-								src="/static/img/back-card.jpeg"
+								src="/static/img/back-card-blank.jpeg"
 								height="300px"
 								alt="backcard"
 							/>

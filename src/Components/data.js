@@ -86,14 +86,19 @@ export const Supporters = [
 	{ path: '/static/img/supporters/theflank.jpg' },
 	{ path: '/static/img/supporters/jkdoi.jpeg' },
 	{ path: '/static/img/supporters/lunch room.png' },
+	{ path: '/static/img/supporters/myhira.png' },
+	{ path: '/static/img/supporters/rambha.jfif' },
 	{ path: '/static/img/supporters/wharfone.jpg' },
 	{ path: '/static/img/supporters/malasianfoodies.jfif' },
 	{ path: '/static/img/supporters/smartway.png' },
+	{ path: '/static/img/supporters/hanuman.png' },
 	{ path: '/static/img/supporters/saffron.png' },
 	{ path: '/static/img/supporters/hogscafe.jpg' },
 	{ path: '/static/img/supporters/psealms.png' },
 	{ path: '/static/img/supporters/stopcafe.png' },
 	{ path: '/static/img/supporters/mercuredarwin.png' },
+	{ path: '/static/img/supporters/uniqueindustries.png' },
+	{ path: '/static/img/supporters/eaant.png' },
 ]
 
 export const Aboutus = {
