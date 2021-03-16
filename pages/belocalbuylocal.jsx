@@ -14,36 +14,32 @@ const OurSupporters = () => {
 			<SpecialTitle title={BLBL.title} subtitle={BLBL.description} />
 			<h1 className="text-center m-5">{BLBL.subtitle}</h1>
 			{BLBL.steps.map(item => (
-				<Row align="middle" justify="center">
-					<div className="m-3">
+				<Col
+					xs={{ span: 20 }}
+					lg={{ span: 8 }}
+					className="m-auto"
+					align="middle"
+					justify="center"
+				>
+					<div>
 						<div className={styles.title}>{item.title}</div>
 						<div className={styles.subtitle}>{item.subtitle}</div>
 						<div className={styles.content}>{item.description}</div>
 						<br></br>
 					</div>
-				</Row>
+				</Col>
 			))}
 			<Row align="middle" justify="center">
 				{BLBL.logos.map(item => (
 					<Parallax
-						animation={[
-							{ x: 0, opacity: 1, playScale: [0, 0.8] },
-							{ y: 100, playScale: [0, 0.3] },
-							{ blur: '10px', playScale: [0, 1] }
-						]}
-						style={{
-							transform: 'translateX(-100px)',
-							filter: 'blur(0px)',
-							opacity: 0
-						}}
+						animation={{ x: 0, opacity: 1, playScale: [0, 0.8] }}
+						style={{ transform: 'translateX(-500px)', opacity: 0 }}
 					>
-						
-							<div className="m-5">
-								<img src={item.path} height="200px" alt="img" />
-							</div>
-							<div className={styles.discount}>{item.discount}</div>
-							<br></br>
-						
+						<div className="ml-5 mr-5 mu-2 md-2">
+							<img src={item.path} height="200px" alt="img" />
+						</div>
+						<div className={styles.discount}>{item.discount}</div>
+						<br></br>
 					</Parallax>
 				))}
 			</Row>

@@ -1,22 +1,23 @@
 /* eslint no-undef: 0 */
 /* eslint arrow-parens: 0 */
 import React from 'react'
-import { enquireScreen } from 'enquire-js'
-import Teams3 from '@Components/Teams3'
-import { Card } from 'antd'
 import { Row, Col, Divider } from 'antd'
-import QueueAnim from 'rc-queue-anim'
-import { Team } from '@Components/data.js'
-import { Parallax } from 'rc-scroll-anim'
 import Image from 'next/image'
+import {
+	FacebookFilled,
+	InstagramFilled,
+	WechatFilled
+} from '@ant-design/icons'
+import Link from 'next/link'
 
 const Footer = () => {
 	return (
 		<div className="footer">
 			<Row align="middle" justify="center">
 				<Col
-					span={8}
-					className="ant-col block ant-col-xs-24 ant-col-md-6 p-5"
+					xs={{ span: 20 }}
+					lg={{ span: 8 }}
+					className="m-auto"
 					align="middle"
 					justify="center"
 				>
@@ -26,28 +27,84 @@ const Footer = () => {
 						height={200}
 						layout="responsive"
 						alt="img"
+						className="my-4"
 					/>
+					<br></br>
+					<br></br>
 					Kindness Shake team acknowledges and pays respect to the past, present
 					and future traditional custodians and elders of this nation and the
 					continuation of cultural, spiritual and educational practices of
 					Aboriginal and Torres Strait islander peoples.
+					<br></br>
+					<br></br>
 				</Col>
-				<Col span={8} className="ant-col block ant-col-xs-24 ant-col-md-6 p-5">
+				<Col
+					xs={{ span: 20 }}
+					lg={{ span: 8 }}
+					className="m-auto"
+					align="middle"
+					justify="center"
+				>
 					<h1>ABOUT US</h1>
-					<p>Our values</p>
-					<p>Our mission</p>
-					<p>Our vision</p>
+					<br></br>
+					<Link href="/ourstory" passHref>
+					<a style={{fontSize:"20px", color:"#919191"}}>OUR VISION</a>
+					</Link>
+					<br></br>
+					<br></br>
+					<Link href="/ourstory" passHref>
+						<a style={{fontSize:"20px", color:"#919191"}}>OUR MISSION</a>
+					</Link>
+					<br></br>
+					<br></br>
 				</Col>
-				<Col span={8} className="ant-col block ant-col-xs-24 ant-col-md-6 p-5">
+				<Col
+					xs={{ span: 20 }}
+					lg={{ span: 8 }}
+					className="m-auto"
+					align="middle"
+					justify="center"
+				>
 					<h1>SOCIAL MEDIA</h1>
-					<p>Facebook</p>
-					<p>Instagram</p>
-					<p>Wechat</p>
+					<br></br>
+					<a
+						href="https://www.facebook.com/KindnessShakeNT"
+						rel="noopener noreferrer"
+						target="_blank"
+					>
+						<FacebookFilled
+							style={{ fontSize: '48px', color: '#919191' }}
+							className="m-2"
+						/>
+					</a>
+					<br></br>
+					<a
+						href="https://www.instagram.com/kindnessshake/"
+						rel="noopener noreferrer"
+						target="_blank"
+					>
+						<InstagramFilled
+							style={{ fontSize: '48px', color: '#919191' }}
+							className="m-2"
+						/>
+					</a>
+					<br></br>
+					<a
+						href="https://www.facebook.com/KindnessShakeNT"
+						rel="noopener noreferrer"
+						target="_blank"
+					>
+						<WechatFilled
+							style={{ fontSize: '48px', color: '#919191' }}
+							className="m-2"
+						/>
+					</a>
+					<br></br>
 				</Col>
 			</Row>
-			<Divider style={{ 'backgroundColor': '#182B3D' }} />
+			<Divider style={{ backgroundColor: '#182B3D' }} />
 			<Row align="middle" justify="center">
-				©2020 by Kindness Shake
+				©2021 by Kindness Shake
 				<br></br>
 				<br></br>
 				<br></br>

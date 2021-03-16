@@ -4,6 +4,7 @@ import { Form, Input, InputNumber, Button, Select, Switch } from 'antd'
 import { Row, Col, Divider } from 'antd'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
+import styles from '@Components/Titles.module.css'
 
 const { GoogleSpreadsheet } = require('google-spreadsheet')
 
@@ -27,9 +28,8 @@ const formItemLayout = {
 	}
 }
 
-
 const validateMessages = {
-    required: '${label} is required!',
+	required: '${label} is required!',
 	types: {
 		email: '${label} is not a valid email!',
 		number: '${label} is not a valid number!'
@@ -53,12 +53,12 @@ const doc = new GoogleSpreadsheet(
 )
 
 const Demo = () => {
-    const [form] = Form.useForm();
+	const [form] = Form.useForm()
 
 	const onFinish = values => {
 		write_rows(values.user)
 		setOpen(true)
-        form.resetFields();
+		form.resetFields()
 	}
 
 	const write_rows = async row => {
@@ -80,8 +80,8 @@ const Demo = () => {
 
 	const getToken = async () => {
 		await doc.useServiceAccountAuth({
-			client_email:process.env.sheets_email,
-			private_key:process.env.sheets_privatekey,
+			client_email: process.env.sheets_email,
+			private_key: process.env.sheets_privatekey
 		})
 
 		await doc.loadInfo()
@@ -90,79 +90,107 @@ const Demo = () => {
 	return (
 		<>
 			<div className="home-page-wrapper">
-				<h1 className="text-center m-5">CONTACT US</h1>
-				<Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
-					<MuiAlert
-						onClose={handleClose}
-						elevation={6}
-						variant="filled"
-						severity="success"
+				<h1 className="text-center m-5">CONTACT US TODAY</h1>
+				<Row>
+					<Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+						<MuiAlert
+							onClose={handleClose}
+							elevation={6}
+							variant="filled"
+							severity="success"
+						>
+							Thank you for your interest!
+						</MuiAlert>
+					</Snackbar>
+					<Col
+						xs={{ span: 20, offset: 1 }}
+						lg={{ span: 10, offset: 2 }}
+						className="m-auto"
 					>
-						Thank you for your interest!
-					</MuiAlert>
-				</Snackbar>
-
-				<Row align="middle" justify="center">
-                <Col span={12}>
-					<Form
-						{...formItemLayout}
-                        form={form}
-						name="nest-messages"
-						onFinish={onFinish}
-						validateMessages={validateMessages}
-						layout="horizontal"
-						initialValues={{
-							residence: ['zhejiang', 'hangzhou', 'xihu'],
-							prefix: '61'
-						}}
+						<Form
+							{...formItemLayout}
+							form={form}
+							name="nest-messages"
+							onFinish={onFinish}
+							validateMessages={validateMessages}
+							layout="horizontal"
+							initialValues={{
+								residence: ['zhejiang', 'hangzhou', 'xihu'],
+								prefix: '61'
+							}}
+						>
+							<Form.Item
+								name={['user', 'firstname']}
+								label="First Name"
+								rules={[
+									{
+										required: true
+									}
+								]}
+							>
+								<Input />
+							</Form.Item>
+							<Form.Item
+								name={['user', 'lastname']}
+								label="Last Name"
+								rules={[
+									{
+										required: true
+									}
+								]}
+							>
+								<Input />
+							</Form.Item>
+							<Form.Item
+								name={['user', 'email']}
+								label="Email"
+								rules={[
+									{
+										type: 'email'
+									}
+								]}
+							>
+								<Input />
+							</Form.Item>
+							<Form.Item
+								className={'two-rows-label'}
+								name={['user', 'message']}
+								label="Message   "
+							>
+								<Input.TextArea />
+							</Form.Item>
+							<Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
+								<Button type="primary" htmlType="submit">
+									Submit
+								</Button>
+							</Form.Item>
+						</Form>
+					</Col>
+					<Col
+						xs={{ span: 20, offset: 1 }}
+						lg={{ span: 10, offset: 2 }}
+						className="mx-auto"
 					>
-						<Form.Item
-							name={['user', 'firstname']}
-							label="First Name"
-							rules={[
-								{
-									required: true
-								}
-							]}
-						>
-							<Input />
-						</Form.Item>
-						<Form.Item
-							name={['user', 'lastname']}
-							label="Last Name"
-							rules={[
-								{
-									required: true
-								}
-							]}
-						>
-							<Input />
-						</Form.Item>
-						<Form.Item
-							name={['user', 'email']}
-							label="Email"
-							rules={[
-								{
-									type: 'email'
-								}
-							]}
-						>
-							<Input />
-						</Form.Item>
-						<Form.Item
-							className={'two-rows-label'}
-							name={['user', 'message']}
-							label="Message   "
-						>
-							<Input.TextArea />
-						</Form.Item>
-						<Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
-							<Button type="primary" htmlType="submit">
-								Submit
-							</Button>
-						</Form.Item>
-					</Form>
-                    </Col>
+						<div className={styles.contentContact}>
+							Showcasing the importance and the value of international students
+							in the NT while portraying the boundless ways the community can
+							get together, regardless the difficult time the world is
+							experiencing.
+							<br></br> There are many ways to join us and support our mission.
+							Contact us to find out more about volunteer opportunities,
+							fundraising events, and ways that you can get our message to your
+							friends and family.
+							<br></br>
+							<br></br>
+							#KindnessShake<br></br>
+							<br></br> Darwin, Northern Territory, Australia
+							<br></br>
+							info@kindness-shake.com.au<br></br>+61 451 717 861
+							<br></br>
+							<br></br>
+							<br></br>
+						</div>
+					</Col>
 				</Row>
 			</div>
 		</>

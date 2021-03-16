@@ -1,22 +1,8 @@
-/* eslint no-undef: 0 */
-/* eslint arrow-parens: 0 */
 import React from 'react'
 import { enquireScreen } from 'enquire-js'
+import Home from '@Components/home'
 
-// import YouTube from "react-youtube";
-import Banner0 from '@Components/Banner0'
-import Feature6 from '@Components/Feature6'
-import Contact0 from '@Components/Contact0'
-import Banner from '@Components/home'
-import dynamic from "next/dynamic";
-
-const Map = dynamic(() => import("@Components/map-leaflet"), { ssr: false });
-
-import {
-	Banner00DataSource,
-	Feature60DataSource,
-	Contact00DataSource
-} from '@Components/data.source'
+// const Map = dynamic(() => import("@Components/map-leaflet"), { ssr: false });
 
 let isMobile
 enquireScreen(b => {
@@ -24,18 +10,8 @@ enquireScreen(b => {
 })
 
 const { location = {} } = typeof window !== 'undefined' ? window : {}
-const opts = {
-	height: '500px',
-	width: '100%',
-	playerVars: {
-		// https://developers.google.com/youtube/player_parameters
-		autoplay: 0,
-		controls: 0,
-		modestbranding: 0
-	}
-}
 
-export default class Home extends React.Component {
+export default class Index extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -60,14 +36,8 @@ export default class Home extends React.Component {
 	render() {
 		const content = this.state
 		const children = [
-			<Banner />,
-			<Feature6
-				id="Feature6_0"
-				key="Feature6_0"
-				dataSource={Feature60DataSource}
-				isMobile={content.isMobile}
-			/>,
-			<Map/>
+			<Home />,
+			// <Map/>
 		]
 		return (
 			<div

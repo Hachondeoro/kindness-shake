@@ -4,6 +4,7 @@ import { Form, Input, InputNumber, Button, Select, Switch } from 'antd'
 import { Row, Col, Divider } from 'antd'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
+import styles from '@Components/Titles.module.css'
 
 const { GoogleSpreadsheet } = require('google-spreadsheet')
 
@@ -27,9 +28,8 @@ const formItemLayout = {
 	}
 }
 
-
 const validateMessages = {
-    required: '${label} is required!',
+	required: '${label} is required!',
 	types: {
 		email: '${label} is not a valid email!',
 		number: '${label} is not a valid number!'
@@ -53,14 +53,14 @@ const doc = new GoogleSpreadsheet(
 )
 
 const Demo = () => {
-    const [form] = Form.useForm();
+	const [form] = Form.useForm()
 
 	const onFinish = values => {
 		const expertise = values.user.expertise.join(', ')
 		values.user.expertise = expertise
 		write_rows(values.user)
 		setOpen(true)
-        form.resetFields();
+		form.resetFields()
 	}
 
 	const write_rows = async row => {
@@ -82,8 +82,8 @@ const Demo = () => {
 
 	const getToken = async () => {
 		await doc.useServiceAccountAuth({
-			client_email:process.env.sheets_email,
-			private_key:process.env.sheets_privatekey,
+			client_email: process.env.sheets_email,
+			private_key: process.env.sheets_privatekey
 		})
 
 		await doc.loadInfo()
@@ -92,7 +92,24 @@ const Demo = () => {
 	return (
 		<>
 			<div className="home-page-wrapper">
-				<h1 className="text-center m-5">VOLUNTEER WITH US</h1>
+				<h1 className="text-center m-5">Volunteering Expression of Interest</h1>
+				<Col
+					xs={{ span: 20 }}
+					lg={{ span: 8 }}
+					className="m-auto"
+					align="middle"
+					justify="center"
+				>
+					<div className={styles.subtitle}>
+						If you want to be part of our volunteer projects please fill this
+						form and we will be in contact once we have assessed your
+						application. <br></br> If you have any questions or comments, please
+						email volunteers@kindness-shake.com.au
+						<br></br>
+						<br></br>
+					</div>
+				</Col>
+
 				<Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
 					<MuiAlert
 						onClose={handleClose}
@@ -103,11 +120,10 @@ const Demo = () => {
 						Thank you for your interest!
 					</MuiAlert>
 				</Snackbar>
-
-				<Row align="middle" justify="center">
+				<Row align="middle" justify="center" className="mx-5">
 					<Form
 						{...formItemLayout}
-                        form={form}
+						form={form}
 						name="nest-messages"
 						onFinish={onFinish}
 						validateMessages={validateMessages}
@@ -144,24 +160,12 @@ const Demo = () => {
 							label="Email"
 							rules={[
 								{
-									type: 'email'
+									type: 'email',
+									required: true
 								}
 							]}
 						>
 							<Input />
-						</Form.Item>
-						<Form.Item
-							name={['user', 'age']}
-							label="Age"
-							rules={[
-								{
-									type: 'number',
-									min: 0,
-									max: 99
-								}
-							]}
-						>
-							<InputNumber />
 						</Form.Item>
 						<Form.Item
 							name={['user', 'phone']}
@@ -216,6 +220,18 @@ const Demo = () => {
 							label="Any other areas that you would like to develop professionally?"
 						>
 							<Input.TextArea />
+						</Form.Item>
+						<Form.Item
+							className={'two-rows-label'}
+							name={['user', 'consent']}
+							rules={[
+								{
+									required: true
+								}
+							]}
+							label="I acknowledge that my personal details will be used for the purpose of expressing interest for Volunteering in Kindness Shake programs or events"
+						>
+							<Switch />
 						</Form.Item>
 						<Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
 							<Button type="primary" htmlType="submit">

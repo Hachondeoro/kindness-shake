@@ -8,6 +8,7 @@ import { BLBL } from '@Components/data.js'
 import SpecialTitle from '@Components/specialtitle'
 import styles from '@Components/Titles.module.css'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
+import { UsergroupAddOutlined } from '@ant-design/icons'
 
 const navmenu = {
 	fontFamily:
@@ -35,7 +36,7 @@ const data = [
 	{
 		title: 'Benefit 3',
 		content:
-			'10% Discount on Food and Beverage in Kindness Space\n20% Discount on diverse Kindness Shake merchandise '
+			'10% Discount on Food and Beverage in Kindness Space. \n20% Discount on diverse Kindness Shake merchandise '
 	},
 	{
 		title: 'Benefit 4',
@@ -44,7 +45,7 @@ const data = [
 	{
 		title: 'Benefit 5',
 		content:
-			'A copy of the Kindness Shake constitution \nMinutes of general meetings \nAnnual reports and annual financial reports'
+			'A copy of the Kindness Shake constitution. \nMinutes of general meetings.\nAnnual reports and annual financial reports'
 	},
 	{
 		title: 'Benefit 6',
@@ -54,7 +55,7 @@ const data = [
 	{
 		title: 'Benefit 7',
 		content:
-			'First look for future Kindness Shake projects\nOptions to participate in strategy planning'
+			'First look for future Kindness Shake projects. \nOptions to participate in strategy planning'
 	},
 	{
 		title: 'Benefit 8',
@@ -63,7 +64,7 @@ const data = [
 	{
 		title: 'Benefit 9',
 		content:
-			'Some proceeds from the Membership Fee will be funded towards \nstudents scholarships and mentorships every academic year'
+			'Some proceeds from the Membership Fee will be funded towards students scholarships and mentorships every academic year'
 	}
 ]
 
@@ -94,17 +95,38 @@ const Membership = () => {
 								and complete the payment.
 							</div>
 							<br></br>
-
-							<img
-								src="/static/img/front-card.jpeg"
-								height="300px"
-								alt="frontcard"
-							/>
-							<img
-								src="/static/img/back-card-blank.jpeg"
-								height="300px"
-								alt="backcard"
-							/>
+							<Row align="middle" justify="center">
+								<Col
+									xs={{ span: 20 }}
+									lg={{ span: 8 }}
+									className="m-auto"
+									align="middle"
+									justify="center"
+								>
+									<img
+										src="/static/img/front-card.jpeg"
+										alt="frontcard"
+										width="100%"
+										height="100%"
+										className="my-2"
+									/>
+								</Col>
+								<Col
+									xs={{ span: 20 }}
+									lg={{ span: 8 }}
+									className="m-auto"
+									align="middle"
+									justify="center"
+								>
+									<img
+										src="/static/img/back-card-blank.jpeg"
+										alt="backcard"
+										width="100%"
+										height="100%"
+										className="my-2"
+									/>
+								</Col>
+							</Row>
 							<br></br>
 							<br></br>
 							<Button
@@ -118,42 +140,33 @@ const Membership = () => {
 							<br></br>
 							<br></br>
 							<h2>Membership benefits</h2>
-							<div
-								style={{ width: '40%', whiteSpace: 'pre' }}
-								className="m-auto"
-							>
-								<List
-									itemLayout="horizontal"
-									dataSource={data}
-									size="large"
-									renderItem={item => (
-										<List.Item>
-											<List.Item.Meta
-												avatar={<ArrowForwardIosIcon />}
-												description={item.content}
-											/>
-										</List.Item>
-									)}
-								/>
-								,
+							<div className="m-auto" style={{ whiteSpace: 'pre-wrap' }}>
+								<Col>
+									{data.map(item => (
+										<Col
+											xs={{ span: 20 }}
+											lg={{ span: 8 }}
+											className="m-auto"
+											align="middle"
+											justify="center"
+										>
+											<div className={styles.contentMembership}>
+												<ArrowForwardIosIcon />
+												{item.content}
+											</div>
+										</Col>
+									))}
+								</Col>
 							</div>
 							<br></br>
 							<h2>Our partners</h2>
 							<Row align="middle" justify="center">
 								{BLBL.logos.map(item => (
 									<Parallax
-										animation={[
-											{ x: 0, opacity: 1, playScale: [0, 0.8] },
-											{ y: 100, playScale: [0, 0.3] },
-											{ blur: '10px', playScale: [0, 1] }
-										]}
-										style={{
-											transform: 'translateX(-100px)',
-											filter: 'blur(0px)',
-											opacity: 0
-										}}
+										animation={{ x: 0, opacity: 1, playScale: [0, 0.8] }}
+										style={{ transform: 'translateX(-500px)', opacity: 0 }}
 									>
-										<div className="m-5">
+										<div className="ml-5 mr-5 mu-2 md-2">
 											<img src={item.path} height="200px" alt="img" />
 										</div>
 										<div className={styles.discount}>{item.discount}</div>
@@ -172,6 +185,23 @@ const Membership = () => {
 							frameborder="no"
 							src="https://ksi.wildapricot.org/widget/membership"
 						></iframe>
+						<br></br>
+						<br></br>
+						If you can not see the registration form, please follow the
+						following link
+						<br></br>
+						<a
+							href="https://ksi.wildapricot.org/widget/membership"
+							rel="noopener noreferrer"
+							target="_blank"
+						>
+							<UsergroupAddOutlined
+								style={{ fontSize: '64px', color: '#919191' }}
+								className="m-2"
+							/>
+						</a>
+						<br></br>
+						<br></br>
 					</div>
 				</TabPanel>
 				<TabPanel>

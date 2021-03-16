@@ -4,7 +4,7 @@ import Head from 'next/head'
 import App from 'next/app'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { enquireScreen } from "enquire-js";
-import MultiDropdownNavbar from "@Components/multidropdown.jsx";
+import MultiDropdownNavbar from "@Components/multidropdown rc.jsx";
 import Footer from "@Components/Footer.jsx";
 
 import 'react-tabs/style/react-tabs.css';

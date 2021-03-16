@@ -5,7 +5,6 @@ import { Row, Col } from 'antd'
 import { Team } from '@Components/data.js'
 import { Parallax } from 'rc-scroll-anim'
 
-
 let isMobile
 enquireScreen(b => {
 	isMobile = b

@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { Layout, Menu, Drawer, Button } from 'antd'
+import React, { useRef, forwardRef,useEffect, useState } from 'react'
+import Link from 'next/link'
+import classnames from 'classnames'
+import { Menu, Drawer, Button } from 'antd'
 import {
 	MailOutlined,
 	HomeOutlined,
@@ -8,31 +10,76 @@ import {
 	UsergroupAddOutlined,
 	MenuOutlined
 } from '@ant-design/icons'
-import Link from 'next/link'
-import { Container } from 'reactstrap'
-const { Header, Content, Footer, Sider } = Layout
+
+// reactstrap components
+import { Collapse, NavbarBrand, Navbar, Nav, Container } from 'reactstrap'
 
 const { SubMenu } = Menu
 
-const DesktopNavbar = () => {
+const MultiDropdownNavbar = ({ children }) => {
+	const [navbarColor, setNavbarColor] = React.useState('navbar-transparent')
+	const [bodyClick, setBodyClick] = React.useState(false)
+	const [collapseOpen, setCollapseOpen] = React.useState(false)
 	const [current, setCurrent] = useState('mail')
 	const [tabIndex, setTabIndex] = useState(0)
 
+	React.useEffect(() => {
+		const updateNavbarColor = () => {
+			if (
+				document.documentElement.scrollTop > 699 ||
+				document.body.scrollTop > 699
+			) {
+				setNavbarColor('black')
+			} else if (
+				document.documentElement.scrollTop < 700 ||
+				document.body.scrollTop < 700
+			) {
+				setNavbarColor('navbar-transparent')
+			}
+		}
+
+		window.addEventListener('scroll', updateNavbarColor)
+		return function cleanup() {
+			window.removeEventListener('scroll', updateNavbarColor)
+		}
+	})
 	return (
-		<div id="multidropdown" className="m-auto">
-			<Layout>
-				<Sider
-					breakpoint="lg"
-					collapsedWidth="0"
-					onCollapse={(collapsed, type) => {
-						console.log(collapsed, type)
+		<>
+			{bodyClick ? (
+				<div
+					id="bodyClick"
+					onClick={() => {
+						document.documentElement.classList.toggle('nav-open')
+						setBodyClick(false)
+						setCollapseOpen(false)
 					}}
-					trigger={null}
-				>
+				/>
+			) : null}
+			<Navbar
+				className={classnames('fixed-top', navbarColor)}
+				id="navbar-main"
+				expand="lg"
+			>
+				<Container>
+					<div className="navbar-translate">
+						<button
+							type="button"
+							onClick={() => {
+								document.documentElement.classList.toggle('nav-open')
+								setBodyClick(true)
+								setCollapseOpen(true)
+							}}
+						>
+							<span className="navbar-toggler-bar bar1"></span>
+							<span className="navbar-toggler-bar bar2"></span>
+							<span className="navbar-toggler-bar bar3"></span>
+						</button>
+					</div>
+					<Collapse navbar isOpen={collapseOpen}>
 						<Menu
 							onClick={e => setCurrent(e.key)}
 							selectedKeys={[current]}
-							mode="inline"
+							mode="horizontal"
 							theme="dark"
 							className="m-auto"
 						>
@@ -98,10 +145,12 @@ const DesktopNavbar = () => {
 								</Link>
 							</Menu.Item>
 						</Menu>
-				</Sider>
-			</Layout>
-		</div>
+					</Collapse>
+				</Container>
+			</Navbar>
+			{children}
+		</>
 	)
 }
 
-export default DesktopNavbar
+export default MultiDropdownNavbar

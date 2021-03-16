@@ -1,13 +1,23 @@
 import React from 'react'
 import { Button } from 'antd'
 import { DownOutlined } from '@ant-design/icons'
-import QueueAnim from 'rc-queue-anim'
 import TweenOne from 'rc-tween-one'
-import { isImg } from '@Components/utils'
+import Feature6 from '@Components/Feature6'
+import { enquireScreen } from 'enquire-js'
+
+import InstagramEmbed from 'react-instagram-embed'
+import { Instagram } from '@Components/data.js'
+import { Parallax } from 'rc-scroll-anim'
+import { Row, Col } from 'antd'
+
 import Image from 'next/image'
+import { Feature60DataSource } from '@Components/data.source'
 
 // https://nextjs.org/docs/basic-features/environment-variables#exposing-environment-variables-to-the-browser
-
+let isMobile
+enquireScreen(b => {
+	isMobile = b
+})
 
 const Home = () => {
 	return (
@@ -42,7 +52,7 @@ const Home = () => {
 				</div>
 				<TweenOne
 					animation={{
-						y: '-=100',
+						y: '-=50',
 						yoyo: true,
 						repeat: -1,
 						duration: 1000
@@ -53,7 +63,41 @@ const Home = () => {
 					<DownOutlined />
 				</TweenOne>
 			</div>
-			
+			<Feature6
+				id="Feature6_0"
+				key="Feature6_0"
+				dataSource={Feature60DataSource}
+				isMobile={isMobile}
+			/>
+			<div className="home-page-wrapper">
+				<h1 className="text-center m-5">Social Media</h1>
+				<Row align="middle" justify="center">
+					{Instagram.slice(0, 6).map(item => (
+						<Parallax
+							animation={{ x: 0, opacity: 1, playScale: [0.5, 0.8] }}
+							style={{ transform: 'translateX(-100px)', opacity: 0 }}
+						>
+							<Col span={8}>
+								<div className="m-5">
+									<InstagramEmbed
+										url={item.post}
+										clientAccessToken="821751731773259|69972d556b438c02d3cd032878cfdbee"
+										maxWidth={450}
+										hideCaption={true}
+										containerTagName="div"
+										protocol=""
+										injectScript
+										onLoading={() => {}}
+										onSuccess={() => {}}
+										onAfterRender={() => {}}
+										onFailure={() => {}}
+									/>
+								</div>
+							</Col>
+						</Parallax>
+					))}
+				</Row>
+			</div>
 		</>
 	)
 }
