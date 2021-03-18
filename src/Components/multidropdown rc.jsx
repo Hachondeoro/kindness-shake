@@ -6,15 +6,15 @@ import {
 	TeamOutlined,
 	InstagramOutlined,
 	UsergroupAddOutlined,
+	StarOutlined
 } from '@ant-design/icons'
 import Link from 'next/link'
 import Drawer from 'rc-drawer'
-import {  Container } from 'reactstrap'
+import { Container } from 'reactstrap'
 
 const SubMenu = Menu.SubMenu
 
 const MultiDropdownNavbar = () => {
-	
 	const [current, setCurrent] = useState('mail')
 
 	return (
@@ -60,6 +60,16 @@ const MultiDropdownNavbar = () => {
 								Our social media
 							</Link>
 						</Menu.Item>
+						<Menu.Item key="volunteer" icon={<MailOutlined />}>
+							<Link href="/volunteer" passHref>
+								Volunteer
+							</Link>
+						</Menu.Item>
+						<Menu.Item key="donate" icon={<StarOutlined />}>
+							<Link href="/donate" passHref>
+								Donate
+							</Link>
+						</Menu.Item>
 						<SubMenu
 							key="sub2"
 							icon={<UsergroupAddOutlined />}
@@ -70,7 +80,7 @@ const MultiDropdownNavbar = () => {
 									Become a member
 								</Link>
 							</Menu.Item>
-							<Menu.Item key="belocalbuylocal" >
+							<Menu.Item key="belocalbuylocal">
 								<Link href="/belocalbuylocal" passHref>
 									Be Local Buy Local
 								</Link>
@@ -79,11 +89,6 @@ const MultiDropdownNavbar = () => {
 						<Menu.Item key="contactus" icon={<MailOutlined />}>
 							<Link href="/contactus" passHref>
 								Contact Us
-							</Link>
-						</Menu.Item>
-						<Menu.Item key="volunteer" icon={<MailOutlined />}>
-							<Link href="/volunteer" passHref>
-								Volunteer
 							</Link>
 						</Menu.Item>
 					</Menu>
@@ -130,6 +135,16 @@ const MultiDropdownNavbar = () => {
 								Our social media
 							</Link>
 						</Menu.Item>
+						<Menu.Item key="volunteer" icon={<MailOutlined />}>
+							<Link href="/volunteer" passHref>
+								Volunteer
+							</Link>
+						</Menu.Item>
+						<Menu.Item key="donate" icon={<StarOutlined />}>
+							<Link href="/donate" passHref>
+								Donate
+							</Link>
+						</Menu.Item>
 						<SubMenu
 							key="Membership"
 							icon={<UsergroupAddOutlined />}
@@ -149,11 +164,6 @@ const MultiDropdownNavbar = () => {
 						<Menu.Item key="contactus" icon={<MailOutlined />}>
 							<Link href="/contactus" passHref>
 								Contact Us
-							</Link>
-						</Menu.Item>
-						<Menu.Item key="volunteer" icon={<MailOutlined />}>
-							<Link href="/volunteer" passHref>
-								Volunteer
 							</Link>
 						</Menu.Item>
 					</Menu>

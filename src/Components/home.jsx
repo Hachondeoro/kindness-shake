@@ -74,7 +74,7 @@ const Home = () => {
 				<Row align="middle" justify="center">
 					{Instagram.slice(0, 6).map(item => (
 						<Parallax
-							animation={{ x: 0, opacity: 1, playScale: [0.5, 0.8] }}
+							animation={{ x: 0, opacity: 1, playScale: [0, 0.8] }}
 							style={{ transform: 'translateX(-100px)', opacity: 0 }}
 						>
 							<Col span={8}>

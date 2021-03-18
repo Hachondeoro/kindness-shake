@@ -78,6 +78,21 @@
 	text-align: center;
 }
 
+.footerLogos {
+	font-size: 48px;
+	color: #919191;
+	margin: 2px;
+}
+
+.footerTitle{
+	font-size: 40px;
+	color:#919191;
+}
+
+.footerSubtitle{
+	font-size: 20px;
+	color:#919191;
+}
 
 @media only screen and (max-width: 600px) {
 	.titleBLBL {
@@ -88,10 +103,26 @@
 		/* word-wrap: break-word;
 		display: inline-block; */
 	}
-	.descriptionBLBL{
+	.descriptionBLBL {
 		font-size: 14px;
 		color: #919191;
 		text-align: center;
-		margin:4px
+		margin: 4px;
+	}
+
+	.footerLogos {
+		font-size: 28px;
+		color: #919191;
+		margin: 3px;
+	}
+	.footerTitle{
+		font-size: 28px;
+		color:#919191;
+	}
+	
+	.footerSubtitle{
+		font-size: 15px;
+		color:#919191;
+		margin: 1px;
 	}
 }

@@ -10,6 +10,7 @@ import {
 	LinkedinFilled
 } from '@ant-design/icons'
 import Link from 'next/link'
+import styles from '@Components/Titles.module.css'
 
 const Footer = () => {
 	return (
@@ -46,15 +47,15 @@ const Footer = () => {
 					align="middle"
 					justify="center"
 				>
-					<h1>ABOUT US</h1>
+					<div className={styles.footerTitle}>ABOUT US</div>
 					<br></br>
 					<Link href="/ourstory" passHref>
-						<a style={{ fontSize: '20px', color: '#919191' }}>OUR VISION</a>
+						<a className={styles.footerSubtitle}>OUR VISION</a>
 					</Link>
 					<br></br>
 					<br></br>
 					<Link href="/ourstory" passHref>
-						<a style={{ fontSize: '20px', color: '#919191' }}>OUR MISSION</a>
+						<a className={styles.footerSubtitle}>OUR MISSION</a>
 					</Link>
 					<br></br>
 					<br></br>
@@ -66,17 +67,14 @@ const Footer = () => {
 					align="middle"
 					justify="center"
 				>
-					<h1>SOCIAL MEDIA</h1>
+					<div className={styles.footerTitle}>SOCIAL MEDIA</div>
 					<br></br>
 					<a
 						href="https://www.facebook.com/KindnessShakeNT"
 						rel="noopener noreferrer"
 						target="_blank"
 					>
-						<FacebookFilled
-							style={{ fontSize: '48px', color: '#919191' }}
-							className="m-2"
-						/>
+						<FacebookFilled className={styles.footerLogos} />
 					</a>
 
 					<a
@@ -84,30 +82,21 @@ const Footer = () => {
 						rel="noopener noreferrer"
 						target="_blank"
 					>
-						<InstagramFilled
-							style={{ fontSize: '48px', color: '#919191' }}
-							className="m-2"
-						/>
+						<InstagramFilled className={styles.footerLogos} />
 					</a>
 					<a
 						href="https://www.linkedin.com/company/kindnessshakent/"
 						rel="noopener noreferrer"
 						target="_blank"
 					>
-						<LinkedinFilled
-							style={{ fontSize: '48px', color: '#919191' }}
-							className="m-2"
-						/>
+						<LinkedinFilled className={styles.footerLogos} />
 					</a>
 					<a
 						href="https://www.facebook.com/KindnessShakeNT"
 						rel="noopener noreferrer"
 						target="_blank"
 					>
-						<WechatFilled
-							style={{ fontSize: '48px', color: '#919191' }}
-							className="m-2"
-						/>
+						<WechatFilled className={styles.footerLogos} />
 					</a>
 
 					<br></br>
