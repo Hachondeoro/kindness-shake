@@ -105,7 +105,7 @@ const socialmedia = () => {
 						animation={[
 							{ x: 0, opacity: 1, playScale: [0, 0.8] },
 							{ y: 100, playScale: [0, 0.3] },
-							{ blur: '10px', playScale: [0, 1] }
+							{ blur: '10px', playScale: [0.5, 1] }
 						]}
 						style={{
 							transform: 'translateX(-100px)',

@@ -8,7 +8,7 @@
 	font-size: 32px;
 	margin-bottom: 16px;
 	text-align: center;
-	color: #CCC
+	color: #ccc;
 }
 
 .subtitle {
@@ -53,6 +53,45 @@
 	text-align: center;
 }
 
-.card {
-	/* overflow: hidden; */
+.TeamEmails {
+	font-size: 12px;
+	color: #919191;
+	text-align: left;
+	width: 350px;
+	margin-left: 30px;
+	padding: 0%;
+	/* line-height: 1; */
+}
+.TeamDepartments {
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+	width: 350px;
+	margin-left: 30px;
+	padding: 0%;
+	/* line-height: 1; */
+}
+
+.titleBLBL {
+	font-size: 48px;
+	margin-bottom: 2px;
+	text-align: center;
+}
+
+
+@media only screen and (max-width: 600px) {
+	.titleBLBL {
+		font-size: 40px;
+		/* margin: 10%; */
+		text-align: center;
+		white-space: pre-wrap;
+		/* word-wrap: break-word;
+		display: inline-block; */
+	}
+	.descriptionBLBL{
+		font-size: 14px;
+		color: #919191;
+		text-align: center;
+		margin:4px
+	}
 }

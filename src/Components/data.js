@@ -112,7 +112,7 @@ export const Supporters = [
 
 export const Aboutus = {
 	mission:
-		'Our mission is to provide is to provide any form of support not limited to meals and employability but also social engagement and welfare/well-being of International Students and Migrants in the Northern Territory. This will be achieved through our current initiatives and future goals. ',
+		'Our mission is to provide any form of support not limited to meals and employability but also social engagement and welfare/well-being of International Students and Migrants in the Northern Territory. This will be achieved through our current initiatives and future goals. ',
 	vision:
 		'Enhancing the wellbeing of International Students in the NT through Social Engagement and Employability while showcasing the importance of Multiculturalism and International Communities in Australia.',
 	story: [
@@ -129,12 +129,28 @@ export const Aboutus = {
 		{
 			img: '/static/img/aboutus/members3.jpg',
 			description:
-				"The Kindness Shake was launched at the Charles Darwin University on Friday 3rd of April 2020 in presence of the Australia's Northern Territory Chief Minister, Michael Gunner MLA. Earlier, that very same morning, temporary residents, visitors, and more than half a million international students heard the controversial comment: “it’s time to go home”. Since its launch, the Kindness Shake has served over 700 meals, connected with dozens of local businesses and recruited 40+ volunteers."
+				"The Kindness Shake was launched at the Charles Darwin University on Friday 3rd of April 2020 in presence of the Australia's Northern Territory Chief Minister, Michael Gunner MLA. Earlier, that very same morning, temporary residents, visitors, and more than half a million international students heard the controversial comment: “it’s time to go home”. Since its launch, the Kindness Shake has served over 5000 meals, connected with dozens of local businesses and recruited over 100 volunteers."
 		}
 	]
 }
 
 export const Awards = [
+	{
+		title: 'City of Darwin Awards',
+		subtitle:
+			'Community Event of the Year Award by City of Darwin',
+		description:
+			'The Community Event of the Year Award encourages us to work harder in making the Darwin multicultural community a better place for everyone to live in. ',
+		image: '/static/img/awards/Community Event of the Year Award by City of Darwin.jpg'
+	},
+	{
+		title: 'The Northern Territory Human Rights Awards ',
+		subtitle:
+			'The Fitzgerald Diversity Award ',
+		description:
+			'The Northern Territory Human Rights Awards celebrate notable activities in the Northern Territory or by Territorians, which advance human rights---Promoting human rights and peace through education, sports or other practical activities and/or advocacy---Promoting equal opportunity and non-discriminatory attitudes and practices --- Increasing community understanding of human rights for the promotion of greater respect, diversity, inclusion and harmony --- Challenging human rights barriers and/or breaches ',
+		image: '/static/img/awards/The Fitzgerald Diversity Award – Kindness Shake Inc.jpg'
+	},
 	{
 		title: '2020 Northern Territory Volunteer of The Year Awards ',
 		subtitle:
@@ -151,22 +167,8 @@ export const Awards = [
 			'Organisations recognised for making significant contributions to embracing cultural diversity and promoting the NT as a united, harmonious, and inclusive community. The work which supports migrants and refugees is highly regarded.  ',
 		image: '/static/img/awards/MCNT Council - Yogan Sathianathan Multicultural Awards.jpg'
 	},
-	{
-		title: 'The Northern Territory Human Rights Awards ',
-		subtitle:
-			'The Fitzgerald Diversity Award ',
-		description:
-			'The Northern Territory Human Rights Awards celebrate notable activities in the Northern Territory or by Territorians, which advance human rights---Promoting human rights and peace through education, sports or other practical activities and/or advocacy---Promoting equal opportunity and non-discriminatory attitudes and practices --- Increasing community understanding of human rights for the promotion of greater respect, diversity, inclusion and harmony --- Challenging human rights barriers and/or breaches ',
-		image: '/static/img/awards/The Fitzgerald Diversity Award – Kindness Shake Inc.jpg'
-	},
-	{
-		title: 'City of Darwin Awards',
-		subtitle:
-			'Community Event of the Year Award by City of Darwin',
-		description:
-			'The Community Event of the Year Award encourages us to work harder in making the Darwin multicultural community a better place for everyone to live in. ',
-		image: '/static/img/awards/Community Event of the Year Award by City of Darwin.jpg'
-	},
+
+
 ]
 
 export const Instagram = [
@@ -255,7 +257,6 @@ export const BLBL = {
 			discount: '10% discount'
 		},
 		{ path: '/static/img/belocal/Night Market.JPG', discount: '10% discount' },
-		{ path: '/static/img/belocal/Opium.jpg', discount: '10% discount' },
 		{
 			path: '/static/img/belocal/Palates of India.jpg',
 			discount: '10% discount'
@@ -277,7 +278,6 @@ export const BLBL = {
 			path: '/static/img/belocal/SAMAF Accountants & Consultants.png',
 			discount: '20% discount'
 		},
-		{ path: '/static/img/belocal/Six Tanks.png', discount: '10% discount' },
 		{ path: '/static/img/belocal/The Flank.jpg', discount: '10% discount' },
 		{
 			path: '/static/img/belocal/Where 2 Buns Meat.png',

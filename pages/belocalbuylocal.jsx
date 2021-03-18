@@ -1,17 +1,18 @@
 import React from 'react'
 import { Row, Col, Divider } from 'antd'
-import QueueAnim from 'rc-queue-anim'
-import { Team } from '@Components/data.js'
 import { Parallax } from 'rc-scroll-anim'
-import Image from 'next/image'
 import { BLBL } from '@Components/data.js'
-import SpecialTitle from '@Components/specialtitle'
+import Texty from 'rc-texty'
 import styles from '@Components/Titles.module.css'
 
 const OurSupporters = () => {
 	return (
 		<div className="home-page-wrapper">
-			<SpecialTitle title={BLBL.title} subtitle={BLBL.description} />
+			<div className="texty-demo" style={{ marginTop: 64 }}>
+				<Texty className={styles.titleBLBL}>Welcome to</Texty>
+				<Texty className={styles.titleBLBL}>Be Local Buy Local</Texty>
+			</div>
+			<div className={styles.descriptionBLBL}>{BLBL.description}</div>
 			<h1 className="text-center m-5">{BLBL.subtitle}</h1>
 			{BLBL.steps.map(item => (
 				<Col
@@ -32,8 +33,8 @@ const OurSupporters = () => {
 			<Row align="middle" justify="center">
 				{BLBL.logos.map(item => (
 					<Parallax
-						animation={{ x: 0, opacity: 1, playScale: [0, 0.8] }}
-						style={{ transform: 'translateX(-500px)', opacity: 0 }}
+						animation={{ x: 0, opacity: 1, playScale: [-0.2, 0.8] }}
+						style={{ transform: 'translateX(-200px)', opacity: 0 }}
 					>
 						<div className="ml-5 mr-5 mu-2 md-2">
 							<img src={item.path} height="200px" alt="img" />

@@ -16,7 +16,7 @@ const OurSupporters = () => {
 			<Row align="middle" justify="center">
 				{Supporters.map(item => (
 					<Parallax
-						animation={{ x: 0, opacity: 1, playScale: [0, 0.8] }}
+						animation={{ x: 0, opacity: 1, playScale: [-0.5, 0.8] }}
 						style={{ transform: 'translateX(-500px)', opacity: 0 }}
 					>
 						<Col span={4}>

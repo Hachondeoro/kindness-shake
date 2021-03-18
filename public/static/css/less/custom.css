@@ -32,3 +32,18 @@
   position: absolute;
   left: -7px;
 }
+.markdown {
+  font-size: 14px;
+  color: #919191;
+}
+.markdown h1 {
+  font-size: 32px;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #CCC;
+}
+.markdown p {
+  font-size: 14px;
+  color: #919191;
+  text-align: left;
+}

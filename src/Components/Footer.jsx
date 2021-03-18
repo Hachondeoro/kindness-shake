@@ -6,7 +6,8 @@ import Image from 'next/image'
 import {
 	FacebookFilled,
 	InstagramFilled,
-	WechatFilled
+	WechatFilled,
+	LinkedinFilled
 } from '@ant-design/icons'
 import Link from 'next/link'
 
@@ -48,12 +49,12 @@ const Footer = () => {
 					<h1>ABOUT US</h1>
 					<br></br>
 					<Link href="/ourstory" passHref>
-					<a style={{fontSize:"20px", color:"#919191"}}>OUR VISION</a>
+						<a style={{ fontSize: '20px', color: '#919191' }}>OUR VISION</a>
 					</Link>
 					<br></br>
 					<br></br>
 					<Link href="/ourstory" passHref>
-						<a style={{fontSize:"20px", color:"#919191"}}>OUR MISSION</a>
+						<a style={{ fontSize: '20px', color: '#919191' }}>OUR MISSION</a>
 					</Link>
 					<br></br>
 					<br></br>
@@ -77,7 +78,7 @@ const Footer = () => {
 							className="m-2"
 						/>
 					</a>
-					<br></br>
+
 					<a
 						href="https://www.instagram.com/kindnessshake/"
 						rel="noopener noreferrer"
@@ -88,7 +89,16 @@ const Footer = () => {
 							className="m-2"
 						/>
 					</a>
-					<br></br>
+					<a
+						href="https://www.linkedin.com/company/kindnessshakent/"
+						rel="noopener noreferrer"
+						target="_blank"
+					>
+						<LinkedinFilled
+							style={{ fontSize: '48px', color: '#919191' }}
+							className="m-2"
+						/>
+					</a>
 					<a
 						href="https://www.facebook.com/KindnessShakeNT"
 						rel="noopener noreferrer"
@@ -99,6 +109,7 @@ const Footer = () => {
 							className="m-2"
 						/>
 					</a>
+
 					<br></br>
 				</Col>
 			</Row>

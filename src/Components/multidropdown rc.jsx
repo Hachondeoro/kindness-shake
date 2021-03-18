@@ -49,9 +49,9 @@ const MultiDropdownNavbar = () => {
 									Our supporters
 								</Link>
 							</Menu.Item>
-							<Menu.Item key="achievements">
-								<Link href="/ourachievements" passHref>
-									Our achievements
+							<Menu.Item key="awards">
+								<Link href="/ourawards" passHref>
+									Our awards
 								</Link>
 							</Menu.Item>
 						</SubMenu>
@@ -81,9 +81,9 @@ const MultiDropdownNavbar = () => {
 								Contact Us
 							</Link>
 						</Menu.Item>
-						<Menu.Item key="volunteerwithus" icon={<MailOutlined />}>
-							<Link href="/volunteerwithus" passHref>
-								Volunteer with Us
+						<Menu.Item key="volunteer" icon={<MailOutlined />}>
+							<Link href="/volunteer" passHref>
+								Volunteer
 							</Link>
 						</Menu.Item>
 					</Menu>
@@ -119,9 +119,9 @@ const MultiDropdownNavbar = () => {
 									Our supporters
 								</Link>
 							</Menu.Item>
-							<Menu.Item key="achievements">
-								<Link href="/ourachievements" passHref>
-									Our achievements
+							<Menu.Item key="awards">
+								<Link href="/ourawards" passHref>
+									Our awards
 								</Link>
 							</Menu.Item>
 						</SubMenu>
@@ -151,9 +151,9 @@ const MultiDropdownNavbar = () => {
 								Contact Us
 							</Link>
 						</Menu.Item>
-						<Menu.Item key="volunteerwithus" icon={<MailOutlined />}>
-							<Link href="/volunteerwithus" passHref>
-								Volunteer with Us
+						<Menu.Item key="volunteer" icon={<MailOutlined />}>
+							<Link href="/volunteer" passHref>
+								Volunteer
 							</Link>
 						</Menu.Item>
 					</Menu>

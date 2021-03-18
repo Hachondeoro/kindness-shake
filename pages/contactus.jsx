@@ -146,6 +146,7 @@ const Demo = () => {
 								label="Email"
 								rules={[
 									{
+										required: true,
 										type: 'email'
 									}
 								]}
@@ -153,11 +154,33 @@ const Demo = () => {
 								<Input />
 							</Form.Item>
 							<Form.Item
-								className={'two-rows-label'}
-								name={['user', 'message']}
-								label="Message   "
+								name={['user', 'phone']}
+								label="Phone Number"
+								rules={[
+									{
+										required: true,
+										message: 'Please input your phone number!'
+									}
+								]}
 							>
-								<Input.TextArea />
+								<Input
+									addonBefore={prefixSelector}
+									style={{
+										width: '100%'
+									}}
+								/>
+							</Form.Item>
+							<Form.Item
+								name={['user', 'message']}
+								label="Message"
+								rules={[
+									{
+										required: true,
+										message: 'Please type your message!'
+									}
+								]}
+							>
+								<Input.TextArea style={{ height: 200 }}/>
 							</Form.Item>
 							<Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
 								<Button type="primary" htmlType="submit">

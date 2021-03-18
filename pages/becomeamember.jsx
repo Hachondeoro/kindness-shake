@@ -5,7 +5,6 @@ import { Parallax } from 'rc-scroll-anim'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import { HomeOutlined, IdcardOutlined, UserOutlined } from '@ant-design/icons'
 import { BLBL } from '@Components/data.js'
-import SpecialTitle from '@Components/specialtitle'
 import styles from '@Components/Titles.module.css'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 import { UsergroupAddOutlined } from '@ant-design/icons'
@@ -163,8 +162,8 @@ const Membership = () => {
 							<Row align="middle" justify="center">
 								{BLBL.logos.map(item => (
 									<Parallax
-										animation={{ x: 0, opacity: 1, playScale: [0, 0.8] }}
-										style={{ transform: 'translateX(-500px)', opacity: 0 }}
+										animation={{ x: 0, opacity: 1, playScale: [-0.2, 0.8] }}
+										style={{ transform: 'translateX(-300px)', opacity: 0 }}
 									>
 										<div className="ml-5 mr-5 mu-2 md-2">
 											<img src={item.path} height="200px" alt="img" />
@@ -182,7 +181,7 @@ const Membership = () => {
 						<iframe
 							width="100%"
 							height="1000px"
-							frameborder="no"
+							frameBorder="no"
 							src="https://ksi.wildapricot.org/widget/membership"
 						></iframe>
 						<br></br>
@@ -209,7 +208,7 @@ const Membership = () => {
 						<iframe
 							width="100%"
 							height="1000px"
-							frameborder="no"
+							frameBorder="no"
 							src="https://ksi.wildapricot.org/widget/Sys/Profile"
 						></iframe>
 					</div>

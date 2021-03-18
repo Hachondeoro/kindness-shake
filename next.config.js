@@ -11,6 +11,10 @@ module.exports = withOffline({
 			net: 'empty',
 			tls: 'empty'
 		}
+		config.module.rules.push({
+			test: /\.md$/,
+			use: 'raw-loader'
+		})
 
 		return config
 	},

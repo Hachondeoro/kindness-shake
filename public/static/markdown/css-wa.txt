@@ -1,0 +1,47 @@
+/*#id_VJ7WkED{
+    width:100%;
+    position:fixed;
+    top:0px;
+    z-index:1;
+    overflow:auto;
+    height: 100%;
+    background-color: white;
+display:none;   
+}
+#id_Q3mNps1{
+    
+    width:60%;
+
+}*/
+#id_VJ7WkED{
+    display: none;
+}
+
+.joinUs-btn p a{
+    text-decoration: none !important;
+    padding: 20px;
+    background-color: #006666;
+    color: White !important;
+}
+.infoOuterContainer {
+    background-color: #006666;
+    color: White;
+}
+
+.fieldContainer input.typeText, .fieldContainer input[type=text]{
+    padding: 10px 10px;
+}
+.infoContainer {
+    Padding: 10px 10px;
+
+}
+.col-sm{
+    Padding: 30px 30px 30px 30px;
+}
+
+.card text-white bg-primary mb-3{
+    float: left;
+}
+.card-deck{
+    padding: 20px;
+}

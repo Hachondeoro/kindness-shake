@@ -4,6 +4,7 @@ import { Card } from 'antd'
 import { Row, Col } from 'antd'
 import { Team } from '@Components/data.js'
 import { Parallax } from 'rc-scroll-anim'
+import styles from '@Components/Titles.module.css'
 
 let isMobile
 enquireScreen(b => {
@@ -44,8 +45,8 @@ export default class Home extends React.Component {
 						<Row align="middle" justify="center">
 							{Team.map(item => (
 								<Parallax
-									animation={{ x: 0, opacity: 1, playScale: [0.5, 0.8] }}
-									style={{ transform: 'translateX(-100px)', opacity: 0 }}
+									animation={{ x: 0, opacity: 1, playScale: [0, 0.8] }}
+									style={{ transform: 'translateX(-300px)', opacity: 0 }}
 								>
 									<Col span={8}>
 										<div className="teams3-top-image">
@@ -58,7 +59,8 @@ export default class Home extends React.Component {
 										</div>
 
 										<div className="teams3-top-title">{item.name}</div>
-										<div className="teams3-top-job">{item.position}</div>
+										<div className={styles.TeamDepartments}>{item.position}</div>
+										<div className={styles.TeamEmails}>{item.email}</div>
 										<div className="teams3-top-content">{item.description}</div>
 										<br></br>
 									</Col>

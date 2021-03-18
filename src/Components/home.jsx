@@ -45,7 +45,7 @@ const Home = () => {
 						/>
 					</div>
 					<div style={{ color: 'white', fontSize: 30 }}>
-						You need a hand? We'll give you a <br></br>#Kindness Shake
+						You need a hand? We'll give you a <br></br>#KindnessShake
 					</div>
 					<br></br>
 					<Button className="banner0-button">Learn more</Button>

@@ -1,7 +1,6 @@
 import Texty from 'rc-texty'
 import 'rc-texty/assets/index.css'
 import TweenOne from 'rc-tween-one'
-import Button from 'antd/lib/button'
 import styles from './specialtitle.module.css'
 
 import React, { useState } from 'react'
