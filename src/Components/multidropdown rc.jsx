@@ -10,12 +10,16 @@ import {
 } from '@ant-design/icons'
 import Link from 'next/link'
 import Drawer from 'rc-drawer'
-import { Container } from 'reactstrap'
 
 const SubMenu = Menu.SubMenu
 
 const MultiDropdownNavbar = () => {
 	const [current, setCurrent] = useState('mail')
+	const centerStyle = {
+		position: 'relative',
+		display: 'flex',
+		justifyContent: 'center'
+	  };
 
 	return (
 		<>
@@ -54,11 +58,11 @@ const MultiDropdownNavbar = () => {
 									Our awards
 								</Link>
 							</Menu.Item>
-							<Menu.Item key="projects">
+							{/* <Menu.Item key="projects">
 								<Link href="/ourprojects" passHref>
 									Our projects
 								</Link>
-							</Menu.Item>
+							</Menu.Item> */}
 						</SubMenu>
 						<Menu.Item key="socialmedia" icon={<InstagramOutlined />}>
 							<Link href="/socialmedia" passHref>
@@ -99,14 +103,13 @@ const MultiDropdownNavbar = () => {
 					</Menu>
 				</Drawer>
 			</div>
-			<div className="d-none d-lg-block m-auto" id="multidropdown">
-				<Container className="m-auto" id="multidropdown">
+			<div>
 					<Menu
 						onClick={e => setCurrent(e.key)}
 						selectedKeys={[current]}
 						mode="horizontal"
 						theme="dark"
-						className="m-auto"
+						style={centerStyle}
 					>
 						<Menu.Item key="home" icon={<HomeOutlined />}>
 							<Link id="navitem" href="/" passHref>
@@ -134,11 +137,11 @@ const MultiDropdownNavbar = () => {
 									Our awards
 								</Link>
 							</Menu.Item>
-							<Menu.Item key="projects">
+							{/* <Menu.Item key="projects">
 								<Link href="/ourprojects" passHref>
 									Our projects
 								</Link>
-							</Menu.Item>
+							</Menu.Item> */}
 						</SubMenu>
 						<Menu.Item key="socialmedia" icon={<InstagramOutlined />}>
 							<Link href="/socialmedia" passHref>
@@ -177,7 +180,6 @@ const MultiDropdownNavbar = () => {
 							</Link>
 						</Menu.Item>
 					</Menu>
-				</Container>
 			</div>
 		</>
 	)
