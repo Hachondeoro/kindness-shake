@@ -119,17 +119,17 @@ export const Aboutus = {
 		{
 			img: '/static/img/aboutus/members.jpg',
 			description:
-				'The #KindnessShake (KS) is a community-led initiative that provides support for individuals experiencing financial hardship due to the COVID-19, focusing on international students'
+				'The Kindness Shake (KS) is a community and student-led initiative, launched during the outbreak of the COVID-19 pandemic. It supports and focuses on international students, migrants, refugees and temporary visa holders who are experiencing financial difficulties. This partnership between international student volunteers, education and training providers, local businesses, multi-cultural groups and Governments, aims to ensure that no one in the NT affected by the crisis goes to bed without a meal and a kind and genuine smile.'
 		},
 		{
 			img: '/static/img/aboutus/members2.jpg',
 			description:
-				'In a partnership approach between international student volunteers, education providers and local businesses (who will initially offer “at cost” food and labour), the project’s objective are to ensure that no one in the NT affected by the crisis, especially international students and other temporary visa holders.'
+				'Our target audience are Individuals, families, communities and organisations based in the Northern Territory. Disadvantaged groups who benefit from our activities and programs are not limited to only international students but also any individual, family and community from culturally and linguistically diverse (CALD) backgrounds.  \n\nAt a time where retail and hospitality businesses had to close down and let some of their staff go, KS turned this challenging situation to an opportunity to bring the community together, provide free meals and food parcels as well as employment, networking and cultural engagement opportunities. '
 		},
 		{
 			img: '/static/img/aboutus/members3.jpg',
 			description:
-				"The Kindness Shake was launched at the Charles Darwin University on Friday 3rd of April 2020 in presence of the Australia's Northern Territory Chief Minister, Michael Gunner MLA. Earlier, that very same morning, temporary residents, visitors, and more than half a million international students heard the controversial comment: “it’s time to go home”. Since its launch, the Kindness Shake has served over 5000 meals, connected with dozens of local businesses and recruited over 100 volunteers."
+				"Since its launch in April 2020, KS has served over 5,000 cooked meals, assisted more than 500 individuals, partnered with more than 30 organisations and local businesses, recruited more than 100 volunteers, raised over $60,000 and it is now an official incorporated association and charity.  \n\nAlthough our main supporters are StudyNT/NT Government, the City of Darwin, Charles Darwin University, Australian Red Cross, Melaleuca Refugee Centre and Foodbank, we have connected with dozens of businesses and organisations who continue supporting our goals and the ambitious plan we have for the future.\n\n "
 		}
 	]
 }

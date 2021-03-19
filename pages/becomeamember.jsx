@@ -7,7 +7,6 @@ import { HomeOutlined, IdcardOutlined, UserOutlined } from '@ant-design/icons'
 import { BLBL } from '@Components/data.js'
 import styles from '@Components/Titles.module.css'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
-import { UsergroupAddOutlined } from '@ant-design/icons'
 
 const navmenu = {
 	fontFamily:
@@ -69,6 +68,27 @@ const data = [
 
 const Membership = () => {
 	const [tabIndex, setTabIndex] = useState(0)
+
+	function iOS() {
+		return (
+			[
+				'iPad Simulator',
+				'iPhone Simulator',
+				'iPod Simulator',
+				'iPad',
+				'iPhone',
+				'iPod'
+			].includes(navigator.platform) ||
+			// iPad on iOS 13 detection
+			(navigator.userAgent.includes('Mac') && 'ontouchend' in document)
+		)
+	}
+
+	const [iosdevice, setIosdevice] = useState(true)
+
+	useEffect(() => {
+		setIosdevice(iOS())
+	}, [])
 
 	return (
 		<div style={navmenu}>
@@ -178,29 +198,64 @@ const Membership = () => {
 				</TabPanel>
 				<TabPanel>
 					<div style={membershiphome}>
-						<iframe
-							width="100%"
-							height="1000px"
-							frameBorder="no"
-							src="https://ksi.wildapricot.org/widget/membership"
-						></iframe>
-						<br></br>
-						<br></br>
-						If you can not see the registration form, please follow the
-						following link
-						<br></br>
-						<a
-							href="https://ksi.wildapricot.org/widget/membership"
-							rel="noopener noreferrer"
-							target="_blank"
-						>
-							<UsergroupAddOutlined
-								style={{ fontSize: '64px', color: '#919191' }}
-								className="m-2"
-							/>
-						</a>
-						<br></br>
-						<br></br>
+						{iosdevice ? (
+							<div>
+								<div className="mb-6">
+									<br></br>
+									<br></br>
+									<br></br>
+									<br></br>
+									Our membership page is powered by Wild Apricot membership
+									system
+								</div>
+								<Col
+									xs={{ span: 20 }}
+									md={{ span: 12 }}
+									className="m-auto"
+									align="middle"
+									justify="center"
+								>
+									<img
+										src="/static/img/wild-apricot-logo.png"
+										alt="wildapricotlogo"
+										width="100%"
+										height="100%"
+										className="mt-5"
+									/>
+								</Col>
+								<br></br>
+								<div className="m-5">
+									Please press the following button to submit an application form
+								</div>
+								<a
+									href="https://ksi.wildapricot.org/widget/membership"
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+									<Button
+										type="primary"
+										shape="round"
+										size="large"
+									>
+										{' '}
+										Membership Application form{' '}
+									</Button>
+								</a>
+								<br></br>
+								<br></br>
+							</div>
+						) : (
+							<div>
+								<iframe
+									width="100%"
+									height="1000px"
+									frameBorder="no"
+									src="https://ksi.wildapricot.org/widget/membership"
+								></iframe>
+								<br></br>
+								<br></br>
+							</div>
+						)}
 					</div>
 				</TabPanel>
 				<TabPanel>

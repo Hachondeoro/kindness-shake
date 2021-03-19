@@ -16,6 +16,12 @@
 	color: #919191;
 	text-align: center;
 }
+.subtitleStory {
+	font-size: 18px;
+	color: #919191;
+	text-align: left;
+	white-space: pre-wrap;
+}
 .contentContact {
 	font-size: 14px;
 	color: #919191;

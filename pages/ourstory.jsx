@@ -86,7 +86,7 @@ export default class Home extends React.Component {
 										align="middle"
 										justify="center"
 									>
-										<div className={styles.subtitle}>{item.description}</div>
+										<div className={styles.subtitleStory}>{item.description}</div>
 									</Col>
 									<br></br>
 								</Row>
