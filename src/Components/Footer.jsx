@@ -1,7 +1,7 @@
 /* eslint no-undef: 0 */
 /* eslint arrow-parens: 0 */
-import React from 'react'
-import { Row, Col, Divider } from 'antd'
+import React, { useState } from 'react'
+import { Row, Col, Divider, Modal } from 'antd'
 import Image from 'next/image'
 import {
 	FacebookFilled,
@@ -13,6 +13,14 @@ import Link from 'next/link'
 import styles from '@Components/Titles.module.css'
 
 const Footer = () => {
+	const [isModalVisible, setIsModalVisible] = useState(false)
+	const showModal = () => {
+		setIsModalVisible(true)
+	}
+
+	const handleOk = () => {
+		setIsModalVisible(false)
+	}
 	return (
 		<div className="footer">
 			<Row align="middle" justify="center">
@@ -73,6 +81,7 @@ const Footer = () => {
 						href="https://www.facebook.com/KindnessShakeNT"
 						rel="noopener noreferrer"
 						target="_blank"
+						style={{color:"inherit"}}
 					>
 						<FacebookFilled className={styles.footerLogos} />
 					</a>
@@ -81,6 +90,7 @@ const Footer = () => {
 						href="https://www.instagram.com/kindnessshake/"
 						rel="noopener noreferrer"
 						target="_blank"
+						style={{color:"inherit"}}
 					>
 						<InstagramFilled className={styles.footerLogos} />
 					</a>
@@ -88,16 +98,31 @@ const Footer = () => {
 						href="https://www.linkedin.com/company/kindnessshakent/"
 						rel="noopener noreferrer"
 						target="_blank"
+						style={{color:"inherit"}}
 					>
 						<LinkedinFilled className={styles.footerLogos} />
 					</a>
-					<a
-						href="https://www.facebook.com/KindnessShakeNT"
-						rel="noopener noreferrer"
-						target="_blank"
+					<button
+						onClick={showModal}
+						style={{ border: 'none', background: 'none' }}
 					>
 						<WechatFilled className={styles.footerLogos} />
-					</a>
+					</button>
+					<Modal
+						title="Our WeChat Account"
+						visible={isModalVisible}
+						onOk={handleOk}
+						onCancel={handleOk}
+					>
+						{' '}
+						<img
+							src="/static/img/wechat-logo.jpg"
+							alt="frontcard"
+							width="100%"
+							height="100%"
+							className="my-2"
+						/>
+					</Modal>
 
 					<br></br>
 				</Col>

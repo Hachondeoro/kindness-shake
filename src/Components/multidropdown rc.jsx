@@ -54,6 +54,11 @@ const MultiDropdownNavbar = () => {
 									Our awards
 								</Link>
 							</Menu.Item>
+							<Menu.Item key="projects">
+								<Link href="/ourprojects" passHref>
+									Our projects
+								</Link>
+							</Menu.Item>
 						</SubMenu>
 						<Menu.Item key="socialmedia" icon={<InstagramOutlined />}>
 							<Link href="/socialmedia" passHref>
@@ -127,6 +132,11 @@ const MultiDropdownNavbar = () => {
 							<Menu.Item key="awards">
 								<Link href="/ourawards" passHref>
 									Our awards
+								</Link>
+							</Menu.Item>
+							<Menu.Item key="projects">
+								<Link href="/ourprojects" passHref>
+									Our projects
 								</Link>
 							</Menu.Item>
 						</SubMenu>

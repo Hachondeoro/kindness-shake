@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import InstagramEmbed from 'react-instagram-embed'
 import { Instagram } from '@Components/data.js'
 import { Parallax } from 'rc-scroll-anim'
 import { Row, Col } from 'antd'
+import { Modal, Button } from 'antd'
+
 import Icon, {
 	FacebookFilled,
 	InstagramFilled,
@@ -30,10 +32,34 @@ const EventbriteSVG = () => (
 )
 
 const VolunteerSVG = () => (
-	<svg t="1615897995351" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1735" width="64" height="64"><path d="M655.984 256a128 128 0 1 0-0.064-255.936A128 128 0 0 0 655.984 256zM803.536 352h-308.672c-85.376 0-152.96 55.936-174.4 131.904l-51.904 145.344H111.152c-34.816 0-63.168 26.56-63.168 60.224 0 33.696 28.352 61.12 63.168 61.12h174.496c45.632 0 81.728-30.176 95.936-70.368l38.4-107.136h24.32v443.968h373.696V572.992h32.448V962.88c0 33.824 28.32 61.12 63.168 61.12C948.432 1024 975.984 996.704 975.984 963.008V530.56C975.984 432.032 905.52 352 803.536 352z" p-id="1736" fill="#919191"></path></svg>
+	<svg
+		t="1615897995351"
+		class="icon"
+		viewBox="0 0 1024 1024"
+		version="1.1"
+		xmlns="http://www.w3.org/2000/svg"
+		p-id="1735"
+		width="64"
+		height="64"
+	>
+		<path
+			d="M655.984 256a128 128 0 1 0-0.064-255.936A128 128 0 0 0 655.984 256zM803.536 352h-308.672c-85.376 0-152.96 55.936-174.4 131.904l-51.904 145.344H111.152c-34.816 0-63.168 26.56-63.168 60.224 0 33.696 28.352 61.12 63.168 61.12h174.496c45.632 0 81.728-30.176 95.936-70.368l38.4-107.136h24.32v443.968h373.696V572.992h32.448V962.88c0 33.824 28.32 61.12 63.168 61.12C948.432 1024 975.984 996.704 975.984 963.008V530.56C975.984 432.032 905.52 352 803.536 352z"
+			p-id="1736"
+			fill="#919191"
+		></path>
+	</svg>
 )
 
 const socialmedia = () => {
+	const [isModalVisible, setIsModalVisible] = useState(false)
+	const showModal = () => {
+		setIsModalVisible(true)
+	}
+
+	const handleOk = () => {
+		setIsModalVisible(false)
+	}
+
 	return (
 		<div className="home-page-wrapper">
 			<h1 className="text-center m-5">SOCIAL MEDIA</h1>
@@ -58,16 +84,30 @@ const socialmedia = () => {
 						className="m-2"
 					/>
 				</a>
-				<a
-					href="https://www.facebook.com/KindnessShakeNT"
-					rel="noopener noreferrer"
-					target="_blank"
+				<button
+					onClick={showModal}
+					style={{ border: 'none', background: 'none' }}
 				>
 					<WechatFilled
 						style={{ fontSize: '64px', color: '#919191' }}
 						className="m-2"
 					/>
-				</a>
+				</button>
+				<Modal
+					title="Our WeChat Account"
+					visible={isModalVisible}
+					onOk={handleOk}
+					onCancel={handleOk}
+				>
+					{' '}
+					<img
+						src="/static/img/wechat-logo.jpg"
+						alt="frontcard"
+						width="100%"
+						height="100%"
+						className="my-2"
+					/>
+				</Modal>
 				<a
 					href="https://www.linkedin.com/company/kindnessshakent/"
 					rel="noopener noreferrer"
@@ -83,17 +123,19 @@ const socialmedia = () => {
 					rel="noopener noreferrer"
 					target="_blank"
 				>
-					<Icon component={EventbriteSVG}
+					<Icon
+						component={EventbriteSVG}
 						style={{ fontSize: '32px', color: '#919191' }}
 						className="m-2"
 					/>
 				</a>
 				<a
-					href="https://kindness-shake.com.au/volunteerwithus"
+					href="https://kindness-shake.com.au/volunteer"
 					rel="noopener noreferrer"
 					target="_blank"
 				>
-					<Icon component={VolunteerSVG}
+					<Icon
+						component={VolunteerSVG}
 						style={{ fontSize: '32px', color: '#919191' }}
 						className="m-2"
 					/>
