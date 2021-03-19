@@ -103,7 +103,7 @@ const MultiDropdownNavbar = () => {
 					</Menu>
 				</Drawer>
 			</div>
-			<div>
+			<div className="d-none d-lg-block">
 					<Menu
 						onClick={e => setCurrent(e.key)}
 						selectedKeys={[current]}

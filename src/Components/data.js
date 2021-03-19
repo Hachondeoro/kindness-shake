@@ -112,24 +112,24 @@ export const Supporters = [
 
 export const Aboutus = {
 	mission:
-		'Our mission is to provide any form of support not limited to meals and employability but also social engagement and welfare/well-being of International Students and Migrants in the Northern Territory. This will be achieved through our current initiatives and future goals. ',
+		'Our mission is to provide any form of support, not limited to free meals and employability, but also social engagement and welfare/well-being improvement of international students and migrants in the Northern Territory. This will be achieved through our current initiatives and future goals. ',
 	vision:
-		'Enhancing the wellbeing of International Students in the NT through Social Engagement and Employability while showcasing the importance of Multiculturalism and International Communities in Australia.',
+		'Enhancing the wellbeing of international students in the Northern Territory through social and cultural engagement, humanitarian services and employability improvement while showcasing the importance of multiculturalism and international communities in Australia.',
 	story: [
 		{
 			img: '/static/img/aboutus/members.jpg',
 			description:
-				'The Kindness Shake (KS) is a community and student-led initiative, launched during the outbreak of the COVID-19 pandemic. It supports and focuses on international students, migrants, refugees and temporary visa holders who are experiencing financial difficulties. This partnership between international student volunteers, education and training providers, local businesses, multi-cultural groups and Governments, aims to ensure that no one in the NT affected by the crisis goes to bed without a meal and a kind and genuine smile.'
+				'The Kindness Shake (KS) is a community and student-led initiative, launched during the outbreak of the COVID-19 pandemic. It supports and focuses on international students, migrants, refugees and temporary visa holders who are experiencing financial difficulties. This partnership between international student volunteers, education and training providers, local businesses, multi-cultural groups and Governments aims to ensure that no one in the NT affected by the crisis goes to bed without a meal and a kind and genuine smile.'
 		},
 		{
 			img: '/static/img/aboutus/members2.jpg',
 			description:
-				'Our target audience are Individuals, families, communities and organisations based in the Northern Territory. Disadvantaged groups who benefit from our activities and programs are not limited to only international students but also any individual, family and community from culturally and linguistically diverse (CALD) backgrounds.  \n\nAt a time where retail and hospitality businesses had to close down and let some of their staff go, KS turned this challenging situation to an opportunity to bring the community together, provide free meals and food parcels as well as employment, networking and cultural engagement opportunities. '
+				'Our target audience are individuals, families, communities and organisations based in the Northern Territory. Disadvantaged groups who benefit from our activities and programs are not limited to only international students but also any individual, family and community from culturally and linguistically diverse (CALD) backgrounds.  \n\nAt a time where retail and hospitality businesses had to close down and let some of their staff go, KS turned this challenging situation into an opportunity to bring the community together by providing free meals and food parcels as well as employment, networking and cultural engagement opportunities. '
 		},
 		{
 			img: '/static/img/aboutus/members3.jpg',
 			description:
-				"Since its launch in April 2020, KS has served over 5,000 cooked meals, assisted more than 500 individuals, partnered with more than 30 organisations and local businesses, recruited more than 100 volunteers, raised over $60,000 and it is now an official incorporated association and charity.  \n\nAlthough our main supporters are StudyNT/NT Government, the City of Darwin, Charles Darwin University, Australian Red Cross, Melaleuca Refugee Centre and Foodbank, we have connected with dozens of businesses and organisations who continue supporting our goals and the ambitious plan we have for the future.\n\n "
+				"Since its launch in April 2020, KS has served over 5,000 cooked meals, assisted more than 500 individuals, partnered with more than 30 organisations and local businesses, recruited more than 100 volunteers, raised over $60,000 and it is now an official incorporated association and charity. \n\n\Although our main supporters are StudyNT/NT Government, the City of Darwin, Charles Darwin University, Australian Red Cross, Melaleuca Refugee Centre and Foodbank, we have connected with dozens of businesses and organisations that continue to support our goals and the exciting plan we have for the NT community in the future.\n\n "
 		}
 	]
 }

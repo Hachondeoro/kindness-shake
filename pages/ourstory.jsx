@@ -81,10 +81,10 @@ export default class Home extends React.Component {
 									</Col>
 									<Col
 										xs={{ span: 20 }}
-										lg={{ span: 10 }}
+										lg={{ span: 8 }}
 										className="m-auto"
-										align="middle"
-										justify="center"
+										align="left"
+										justify="left"
 									>
 										<div className={styles.subtitleStory}>{item.description}</div>
 									</Col>
