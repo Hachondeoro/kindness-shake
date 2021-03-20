@@ -918,7 +918,7 @@ export const Feature60DataSource = {
     },
     children: [
       {
-        title: { className: "feature6-title-text", children: "Our Stats" },
+        title: { className: "feature6-title-text", children: "KEY STATS" },
         className: "feature6-item",
         name: "block0",
         children: [

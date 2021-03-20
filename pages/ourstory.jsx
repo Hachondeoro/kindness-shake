@@ -40,21 +40,6 @@ export default class Home extends React.Component {
 		return (
 			<>
 				<div className="home-page-wrapper">
-					<Col
-						xs={{ span: 20 }}
-						lg={{ span: 12 }}
-						className="m-auto"
-						align="middle"
-						justify="center"
-					>
-						<br></br>
-						<h1 className={styles.titleGray}>OUR VISION</h1>
-						<div className={styles.subtitle}>{Aboutus.vision} </div>
-						<br></br>
-						<h1 className={styles.titleGray}>OUR MISSION</h1>
-						<div className={styles.subtitle}>{Aboutus.mission} </div>
-						<br></br>
-					</Col>
 					<h1 className="text-center m-5">OUR STORY</h1>
 					<div className="teams3-wrapper">
 						{Aboutus.story.map(item => (

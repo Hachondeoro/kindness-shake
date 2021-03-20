@@ -30,7 +30,7 @@
 }
 
 .membership {
-	font-size: 12px;
+	font-size: 14px;
 	color: #919191;
 	text-align: center;
 }
@@ -116,6 +116,21 @@
 .footerSubtitle{
 	font-size: 20px;
 	color:#919191;
+}
+
+.contentHome{
+	font-size: 16px;
+	color: #919191;
+	text-align: center;
+	line-height: 1.5;
+	margin: 2em;
+}
+
+.titleHome{
+	font-size: 24px;
+	/* margin-bottom: 16px; */
+	text-align: center;
+	color: #ccc;
 }
 
 @media only screen and (max-width: 600px) {

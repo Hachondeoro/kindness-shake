@@ -79,7 +79,7 @@ const Demo = props => {
 
 	const [token, setToken] = useState('')
 	useEffect(() => {
-		getToken()
+		// getToken()
 	}, [])
 
 	const getToken = async () => {
@@ -99,8 +99,8 @@ const Demo = props => {
 						xs={{ span: 20 }}
 						lg={{ span: 8 }}
 						className="m-auto"
-						// align="middle"
-						justify="center"
+						align="left"
+						justify="right"
 					>
 						<div className="markdown">
 							<ReactMarkdown source={`${VolunteerIntro}`} />
@@ -112,7 +112,7 @@ const Demo = props => {
 						xs={{ span: 20 }}
 						lg={{ span: 8 }}
 						className="m-auto"
-						align="middle"
+						align="left"
 						justify="center"
 					>
 						<img

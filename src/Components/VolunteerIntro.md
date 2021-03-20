@@ -53,3 +53,10 @@ To participate in the Kindness Shake Volunteer program, you must:
 **How do I apply to become a Kindness Shake Volunteer?**
 
 Fill out the form below to register your expression of interest to become a Volunteer with Kindness Shake.
+&nbsp;  
+&nbsp;  
+If you have any questions related to volunteering with Kindness Shake,
+&nbsp;  
+please contact us at
+[volunteers@kindness-shake.com.au](mailto:volunteers@kindness-shake.com.au)
+ 

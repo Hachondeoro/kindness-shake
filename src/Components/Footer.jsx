@@ -31,14 +31,24 @@ const Footer = () => {
 					align="middle"
 					justify="center"
 				>
-					<Image
-						src="/static/img/ks-logo-transparent.png"
-						width={200}
-						height={200}
-						layout="responsive"
-						alt="img"
-						className="my-4"
-					/>
+					<Row align="middle" justify="center">
+						<Image
+							src="/static/img/ks-logo-transparent.png"
+							width={200}
+							height={200}
+							layout="responsive"
+							alt="img"
+							className="my-4"
+						/>
+						<Image
+							src="/static/img/acnc.png"
+							width={100}
+							height={100}
+							layout="responsive"
+							alt="img"
+							className="my-4"
+						/>
+					</Row>
 					<br></br>
 					<br></br>
 					Kindness Shake team acknowledges and pays respect to the past, present
@@ -81,7 +91,7 @@ const Footer = () => {
 						href="https://www.facebook.com/KindnessShakeNT"
 						rel="noopener noreferrer"
 						target="_blank"
-						style={{color:"inherit"}}
+						style={{ color: 'inherit' }}
 					>
 						<FacebookFilled className={styles.footerLogos} />
 					</a>
@@ -90,7 +100,7 @@ const Footer = () => {
 						href="https://www.instagram.com/kindnessshake/"
 						rel="noopener noreferrer"
 						target="_blank"
-						style={{color:"inherit"}}
+						style={{ color: 'inherit' }}
 					>
 						<InstagramFilled className={styles.footerLogos} />
 					</a>
@@ -98,7 +108,7 @@ const Footer = () => {
 						href="https://www.linkedin.com/company/kindnessshakent/"
 						rel="noopener noreferrer"
 						target="_blank"
-						style={{color:"inherit"}}
+						style={{ color: 'inherit' }}
 					>
 						<LinkedinFilled className={styles.footerLogos} />
 					</a>
@@ -129,7 +139,8 @@ const Footer = () => {
 			</Row>
 			<Divider style={{ backgroundColor: '#182B3D' }} />
 			<Row align="middle" justify="center">
-				©2021 by Kindness Shake
+				© 2021 Kindness Shake | info@kindness-shake.com.au | +61 451 717 861 |
+				ABN: 72 451 262 337
 				<br></br>
 				<br></br>
 				<br></br>

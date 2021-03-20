@@ -86,6 +86,7 @@ export const Supporters = [
 	{ path: '/static/img/supporters/sponsorednt.jpg', height: '130px' },
 	{ path: '/static/img/supporters/territoryboundless.jfif', height: '200px' },
 	{ path: '/static/img/supporters/cdu.png', height: '240px' },
+	{ path: '/static/img/supporters/melaleuca.jpg', height: '240px' },
 	{ path: '/static/img/supporters/redcross.png', height: '180px' },
 	{ path: '/static/img/supporters/wardkeller.png', height: '75px' },
 	{ path: '/static/img/supporters/palatesofindia.png', height: '180px' },

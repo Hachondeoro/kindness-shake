@@ -1,27 +1,29 @@
 import React from 'react'
-import InstagramEmbed from 'react-instagram-embed'
-import { Instagram } from '@Components/data.js'
-import { Parallax } from 'rc-scroll-anim'
-import { Row, Col } from 'antd'
-import Icon, {
-	FacebookFilled,
-	InstagramFilled,
-	WechatFilled,
-	LinkedinFilled
-} from '@ant-design/icons'
+import { Row, Col, Button } from 'antd'
+import styles from '@Components/Titles.module.css'
 
-const socialmedia = () => {
+const Donate = () => {
 	return (
 		<div className="home-page-wrapper">
-			<h1 className="text-center m-5">DONATE TODAY!</h1>
+			<h1 className="text-center m-4">DONATE TODAY!</h1>
+			<div className={styles.membership}>
+				Thank you for making a difference to your community by helping us
+				support the Northern Territory community.{' '}
+			</div>
 			<Row>
 				<Col
 					xs={{ span: 20 }}
-					lg={{ span: 10 }}
+					lg={{ span: 8 }}
 					className="m-auto"
-					align="middle"
-					justify="center"
+					align="right"
+					justify="middle"
 				>
+					<div style={{ fontWeight: 'bold', textAlign: 'center' }}>
+						<br></br>
+						My gift to Kindness Shake
+						<br></br>
+						<br></br>
+					</div>
 					<script
 						src="https://donorbox.org/widget.js"
 						paypalExpress="false"
@@ -47,10 +49,10 @@ const socialmedia = () => {
 					lg={{ span: 14 }}
 					className="m-auto"
 					align="middle"
-					justify="center"
+					justify="left"
 				>
 					<img
-						src="/static/img/volunteer/volunteer3.jpg"
+						src="/static/img/donate.jpg"
 						alt="frontcard"
 						width="100%"
 						height="100%"
@@ -62,4 +64,4 @@ const socialmedia = () => {
 	)
 }
 
-export default socialmedia
+export default Donate

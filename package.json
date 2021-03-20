@@ -39,6 +39,7 @@
 		"leaflet": "^1.7.1",
 		"next": "^10.0.0",
 		"next-offline": "^5.0.2",
+		"nodemailer": "^6.5.0",
 		"raw-loader": "^4.0.2",
 		"rc-banner-anim": "^2.4.5",
 		"rc-drawer": "^4.3.1",
