@@ -22,7 +22,7 @@ const Footer = () => {
 		setIsModalVisible(false)
 	}
 	return (
-		<div className="footer">
+		<div className="footer" style={{ background: '#3E7678', color: '#FFFFFF' }}>
 			<Row align="middle" justify="center">
 				<Col
 					xs={{ span: 20 }}
@@ -139,11 +139,19 @@ const Footer = () => {
 			</Row>
 			<Divider style={{ backgroundColor: '#182B3D' }} />
 			<Row align="middle" justify="center">
-				© 2021 Kindness Shake | info@kindness-shake.com.au | +61 451 717 861 |
-				ABN: 72 451 262 337
-				<br></br>
-				<br></br>
-				<br></br>
+				<Col
+					xs={{ span: 22 }}
+					lg={{ span: 12 }}
+					className="m-auto"
+					align="middle"
+					justify="center"
+				>
+					© 2021 Kindness Shake | info@kindness-shake.com.au | +61 451 717 861 |
+					ABN: 72 451 262 337
+					<br></br>
+					<br></br>
+					<br></br>
+				</Col>
 			</Row>
 		</div>
 	)

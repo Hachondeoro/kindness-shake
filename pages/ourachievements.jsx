@@ -41,12 +41,12 @@ export default class Home extends React.Component {
 		return (
 			<>
 				<div className="home-page-wrapper">
-					<h1 className="text-center m-5">OUR AWARDS</h1>
+					<h1 className="text-center m-5">OUR ACHIEVEMENTS</h1>
 					<div className="teams3-wrapper">
 						{Awards.map(item => (
 							<Parallax
 								animation={{ x: 0, opacity: 1, playScale: [-0.2, 0.8] }}
-								style={{ transform: 'translateX(-300px)', opacity: 0 }}
+								style={{ transform: 'translateX(-200px)', opacity: 0 }}
 							>
 								<Row align="middle" justify="center">
 									<Col

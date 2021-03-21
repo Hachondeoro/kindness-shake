@@ -1,3 +1,7 @@
+.customclass {
+	background-color: #3e7678; /*Overriden property*/
+}
+
 .title {
 	font-size: 28px;
 	margin-bottom: 2px;
@@ -35,6 +39,13 @@
 	text-align: center;
 }
 
+.contentBLBL {
+	font-size: 15px;
+	color: #919191;
+	text-align: center;
+	white-space: pre-line;
+}
+
 .content {
 	font-size: 15px;
 	color: #919191;
@@ -60,8 +71,7 @@
 	text-align: left;
 	color: #ccc;
 	white-space: pre-wrap;
-	text-transform: uppercase; 
-
+	text-transform: uppercase;
 }
 
 .discount {
@@ -104,21 +114,21 @@
 
 .footerLogos {
 	font-size: 48px;
-	color: #919191;
+	color: #FFFFFF;
 	margin: 2px;
 }
 
-.footerTitle{
+.footerTitle {
 	font-size: 40px;
-	color:#919191;
+	color: #FFFFFF;
 }
 
-.footerSubtitle{
+.footerSubtitle {
 	font-size: 20px;
-	color:#919191;
+	color: #FFFFFF;
 }
 
-.contentHome{
+.contentHome {
 	font-size: 16px;
 	color: #919191;
 	text-align: center;
@@ -126,7 +136,7 @@
 	margin: 2em;
 }
 
-.titleHome{
+.titleHome {
 	font-size: 24px;
 	/* margin-bottom: 16px; */
 	text-align: center;
@@ -151,17 +161,41 @@
 
 	.footerLogos {
 		font-size: 28px;
-		color: #919191;
+		color: #FFFFFF;
 		margin: 3px;
 	}
-	.footerTitle{
+	.footerTitle {
 		font-size: 28px;
-		color:#919191;
+		color: #FFFFFF;
 	}
-	
-	.footerSubtitle{
+
+	.footerSubtitle {
 		font-size: 15px;
-		color:#919191;
+		color: #FFFFFF;
 		margin: 1px;
 	}
+}
+
+.ant-menu.ant-menu-dark .ant-menu-sub {
+	color: rgba(255, 255, 255, 0.65);
+	background: #ff761b;
+}
+
+.ant-menu-dark.ant-menu-horizontal > .ant-menu-submenu {
+	top: 0;
+	margin-top: 0;
+	padding: 0 20px;
+	border-color: #ff761b;
+	border-bottom: 0;
+}
+.ant-dropdown-menu-dark .ant-dropdown-menu {
+	background: #ff761b;
+}
+
+.ant-layout-header {
+	height: 64px;
+	padding: 0 50px;
+	color: rgba(0, 0, 0, 0.85);
+	line-height: 64px;
+	background: #ff761b;
 }

@@ -108,7 +108,8 @@ export const Supporters = [
 	{ path: '/static/img/supporters/stopcafe.png', height: '150px' },
 	{ path: '/static/img/supporters/mercuredarwin.png', height: '150px' },
 	{ path: '/static/img/supporters/uniqueindustries.png', height: '150px' },
-	{ path: '/static/img/supporters/eaant.png', height: '150px' }
+	{ path: '/static/img/supporters/eaant.png', height: '150px' },
+	{ path: '/static/img/supporters/fwborders.jpg', height: '150px' }
 ]
 
 export const Aboutus = {
@@ -167,6 +168,14 @@ export const Awards = [
 		description:
 			'Organisations recognised for making significant contributions to embracing cultural diversity and promoting the NT as a united, harmonious, and inclusive community. The work which supports migrants and refugees is highly regarded.  ',
 		image: '/static/img/awards/MCNT Council - Yogan Sathianathan Multicultural Awards.jpg'
+	},
+	{
+		title: 'Chief Minister’s Export and Industry Awards',
+		subtitle:
+			'International Student Award ',
+		description:
+			"For outstanding achievement and resilience shown by an international student studying in the Northern Territory who has demonstrated leadership and excellence in their endeavours and contribution to NT's business community, particularly in response to COVID19. \n\nOut of eight finalists, five were from Kindness Shake:\n	\n\u2022 Manfred Mletsin – Winner \n\u2022 Nilesh Dilushan – Finalist \n\u2022 Francesca Pellizzari – Finalist  \n\u2022 Denis Mitrov – Finalist \n\u2022 Dayam Rizvi – Finalist ",
+		image: '/static/img/awards/International Student of the Year.jpeg'
 	},
 ]
 
@@ -241,7 +250,7 @@ export const BLBL = {
 			title: 'Step 1',
 			subtitle: 'JOIN',
 			description:
-				'Join Kindness Shake online and become a member, join us at https://kindness-shake.com.au/belocalbuylocal'
+				'Join Kindness Shake online and become a member, join us at \nhttps://kindness-shake.com.au/becomeamember'
 		},
 		{
 			title: 'Step 2',

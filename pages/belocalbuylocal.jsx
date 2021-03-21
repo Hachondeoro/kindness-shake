@@ -25,7 +25,7 @@ const OurSupporters = () => {
 					<div>
 						<div className={styles.title}>{item.title}</div>
 						<div className={styles.subtitle}>{item.subtitle}</div>
-						<div className={styles.content}>{item.description}</div>
+						<div className={styles.contentBLBL}>{item.description}</div>
 						<br></br>
 					</div>
 				</Col>
