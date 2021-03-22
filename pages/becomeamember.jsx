@@ -6,7 +6,9 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import { HomeOutlined, IdcardOutlined, UserOutlined } from '@ant-design/icons'
 import { BLBL } from '@Components/data.js'
 import styles from '@Components/Titles.module.css'
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
+import { Memberbenefits } from '@Components/data.js'
+import { isMobile } from 'react-device-detect'
+
 
 const navmenu = {
 	fontFamily:
@@ -21,50 +23,6 @@ const membershiphome = {
 	background: '#ffffff',
 	color: 'black'
 }
-
-const data = [
-	{
-		title: 'Benefit 1',
-		content: 'Voting Rights at the Annual General Meeting'
-	},
-	{
-		title: 'Benefit 2',
-		content: 'Privileged invite to all future Kindness Shake events'
-	},
-	{
-		title: 'Benefit 3',
-		content:
-			'10% Discount on Food and Beverage in Kindness Space. \n20% Discount on diverse Kindness Shake merchandise '
-	},
-	{
-		title: 'Benefit 4',
-		content: 'Kindness Shake newsletter every 3 months'
-	},
-	{
-		title: 'Benefit 5',
-		content:
-			'A copy of the Kindness Shake constitution. \nMinutes of general meetings.\nAnnual reports and annual financial reports'
-	},
-	{
-		title: 'Benefit 6',
-		content:
-			'Invite to annual general meetng with complimentary food and non-alcoholic beverages'
-	},
-	{
-		title: 'Benefit 7',
-		content:
-			'First look for future Kindness Shake projects. \nOptions to participate in strategy planning'
-	},
-	{
-		title: 'Benefit 8',
-		content: 'Mentorship program possibility'
-	},
-	{
-		title: 'Benefit 9',
-		content:
-			'Some proceeds from the Membership Fee will be funded towards students scholarships and mentorships every academic year'
-	}
-]
 
 const Membership = () => {
 	const [tabIndex, setTabIndex] = useState(0)
@@ -108,7 +66,10 @@ const Membership = () => {
 					<div style={membershiphome}>
 						<div className="home-page-wrapper">
 							<br></br>
+							<br></br>
+							<br></br>
 							<h2>Be a part of Kindness Shake in 2021!</h2>
+							<br></br>
 							<div className={styles.subtitle}>
 								To have access to membership card please sign up to this website
 								and complete the payment.
@@ -118,7 +79,7 @@ const Membership = () => {
 								<Col
 									xs={{ span: 20 }}
 									lg={{ span: 8 }}
-									className="m-auto"
+									className="m-2"
 									align="middle"
 									justify="center"
 								>
@@ -133,7 +94,7 @@ const Membership = () => {
 								<Col
 									xs={{ span: 20 }}
 									lg={{ span: 8 }}
-									className="m-auto"
+									className="m-2"
 									align="middle"
 									justify="center"
 								>
@@ -161,38 +122,77 @@ const Membership = () => {
 							<h2>Membership benefits</h2>
 							<div className="m-auto" style={{ whiteSpace: 'pre-wrap' }}>
 								<Col>
-									{data.map(item => (
+									{Memberbenefits.map(item => (
 										<Col
-											xs={{ span: 20 }}
-											lg={{ span: 8 }}
+											xs={{ span: 23 }}
+											lg={{ span: 12 }}
 											className="m-auto"
 											align="middle"
 											justify="center"
 										>
-											<div className={styles.contentMembership}>
-												<ArrowForwardIosIcon />
-												{item.content}
-											</div>
+											<Row align="middle" justify="center">
+												<Col
+													xs={{ span: 4 }}
+													lg={{ span: 4 }}
+													className="m-auto"
+													align="middle"
+													justify="center"
+												>
+													<img src={item.img} width="32px" alt="img" />
+												</Col>
+												<Col
+													xs={{ span: 20 }}
+													lg={{ span: 20 }}
+													className="m-auto"
+													align="middle"
+													justify="center"
+												>
+													<div className={styles.contentMembership}>
+														{item.content}
+													</div>
+												</Col>
+											</Row>
 										</Col>
 									))}
 								</Col>
 							</div>
 							<br></br>
 							<h2>Our partners</h2>
-							<Row align="middle" justify="center">
-								{BLBL.logos.map(item => (
-									<Parallax
-										animation={{ x: 0, opacity: 1, playScale: [-0.2, 0.8] }}
-										style={{ transform: 'translateX(-300px)', opacity: 0 }}
-									>
-										<div className="ml-5 mr-5 mu-2 md-2">
-											<img src={item.path} height="200px" alt="img" />
-										</div>
-										<div className={styles.discount}>{item.discount}</div>
-										<br></br>
-									</Parallax>
-								))}
-							</Row>
+							{isMobile ? (
+								<Row align="middle" justify="center">
+									{BLBL.logos.map(item => (
+										<Parallax
+											animation={{ x: 0, opacity: 1, playScale: [-0.6, 0.8] }}
+											style={{ transform: 'translateX(-200px)', opacity: 0 }}
+										>
+											<div className="mx-1 mt-3">
+												<img
+													src={item.path}
+													width={item.widthMobile}
+													alt="img"
+												/>
+											</div>
+											<div className={styles.discount}>{item.discount}</div>
+											<br></br>
+										</Parallax>
+									))}
+								</Row>
+							) : (
+								<Row align="middle" justify="center">
+									{BLBL.logos.map(item => (
+										<Parallax
+											animation={{ x: 0, opacity: 1, playScale: [-0.6, 0.8] }}
+											style={{ transform: 'translateX(-200px)', opacity: 0 }}
+										>
+											<div className="ml-5 mr-5 mu-2 md-2">
+												<img src={item.path} width={item.width} alt="img" />
+											</div>
+											<div className={styles.discount}>{item.discount}</div>
+											<br></br>
+										</Parallax>
+									))}
+								</Row>
+							)}
 						</div>
 					</div>
 				</TabPanel>
@@ -225,18 +225,15 @@ const Membership = () => {
 								</Col>
 								<br></br>
 								<div className="m-5">
-									Please press the following button to submit an application form
+									Please press the following button to submit an application
+									form
 								</div>
 								<a
 									href="https://ksi.wildapricot.org/widget/membership"
 									rel="noopener noreferrer"
 									target="_blank"
 								>
-									<Button
-										type="primary"
-										shape="round"
-										size="large"
-									>
+									<Button type="primary" shape="round" size="large">
 										{' '}
 										Membership Application form{' '}
 									</Button>

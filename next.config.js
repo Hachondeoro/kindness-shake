@@ -11,10 +11,27 @@ module.exports = withOffline({
 			net: 'empty',
 			tls: 'empty'
 		}
-		config.module.rules.push({
-			test: /\.md$/,
-			use: 'raw-loader'
-		})
+		config.module.rules.push(
+			{
+				test: /\.md$/,
+				use: 'raw-loader'
+			},
+			{
+				test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+				use: [
+					{
+						loader: 'babel-loader'
+					},
+					{
+						loader: '@svgr/webpack',
+						options: {
+							babel: false,
+							icon: true
+						}
+					}
+				]
+			}
+		)
 
 		return config
 	},

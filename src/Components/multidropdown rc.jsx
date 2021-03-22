@@ -46,7 +46,7 @@ const MultiDropdownNavbar = () => {
 					<Menu
 						style={{ height: '200%', width: 'calc(100% - 1px)' }}
 						defaultSelectedKeys={['1']}
-						defaultOpenKeys={['sub1']}
+						defaultOpenKeys={['sub1', 'sub2']}
 						mode="inline"
 						theme="dark"
 						style={mobileStyle}
@@ -69,12 +69,12 @@ const MultiDropdownNavbar = () => {
 							</Menu.Item>
 							<Menu.Item key="supporters" style={submenuStyle}>
 								<Link href="/oursupporters" passHref>
-									Our supporters
+									Our Supporters
 								</Link>
 							</Menu.Item>
 							<Menu.Item key="awards" style={submenuStyle}>
 								<Link href="/ourachievements" passHref>
-									Our achievements
+									Our Achievements
 								</Link>
 							</Menu.Item>
 							{/* <Menu.Item key="projects">
@@ -105,7 +105,7 @@ const MultiDropdownNavbar = () => {
 						>
 							<Menu.Item key="becomemember" style={submenuStyle}>
 								<Link href="/becomeamember" passHref>
-									Become a member
+									Become a Member
 								</Link>
 							</Menu.Item>
 							<Menu.Item key="belocalbuylocal" style={submenuStyle}>
@@ -148,12 +148,12 @@ const MultiDropdownNavbar = () => {
 						</Menu.Item>
 						<Menu.Item key="supporters">
 							<Link href="/oursupporters" passHref>
-								Our supporters
+								Our Supporters
 							</Link>
 						</Menu.Item>
 						<Menu.Item key="awards">
 							<Link href="/ourachievements" passHref>
-								Our achievements
+								Our Achievements
 							</Link>
 						</Menu.Item>
 						{/* <Menu.Item key="projects">
@@ -184,7 +184,7 @@ const MultiDropdownNavbar = () => {
 					>
 						<Menu.Item key="becomemember">
 							<Link href="/becomeamember" passHref>
-								Become a member
+								Become a Member
 							</Link>
 						</Menu.Item>
 						<Menu.Item key="belocalbuylocal">

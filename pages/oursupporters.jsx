@@ -3,6 +3,7 @@ import { Row, Col } from 'antd'
 import { Parallax } from 'rc-scroll-anim'
 import { Supporters } from '@Components/data.js'
 import styles from '@Components/Titles.module.css'
+import { isMobile } from 'react-device-detect'
 
 const OurSupporters = () => {
 	return (
@@ -38,21 +39,35 @@ const OurSupporters = () => {
 				</div>
 			</Col>
 			<h1 className="text-center m-5">OUR SUPPORTERS</h1>
-			<Row align="middle" justify="center">
-				{Supporters.map(item => (
-					<Parallax
-						animation={{ x: 0, opacity: 1, playScale: [-0.5, 0.8] }}
-						style={{ transform: 'translateX(-500px)', opacity: 0 }}
-					>
-						<Col span={4}>
-							<div className="ml-5 mr-5 mu-2 md-2">
-								<img src={item.path} height={item.height} alt="img" />
+			{isMobile ? (
+				<Row align="middle" justify="center">
+					{Supporters.map(item => (
+						<Parallax
+							animation={{ x: 0, opacity: 1, playScale: [-0.6, 0.8] }}
+							style={{ transform: 'translateX(-200px)', opacity: 0 }}
+						>
+							<div className="m-2 mt-3">
+								<img src={item.path} height={item.heightMobile} alt="img" />
 							</div>
-							<br></br>
-						</Col>
-					</Parallax>
-				))}
-			</Row>
+						</Parallax>
+					))}
+				</Row>
+			) : (
+				<Row align="middle" justify="center">
+					{Supporters.map(item => (
+						<Parallax
+							animation={{ x: 0, opacity: 1, playScale: [-0.6, 0.8] }}
+							style={{ transform: 'translateX(-200px)', opacity: 0 }}
+						>
+							<Col span={4}>
+								<div className="ml-5 mr-5 mu-2 md-2">
+									<img src={item.path} height={item.height} alt="img" />
+								</div>
+							</Col>
+						</Parallax>
+					))}
+				</Row>
+			)}
 		</div>
 	)
 }

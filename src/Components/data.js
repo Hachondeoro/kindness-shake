@@ -83,33 +83,141 @@ export const Team = [
 ]
 
 export const Supporters = [
-	{ path: '/static/img/supporters/sponsorednt.jpg', height: '130px' },
-	{ path: '/static/img/supporters/territoryboundless.jfif', height: '200px' },
-	{ path: '/static/img/supporters/cdu.png', height: '240px' },
-	{ path: '/static/img/supporters/melaleuca.jpg', height: '240px' },
-	{ path: '/static/img/supporters/redcross.png', height: '180px' },
-	{ path: '/static/img/supporters/wardkeller.png', height: '75px' },
-	{ path: '/static/img/supporters/palatesofindia.png', height: '180px' },
-	{ path: '/static/img/supporters/freshpoint.jpeg', height: '150px' },
-	{ path: '/static/img/supporters/uglyduckling.jpg', height: '150px' },
-	{ path: '/static/img/supporters/bamboolounge.gif', height: '60px' },
-	{ path: '/static/img/supporters/theflank.jpg', height: '150px' },
-	{ path: '/static/img/supporters/jkdoi.jpeg', height: '150px' },
-	{ path: '/static/img/supporters/lunch room.png', height: '150px' },
-	{ path: '/static/img/supporters/myhira.png', height: '60px' },
-	{ path: '/static/img/supporters/rambha.jfif', height: '150px' },
-	{ path: '/static/img/supporters/wharfone.jpg', height: '60px' },
-	{ path: '/static/img/supporters/malasianfoodies.jfif', height: '150px' },
-	{ path: '/static/img/supporters/smartway.png', height: '100px' },
-	{ path: '/static/img/supporters/hanuman.png', height: '150px' },
-	{ path: '/static/img/supporters/saffron.png', height: '100px' },
-	{ path: '/static/img/supporters/hogscafe.jpg', height: '150px' },
-	{ path: '/static/img/supporters/psealms.png', height: '150px' },
-	{ path: '/static/img/supporters/stopcafe.png', height: '150px' },
-	{ path: '/static/img/supporters/mercuredarwin.png', height: '150px' },
-	{ path: '/static/img/supporters/uniqueindustries.png', height: '150px' },
-	{ path: '/static/img/supporters/eaant.png', height: '150px' },
-	{ path: '/static/img/supporters/fwborders.jpg', height: '150px' }
+	{
+		path: '/static/img/supporters/sponsorednt.jpg',
+		height: '130px',
+		heightMobile: '130px'
+	},
+	{
+		path: '/static/img/supporters/territoryboundless.jfif',
+		height: '200px',
+		heightMobile: '200px'
+	},
+	{
+		path: '/static/img/supporters/cdu.png',
+		height: '240px',
+		heightMobile: '240px'
+	},
+	{
+		path: '/static/img/supporters/melaleuca.jpg',
+		height: '240px',
+		heightMobile: '240px'
+	},
+	{
+		path: '/static/img/supporters/redcross.png',
+		height: '180px',
+		heightMobile: '180px'
+	},
+	{
+		path: '/static/img/supporters/wardkeller.png',
+		height: '75px',
+		heightMobile: '75px'
+	},
+	{
+		path: '/static/img/supporters/palatesofindia.png',
+		height: '180px',
+		heightMobile: '90px'
+	},
+	{
+		path: '/static/img/supporters/freshpoint.jpeg',
+		height: '150px',
+		heightMobile: '100px'
+	},
+	{
+		path: '/static/img/supporters/uglyduckling.jpg',
+		height: '150px',
+		heightMobile: '100px'
+	},
+	{
+		path: '/static/img/supporters/bamboolounge.gif',
+		height: '60px',
+		heightMobile: '60px'
+	},
+	{
+		path: '/static/img/supporters/theflank.jpg',
+		height: '150px',
+		heightMobile: '100px'
+	},
+	{
+		path: '/static/img/supporters/jkdoi.jpeg',
+		height: '150px',
+		heightMobile: '100px'
+	},
+	{
+		path: '/static/img/supporters/lunch room.png',
+		height: '150px',
+		heightMobile: '100px'
+	},
+	{
+		path: '/static/img/supporters/myhira.png',
+		height: '60px',
+		heightMobile: '40px'
+	},
+	{
+		path: '/static/img/supporters/rambha.jfif',
+		height: '150px',
+		heightMobile: '100px'
+	},
+	{
+		path: '/static/img/supporters/wharfone.jpg',
+		height: '60px',
+		heightMobile: '40px'
+	},
+	{
+		path: '/static/img/supporters/malasianfoodies.jfif',
+		height: '150px',
+		heightMobile: '100px'
+	},
+	{
+		path: '/static/img/supporters/smartway.png',
+		height: '100px',
+		heightMobile: '60px'
+	},
+	{
+		path: '/static/img/supporters/hanuman.png',
+		height: '150px',
+		heightMobile: '100px'
+	},
+	{
+		path: '/static/img/supporters/saffron.png',
+		height: '100px',
+		heightMobile: '60px'
+	},
+	{
+		path: '/static/img/supporters/hogscafe.jpg',
+		height: '150px',
+		heightMobile: '100px'
+	},
+	{
+		path: '/static/img/supporters/psealms.png',
+		height: '150px',
+		heightMobile: '100px'
+	},
+	{
+		path: '/static/img/supporters/stopcafe.png',
+		height: '150px',
+		heightMobile: '100px'
+	},
+	{
+		path: '/static/img/supporters/mercuredarwin.png',
+		height: '150px',
+		heightMobile: '100px'
+	},
+	{
+		path: '/static/img/supporters/uniqueindustries.png',
+		height: '150px',
+		heightMobile: '100px'
+	},
+	{
+		path: '/static/img/supporters/eaant.png',
+		height: '150px',
+		heightMobile: '100px'
+	},
+	{
+		path: '/static/img/supporters/fwborders.jpg',
+		height: '150px',
+		heightMobile: '100px'
+	}
 ]
 
 export const Aboutus = {
@@ -131,7 +239,7 @@ export const Aboutus = {
 		{
 			img: '/static/img/aboutus/members3.jpg',
 			description:
-				"Since its launch in April 2020, KS has served over 5,000 cooked meals, assisted more than 500 individuals, partnered with more than 30 organisations and local businesses, recruited more than 100 volunteers, raised over $60,000 and it is now an official incorporated association and charity. \n\n\Although our main supporters are StudyNT/NT Government, the City of Darwin, Charles Darwin University, Australian Red Cross, Melaleuca Refugee Centre and Foodbank, we have connected with dozens of businesses and organisations that continue to support our goals and the exciting plan we have for the NT community in the future.\n\n "
+				'Since its launch in April 2020, KS has served over 5,000 cooked meals, assisted more than 500 individuals, partnered with more than 30 organisations and local businesses, recruited more than 100 volunteers, raised over $60,000 and it is now an official incorporated association and charity. \n\nAlthough our main supporters are StudyNT/NT Government, the City of Darwin, Charles Darwin University, Australian Red Cross, Melaleuca Refugee Centre and Foodbank, we have connected with dozens of businesses and organisations that continue to support our goals and the exciting plan we have for the NT community in the future.\n\n '
 		}
 	]
 }
@@ -139,19 +247,19 @@ export const Aboutus = {
 export const Awards = [
 	{
 		title: 'City of Darwin Awards',
-		subtitle:
-			'Community Event of the Year Award by City of Darwin',
+		subtitle: 'Community Event of the Year Award by City of Darwin',
 		description:
 			'The Community Event of the Year Award encourages us to work harder in making the Darwin multicultural community a better place for everyone to live in. ',
-		image: '/static/img/awards/Community Event of the Year Award by City of Darwin.jpg'
+		image:
+			'/static/img/awards/Community Event of the Year Award by City of Darwin.jpg'
 	},
 	{
 		title: 'The Northern Territory Human Rights Awards ',
-		subtitle:
-			'The Fitzgerald Diversity Award ',
+		subtitle: 'The Fitzgerald Diversity Award ',
 		description:
 			'The Northern Territory Human Rights Awards celebrate notable activities in the Northern Territory or by Territorians, which advance human rights:\n\n\u2022 Promoting human rights and peace through education, sports or other practical activities and/or advocacy\n\u2022 Promoting equal opportunity and non-discriminatory attitudes and practices\n\u2022 Increasing community understanding of human rights for the promotion of greater respect, diversity, inclusion and harmony\n\u2022 Challenging human rights barriers and/or breaches ',
-		image: '/static/img/awards/The Fitzgerald Diversity Award – Kindness Shake Inc.jpg'
+		image:
+			'/static/img/awards/The Fitzgerald Diversity Award – Kindness Shake Inc.jpg'
 	},
 	{
 		title: '2020 Northern Territory Volunteer of The Year Awards ',
@@ -159,24 +267,24 @@ export const Awards = [
 			'Community Bendigo Bank Alice Springs Community Volunteer Organisation/Team of the Year Award ',
 		description:
 			'The NT Volunteer of the Year Awards highlight exemplary volunteer work and recognise the outstanding contribution of NT volunteers, volunteer involving organisations, corporate volunteering programs and volunteer managers who make an invaluable contribution to our communities. ',
-		image: '/static/img/awards/2020 Northern Territory Volunteer of The Year Awards.png'
+		image:
+			'/static/img/awards/2020 Northern Territory Volunteer of The Year Awards.png'
 	},
 	{
 		title: 'MCNT Council - Yogan Sathianathan Multicultural Awards  ',
-		subtitle:
-			'Community Project of the Year ',
+		subtitle: 'Community Project of the Year ',
 		description:
 			'Organisations recognised for making significant contributions to embracing cultural diversity and promoting the NT as a united, harmonious, and inclusive community. The work which supports migrants and refugees is highly regarded.  ',
-		image: '/static/img/awards/MCNT Council - Yogan Sathianathan Multicultural Awards.jpg'
+		image:
+			'/static/img/awards/MCNT Council - Yogan Sathianathan Multicultural Awards.jpg'
 	},
 	{
 		title: 'Chief Minister’s Export and Industry Awards',
-		subtitle:
-			'International Student Award ',
+		subtitle: 'International Student Award ',
 		description:
 			"For outstanding achievement and resilience shown by an international student studying in the Northern Territory who has demonstrated leadership and excellence in their endeavours and contribution to NT's business community, particularly in response to COVID19. \n\nOut of eight finalists, five were from Kindness Shake:\n	\n\u2022 Manfred Mletsin – Winner \n\u2022 Nilesh Dilushan – Finalist \n\u2022 Francesca Pellizzari – Finalist  \n\u2022 Denis Mitrov – Finalist \n\u2022 Dayam Rizvi – Finalist ",
 		image: '/static/img/awards/International Student of the Year.jpeg'
-	},
+	}
 ]
 
 export const Projects = [
@@ -221,7 +329,7 @@ export const Projects = [
 		description:
 			'The aim is to encourage international students living in the Northern Territory (NT) to show their talents and engage with the community as a suitable way to socialize, providing a harmonious life and study environment. We want to enrich the Territory international student experience, showcase the Territory as a study destination and provide students with an opportunity to shine and expand their networks. ',
 		image: '/static/img/projects/Shine-On-Me_poster.png'
-	},
+	}
 ]
 
 export const Instagram = [
@@ -280,62 +388,184 @@ export const BLBL = {
 		'Enjoy your shopping and remember to share the love across your socials using #Be Local Buy Local and tagging the local businesses.',
 	logos: [
 		{
-			path: '/static/img/belocal/Ana Nunex NAATI Translations.jpg',
-			discount: '20% discount'
-		},
-		{ path: '/static/img/belocal/Bamboo Lounge.jpg', discount: '10% discount' },
-		{ path: '/static/img/belocal/BLISS LOGO.png', discount: '15% discount' },
-		{ path: '/static/img/belocal/Cha Time Logo.png', discount: '20% discount' },
-		{
-			path: '/static/img/belocal/Delicious Darwin.jpg',
-			discount: '20% discount'
-		},
-		{
-			path: '/static/img/belocal/District North Kitchen Yarrawonga.jpg',
-			discount: '10% discount'
-		},
-		{ path: '/static/img/belocal/Ebb & Flow.png', discount: '5% discount' },
-		{ path: '/static/img/belocal/Fresh Point.jpg', discount: '10% discount' },
-		{ path: '/static/img/belocal/JK Doi.jpg', discount: '10%-15% discount' },
-		{
 			path: '/static/img/belocal/Johnn Johnns.jpeg',
-			discount: '5%-10% discount'
+			discount: '5%-10%  discount',
+			width: '400px',
+			widthMobile: '150px'
 		},
 		{
-			path: '/static/img/belocal/Kcreative Graphic Designs.png',
-			discount: '20% discount'
+			path: '/static/img/belocal/Fresh Point.jpg',
+			discount: '10% discount',
+			width: '400px',
+			widthMobile: '150px'
 		},
 		{
 			path: '/static/img/belocal/Lunch Room Catering.jpg',
-			discount: '10% discount'
+			discount: '10% discount',
+			width: '400px',
+			widthMobile: '160px'
 		},
-		{ path: '/static/img/belocal/Night Market.JPG', discount: '10% discount' },
+		{
+			path: '/static/img/belocal/Cha Time Logo.png',
+			discount: '20% discount',
+			width: '200px',
+			widthMobile: '160px'
+		},
+		{
+			path: '/static/img/belocal/Ana Nunex NAATI Translations.jpg',
+			discount: '20% discount',
+			width: '200px',
+			widthMobile: '100px'
+		},
+		{
+			path: '/static/img/belocal/Bamboo Lounge.jpg',
+			discount: '10% discount',
+			width: '200px',
+			widthMobile: '100px'
+		},
+		{
+			path: '/static/img/belocal/BLISS LOGO.png',
+			discount: '15% discount',
+			width: '200px',
+			widthMobile: '100px'
+		},
+
+		{
+			path: '/static/img/belocal/Delicious Darwin.jpg',
+			discount: '20% discount',
+			width: '200px',
+			widthMobile: '100px'
+		},
+		{
+			path: '/static/img/belocal/District North Kitchen Yarrawonga.jpg',
+			discount: '10% discount',
+			width: '200px',
+			widthMobile: '100px'
+		},
+		{
+			path: '/static/img/belocal/Ebb & Flow.png',
+			discount: '5% discount',
+			width: '200px',
+			widthMobile: '100px'
+		},
+
+		{
+			path: '/static/img/belocal/JK Doi.jpg',
+			discount: '10%-15% discount',
+			width: '200px',
+			widthMobile: '100px'
+		},
+
+		{
+			path: '/static/img/belocal/Kcreative Graphic Designs.png',
+			discount: '20% discount',
+			width: '200px',
+			widthMobile: '100px'
+		},
+
+		{
+			path: '/static/img/belocal/Night Market.JPG',
+			discount: '10% discount',
+			width: '200px',
+			widthMobile: '100px'
+		},
 		{
 			path: '/static/img/belocal/Palates of India.jpg',
-			discount: '10% discount'
+			discount: '10% discount',
+			width: '200px',
+			widthMobile: '100px'
 		},
-		{ path: '/static/img/belocal/PC Mart.png', discount: '5%-10% discount' },
+		{
+			path: '/static/img/belocal/PC Mart.png',
+			discount: '5%-10% discount',
+			width: '200px',
+			widthMobile: '100px'
+		},
 		{
 			path: '/static/img/belocal/Psealms logo square.jpg',
-			discount: '15% discount'
+			discount: '15% discount',
+			width: '200px',
+			widthMobile: '100px'
 		},
 		{
 			path: '/static/img/belocal/Rambha Noodle Bar.png',
-			discount: '10% discount'
+			discount: '10% discount',
+			width: '200px',
+			widthMobile: '100px'
 		},
 		{
 			path: '/static/img/belocal/Regale Pizza Pasta.png',
-			discount: '10% discount'
+			discount: '10% discount',
+			width: '200px',
+			widthMobile: '100px'
 		},
 		{
 			path: '/static/img/belocal/SAMAF Accountants & Consultants.png',
-			discount: '20% discount'
+			discount: '20% discount',
+			width: '200px',
+			widthMobile: '100px'
 		},
-		{ path: '/static/img/belocal/The Flank.jpg', discount: '10% discount' },
+		{
+			path: '/static/img/belocal/The Flank.jpg',
+			discount: '10% discount',
+			width: '200px',
+			widthMobile: '100px'
+		},
 		{
 			path: '/static/img/belocal/Where 2 Buns Meat.png',
-			discount: '10% discount'
+			discount: '10% discount',
+			width: '200px',
+			widthMobile: '100px'
 		},
-		{ path: '/static/img/belocal/Yogis Way.jpg', discount: '10%-15% discount' }
+		{
+			path: '/static/img/belocal/Yogis Way.jpg',
+			discount: '10%-15% discount',
+			width: '200px',
+			widthMobile: '100px'
+		}
 	]
 }
+
+export const Memberbenefits = [
+	{
+		img: '/static/img/membership/1. VOTING RIGHTS.png',
+		content: 'Voting Rights at the Annual General Meeting'
+	},
+	{
+		img: '/static/img/membership/2. INVITATION.png',
+		content: 'Privileged invite to all future Kindness Shake events'
+	},
+	{
+		img: '/static/img/membership/3. DISCOUNTS.png',
+		content:
+			'10% Discount on Food and Beverage in Kindness Space. \n20% Discount on diverse Kindness Shake merchandise '
+	},
+	{
+		img: '/static/img/membership/4. NEWSLETTER.png',
+		content: 'Kindness Shake newsletter every 3 months'
+	},
+	{
+		img: '/static/img/membership/5. CONSTITUTION.png',
+		content:
+			'A copy of the Kindness Shake constitution. \nMinutes of general meetings.\nAnnual reports and annual financial reports'
+	},
+	{
+		img: '/static/img/membership/6. ANNUAL REPORT.png',
+		content:
+			'Invite to annual general meeting with complimentary food and non-alcoholic beverages'
+	},
+	{
+		img: '/static/img/membership/7. MENTORSHIP.png',
+		content:
+			'First look for future Kindness Shake projects. \nOptions to participate in strategy planning'
+	},
+	{
+		img: '/static/img/membership/8. PROJECTS.png',
+		content: 'Mentorship program possibility'
+	},
+	{
+		img: '/static/img/membership/9. SCHOLARSHIPS.png',
+		content:
+			'Some proceeds from the Membership Fee will be funded towards students scholarships and mentorships every academic year'
+	}
+]
