@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import { Row, Col, Divider } from 'antd'
 import { Parallax } from 'rc-scroll-anim'
 import { BLBL } from '@Components/data.js'
@@ -7,6 +7,12 @@ import styles from '@Components/Titles.module.css'
 import { isMobile } from 'react-device-detect'
 
 const OurSupporters = () => {
+	const [phone, setPhone] = useState(false)
+
+	useEffect(() => {
+		setPhone(isMobile)
+	}, [])
+
 	return (
 		<div className="home-page-wrapper">
 			<div className="texty-demo" style={{ marginTop: 64 }}>
@@ -31,8 +37,7 @@ const OurSupporters = () => {
 					</div>
 				</Col>
 			))}
-			{console.log(isMobile)}
-			{isMobile ? (
+			{phone ? (
 				<Row align="middle" justify="center">
 					{BLBL.logos.map(item => (
 						<Parallax
@@ -54,13 +59,11 @@ const OurSupporters = () => {
 							animation={{ x: 0, opacity: 1, playScale: [-0.6, 0.8] }}
 							style={{ transform: 'translateX(-200px)', opacity: 0 }}
 						>
-							
-								<div className="ml-5 mr-5 mu-2 md-2">
-									<img src={item.path} width={item.width} alt="img" />
-								</div>
-								<div className={styles.discount}>{item.discount}</div>
-								<br></br>
-							
+							<div className="ml-5 mr-5 mu-2 md-2">
+								<img src={item.path} width={item.width} alt="img" />
+							</div>
+							<div className={styles.discount}>{item.discount}</div>
+							<br></br>
 						</Parallax>
 					))}
 				</Row>

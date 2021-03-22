@@ -9,7 +9,6 @@ import styles from '@Components/Titles.module.css'
 import { Memberbenefits } from '@Components/data.js'
 import { isMobile } from 'react-device-detect'
 
-
 const navmenu = {
 	fontFamily:
 		'-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
@@ -43,9 +42,11 @@ const Membership = () => {
 	}
 
 	const [iosdevice, setIosdevice] = useState(true)
+	const [phone, setPhone] = useState(false)
 
 	useEffect(() => {
 		setIosdevice(iOS())
+		setPhone(isMobile)
 	}, [])
 
 	return (
@@ -65,100 +66,102 @@ const Membership = () => {
 				<TabPanel>
 					<div style={membershiphome}>
 						<div className="home-page-wrapper">
-							<br></br>
-							<br></br>
-							<br></br>
-							<h2>Be a part of Kindness Shake in 2021!</h2>
-							<br></br>
-							<div className={styles.subtitle}>
-								To have access to membership card please sign up to this website
-								and complete the payment.
-							</div>
-							<br></br>
-							<Row align="middle" justify="center">
-								<Col
-									xs={{ span: 20 }}
-									lg={{ span: 8 }}
-									className="m-2"
-									align="middle"
-									justify="center"
+							<div>
+								<br></br>
+								<br></br>
+								<br></br>
+								<h2>Be a part of Kindness Shake in 2021!</h2>
+								<br></br>
+								<div className={styles.subtitle}>
+									To have access to membership card please sign up to this
+									website and complete the payment.
+								</div>
+								<br></br>
+								<Row align="middle" justify="center">
+									<Col
+										xs={{ span: 20 }}
+										lg={{ span: 8 }}
+										className="m-2"
+										align="middle"
+										justify="center"
+									>
+										<img
+											src="/static/img/front-card.jpeg"
+											alt="frontcard"
+											width="100%"
+											height="100%"
+											className="my-2"
+										/>
+									</Col>
+									<Col
+										xs={{ span: 20 }}
+										lg={{ span: 8 }}
+										className="m-2"
+										align="middle"
+										justify="center"
+									>
+										<img
+											src="/static/img/back-card-blank.jpeg"
+											alt="backcard"
+											width="100%"
+											height="100%"
+											className="my-2"
+										/>
+									</Col>
+								</Row>
+								<br></br>
+								<br></br>
+								<Button
+									onClick={index => setTabIndex(1)}
+									type="primary"
+									shape="round"
+									size="large"
 								>
-									<img
-										src="/static/img/front-card.jpeg"
-										alt="frontcard"
-										width="100%"
-										height="100%"
-										className="my-2"
-									/>
-								</Col>
-								<Col
-									xs={{ span: 20 }}
-									lg={{ span: 8 }}
-									className="m-2"
-									align="middle"
-									justify="center"
-								>
-									<img
-										src="/static/img/back-card-blank.jpeg"
-										alt="backcard"
-										width="100%"
-										height="100%"
-										className="my-2"
-									/>
-								</Col>
-							</Row>
-							<br></br>
-							<br></br>
-							<Button
-								onClick={index => setTabIndex(1)}
-								type="primary"
-								shape="round"
-								size="large"
-							>
-								Register now!
-							</Button>
-							<br></br>
-							<br></br>
-							<h2>Membership benefits</h2>
-							<div className="m-auto" style={{ whiteSpace: 'pre-wrap' }}>
-								<Col>
-									{Memberbenefits.map(item => (
-										<Col
-											xs={{ span: 23 }}
-											lg={{ span: 12 }}
-											className="m-auto"
-											align="middle"
-											justify="center"
-										>
-											<Row align="middle" justify="center">
-												<Col
-													xs={{ span: 4 }}
-													lg={{ span: 4 }}
-													className="m-auto"
-													align="middle"
-													justify="center"
-												>
-													<img src={item.img} width="32px" alt="img" />
-												</Col>
-												<Col
-													xs={{ span: 20 }}
-													lg={{ span: 20 }}
-													className="m-auto"
-													align="middle"
-													justify="center"
-												>
-													<div className={styles.contentMembership}>
-														{item.content}
-													</div>
-												</Col>
-											</Row>
-										</Col>
-									))}
-								</Col>
+									Register now!
+								</Button>
+								<br></br>
+								<br></br>
+								<h2>Membership benefits</h2>
+								<div className="m-auto" style={{ whiteSpace: 'pre-wrap' }}>
+									<Col>
+										{Memberbenefits.map(item => (
+											<Col
+												xs={{ span: 23 }}
+												lg={{ span: 12 }}
+												className="m-auto"
+												align="middle"
+												justify="center"
+											>
+												<Row align="middle" justify="center">
+													<Col
+														xs={{ span: 4 }}
+														lg={{ span: 4 }}
+														className="m-auto"
+														align="middle"
+														justify="center"
+													>
+														<img src={item.img} width="32px" alt="img" />
+													</Col>
+													<Col
+														xs={{ span: 20 }}
+														lg={{ span: 20 }}
+														className="m-auto"
+														align="middle"
+														justify="center"
+													>
+														<div className={styles.contentMembership}>
+															{item.content}
+														</div>
+													</Col>
+												</Row>
+											</Col>
+										))}
+									</Col>
+								</div>
+								<br></br>
 							</div>
-							<br></br>
 							<h2>Our partners</h2>
-							{isMobile ? (
+							{phone ? (
 								<Row align="middle" justify="center">
 									{BLBL.logos.map(item => (
 										<Parallax
