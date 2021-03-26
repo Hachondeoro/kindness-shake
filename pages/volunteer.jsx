@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, useEffect } from 'react'
-import { Form, Input, InputNumber, Button, Select, Switch } from 'antd'
-import { Row, Col, Divider } from 'antd'
+import { Form, Input, Button, Select, Switch, Radio } from 'antd'
+import { Row, Col } from 'antd'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
-import styles from '@Components/Titles.module.css'
 import ReactMarkdown from 'react-markdown'
 import VolunteerIntro from '@Components/VolunteerIntro.md'
+import * as emailjs from 'emailjs-com'
 
 const { GoogleSpreadsheet } = require('google-spreadsheet')
 
@@ -54,12 +54,35 @@ const doc = new GoogleSpreadsheet(
 	'1zMFH3Uy2hwZRUDgqvsANSQkX2bMgL3WqT9nF6wqtOHg'
 )
 
-const Demo = props => {
+const VolunteerForm = props => {
 	const [form] = Form.useForm()
+
+	const sendEmail = e => {
+		emailjs
+			.send(
+				'service_ahbfe0g',
+				'template_ypm8kd5',
+				e,
+				'user_ez3Faw0hPtbM3o6P3x5Nc'
+			)
+			.then(
+				result => {
+					console.log(result.text)
+				},
+				error => {
+					console.log(error.text)
+				}
+			)
+	}
 
 	const onFinish = values => {
 		const expertise = values.user.expertise.join(', ')
 		values.user.expertise = expertise
+		const availability = values.user.availability? "Yes":"No"
+		values.user.availability = availability
+		const consent = values.user.consent? "Yes":"No"
+		values.user.consent = consent
+		sendEmail(values.user)
 		write_rows(values.user)
 		setOpen(true)
 		form.resetFields()
@@ -77,9 +100,8 @@ const Demo = props => {
 		setOpen(false)
 	}
 
-	const [token, setToken] = useState('')
 	useEffect(() => {
-		// getToken()
+		getToken()
 	}, [])
 
 	const getToken = async () => {
@@ -138,14 +160,14 @@ const Demo = props => {
 						/>
 					</Col>
 				</Row>
-				<Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+				<Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
 					<MuiAlert
 						onClose={handleClose}
 						elevation={6}
 						variant="filled"
 						severity="success"
 					>
-						Thank you for your interest!
+						Thank you for your interest! We will be in touch with you soon :)
 					</MuiAlert>
 				</Snackbar>
 				<Row align="middle" justify="center" className="mx-5">
@@ -215,6 +237,12 @@ const Demo = props => {
 						<Form.Item name={['user', 'availability']} label="Available now?">
 							<Switch />
 						</Form.Item>
+						<Form.Item name={['user', 'position']} label="I want to be a">
+							<Radio.Group>
+								<Radio value="Casual">Casual Volunteer</Radio>
+								<Radio value="Permanent">Permanent Volunteer</Radio>
+							</Radio.Group>
+						</Form.Item>
 						<Form.Item
 							name={['user', 'expertise']}
 							label="Areas of expertise"
@@ -254,7 +282,10 @@ const Demo = props => {
 							name={['user', 'consent']}
 							rules={[
 								{
-									required: true
+									validator: (_, value) =>
+										value
+											? Promise.resolve()
+											: Promise.reject(new Error('Should accept agreement'))
 								}
 							]}
 							label="I acknowledge that my personal details will be used for the purpose of expressing interest for Volunteering in Kindness Shake programs or events"
@@ -273,4 +304,4 @@ const Demo = props => {
 	)
 }
 
-export default Demo
+export default VolunteerForm

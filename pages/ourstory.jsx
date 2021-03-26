@@ -1,48 +1,40 @@
 import React from 'react'
-import { enquireScreen } from 'enquire-js'
-import { Card } from 'antd'
 import { Row, Col } from 'antd'
-import { Aboutus } from '@Components/data.js'
 import { Parallax } from 'rc-scroll-anim'
 import styles from '@Components/Titles.module.css'
+import { GraphQLClient } from 'graphql-request'
 
-let isMobile
-enquireScreen(b => {
-	isMobile = b
-})
-const { location = {} } = typeof window !== 'undefined' ? window : {}
-const { Meta } = Card
+export async function getStaticProps() {
+	const graphcms = new GraphQLClient(
+		'https://api-ap-northeast-1.graphcms.com/v2/ckmmudchrs3z701z29a833h9s/master'
+	)
 
-export default class Home extends React.Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			isMobile,
-			show: !location.port
+	const { aboutuses } = await graphcms.request(
+		`
+		{ 
+			aboutuses {
+				image {
+				  url
+				}
+				description
+			  }
+		}
+	  `
+	)
+	return {
+		props: {
+			aboutuses
 		}
 	}
+}
 
-	componentDidMount() {
-		enquireScreen(b => {
-			this.setState({ isMobile: !!b })
-		})
-
-		if (location.port) {
-			setTimeout(() => {
-				this.setState({
-					show: true
-				})
-			}, 500)
-		}
-	}
-
-	render() {
+const OurStory = ({ aboutuses }) => {
 		return (
 			<>
 				<div className="home-page-wrapper">
 					<h1 className="text-center m-5">OUR STORY</h1>
 					<div className="teams3-wrapper">
-						{Aboutus.story.map(item => (
+						{aboutuses.map(item => (
 							<Parallax
 								animation={{ x: 0, opacity: 1, playScale: [-0.2, 0.8] }}
 								style={{ transform: 'translateX(-100px)', opacity: 0 }}
@@ -57,7 +49,7 @@ export default class Home extends React.Component {
 									>
 										<div className="m-5">
 											<img
-												src={item.img}
+												src={item.image.url}
 												width="100%"
 												height="100%"
 												alt="img"
@@ -82,4 +74,6 @@ export default class Home extends React.Component {
 			</>
 		)
 	}
-}
+
+
+export default OurStory

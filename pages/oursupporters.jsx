@@ -1,67 +1,81 @@
 import React from 'react'
 import { Row, Col } from 'antd'
 import { Parallax } from 'rc-scroll-anim'
-import { Supporters } from '@Components/data.js'
-import styles from '@Components/Titles.module.css'
 import { isMobile } from 'react-device-detect'
+import { GraphQLClient } from 'graphql-request'
+import ReactMarkdown from 'react-markdown'
 
-const OurSupporters = () => {
+export async function getStaticProps() {
+	const graphcms = new GraphQLClient(
+		'https://api-ap-northeast-1.graphcms.com/v2/ckmmudchrs3z701z29a833h9s/master'
+	)
+
+	const { supporters } = await graphcms.request(
+		`
+		{ 
+			supporters {
+				info {
+				  markdown
+				}
+				jsonContent
+				image {
+				  url
+				}
+			  }
+		}
+	  `
+	)
+	return {
+		props: {
+			supporters
+		}
+	}
+}
+
+const OurSupporters = ({ supporters }) => {
+	const logos = supporters[0].image.map((x, i) => ({
+		...x,
+		...supporters[0].jsonContent[i]
+	}))
+
 	return (
-		<div className="home-page-wrapper">
-			<h1 className="text-center m-5">
-				Together, we are supporting the Northern Territory community{' '}
-			</h1>
+		<div>
 			<Col
 				xs={{ span: 22 }}
-				lg={{ span: 10 }}
+				lg={{ span: 12 }}
 				className="m-auto"
 				align="middle"
 				justify="center"
 			>
-				<div className={styles.membership}>
-					We are incredibly fortunate to work with large and small organisations
-					as well as some very special individuals who are committed to provide
-					support to international students, temporary visa holders and
-					migrants.
-					<br></br>
-					<br></br>
-					The support that Kindness Shake provides would not be possible without
-					the incredible generosity of our supporters.
-					<br></br>
-					<br></br>
-				</div>
-				<div className={styles.membership}>
-					Contact us:<br></br>
-					<a href="mailto:info@kindness-shake.com.au">
-						info@kindness-shake.com.au
-					</a>
-					<br></br>+61 451 717 861
-				</div>
+				{supporters.map(item => (
+					<div className="markdown">
+						<ReactMarkdown source={`${item.info.markdown}`} />
+					</div>
+				))}
 			</Col>
-			<h1 className="text-center m-5">OUR SUPPORTERS</h1>
 			{isMobile ? (
 				<Row align="middle" justify="center">
-					{Supporters.map(item => (
+					{logos.map(item => (
 						<Parallax
 							animation={{ x: 0, opacity: 1, playScale: [-0.6, 0.8] }}
 							style={{ transform: 'translateX(-200px)', opacity: 0 }}
 						>
 							<div className="m-2 mt-3">
-								<img src={item.path} height={item.heightMobile} alt="img" />
+								<img src={item.url} width={item.widthMobile} alt="img" />
 							</div>
 						</Parallax>
 					))}
 				</Row>
 			) : (
 				<Row align="middle" justify="center">
-					{Supporters.map(item => (
+					{logos.map(item => (
 						<Parallax
 							animation={{ x: 0, opacity: 1, playScale: [-0.6, 0.8] }}
 							style={{ transform: 'translateX(-200px)', opacity: 0 }}
 						>
 							<Col span={4}>
 								<div className="ml-5 mr-5 mu-2 md-2">
-									<img src={item.path} height={item.height} alt="img" />
+									<img src={item.url} width={item.width} alt="img" />
 								</div>
 							</Col>
 						</Parallax>

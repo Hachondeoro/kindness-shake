@@ -40,14 +40,20 @@ const Footer = () => {
 							alt="img"
 							className="my-4"
 						/>
-						<Image
-							src="/static/img/acnc.png"
-							width={100}
-							height={100}
-							layout="responsive"
-							alt="img"
-							className="my-4"
-						/>
+						<a
+							href="https://www.acnc.gov.au/charity/6b1d8a44a39b7795b8f21cd94164d1d5"
+							rel="noopener noreferrer"
+							target="_blank"
+						>
+							<Image
+								src="/static/img/acnc.png"
+								width={100}
+								height={100}
+								layout="responsive"
+								alt="img"
+								className="my-4"
+							/>
+						</a>
 					</Row>
 					<br></br>
 					<br></br>

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import InstagramEmbed from 'react-instagram-embed'
-import { Instagram } from '@Components/data.js'
 import { Parallax } from 'rc-scroll-anim'
 import { Row, Col } from 'antd'
-import { Modal, Button } from 'antd'
+import { Modal } from 'antd'
+import { GraphQLClient } from 'graphql-request'
 
 import Icon, {
 	FacebookFilled,
@@ -15,7 +15,7 @@ import Icon, {
 const EventbriteSVG = () => (
 	<svg
 		t="1615897317877"
-		class="icon"
+		className="icon"
 		viewBox="0 0 1024 1024"
 		version="1.1"
 		xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@ const EventbriteSVG = () => (
 const VolunteerSVG = () => (
 	<svg
 		t="1615897995351"
-		class="icon"
+		className="icon"
 		viewBox="0 0 1024 1024"
 		version="1.1"
 		xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,29 @@ const VolunteerSVG = () => (
 	</svg>
 )
 
-const socialmedia = () => {
+
+export async function getStaticProps() {
+	const graphcms = new GraphQLClient(
+		'https://api-ap-northeast-1.graphcms.com/v2/ckmmudchrs3z701z29a833h9s/master'
+	)
+	const { socialmedias } = await graphcms.request(
+		`
+		{ 
+			socialmedias {
+				title
+				jsoncontent
+			  }
+		}
+	  `
+	)
+	return {
+		props: {
+			socialmedias
+		}
+	}
+}
+
+const SocialMedia = ({ socialmedias }) => {
 	const [isModalVisible, setIsModalVisible] = useState(false)
 	const showModal = () => {
 		setIsModalVisible(true)
@@ -142,7 +164,7 @@ const socialmedia = () => {
 				</a>
 			</Row>
 			<Row align="middle" justify="center">
-				{Instagram.map(item => (
+				{socialmedias[0].jsoncontent.map(item => (
 					<Parallax
 						animation={[
 							{ x: 0, opacity: 1, playScale: [0, 0.8] },
@@ -179,4 +201,4 @@ const socialmedia = () => {
 	)
 }
 
-export default socialmedia
+export default SocialMedia

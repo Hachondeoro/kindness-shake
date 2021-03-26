@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Form, Input, InputNumber, Button, List, Avatar } from 'antd'
-import { Row, Col, Divider } from 'antd'
+import { Button } from 'antd'
+import { Row, Col } from 'antd'
 import { Parallax } from 'rc-scroll-anim'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import { HomeOutlined, IdcardOutlined, UserOutlined } from '@ant-design/icons'
-import { BLBL } from '@Components/data.js'
 import styles from '@Components/Titles.module.css'
-import { Memberbenefits } from '@Components/data.js'
 import { isMobile } from 'react-device-detect'
+import { GraphQLClient } from 'graphql-request'
 
 const navmenu = {
 	fontFamily:
@@ -23,8 +22,49 @@ const membershiphome = {
 	color: 'black'
 }
 
-const Membership = () => {
+export async function getStaticProps() {
+	const graphcms = new GraphQLClient(
+		'https://api-ap-northeast-1.graphcms.com/v2/ckmmudchrs3z701z29a833h9s/master'
+	)
+
+	// 5 times in total teammembers
+	const { belocals, memberships } = await graphcms.request(
+		`
+		{ 
+			belocals {
+				richtext {
+				  markdown
+				}
+				image {
+				  url
+				}
+				jsontext
+			  }
+			memberships {
+				image {
+				  url
+				}
+				benefit
+			  }
+		}
+	  `
+	)
+	return {
+		props: {
+			belocals, memberships
+		}
+	}
+}
+
+
+
+const Membership = ({belocals, memberships}) => {
 	const [tabIndex, setTabIndex] = useState(0)
+	const logos = belocals[0].image.map((x, i) => ({
+		...x,
+		...belocals[0].jsontext[i]
+	}))
+
 
 	function iOS() {
 		return (
@@ -124,7 +164,7 @@ const Membership = () => {
 								<h2>Membership benefits</h2>
 								<div className="m-auto" style={{ whiteSpace: 'pre-wrap' }}>
 									<Col>
-										{Memberbenefits.map(item => (
+										{memberships.map(item => (
 											<Col
 												xs={{ span: 23 }}
 												lg={{ span: 12 }}
@@ -140,7 +180,7 @@ const Membership = () => {
 														align="middle"
 														justify="center"
 													>
-														<img src={item.img} width="32px" alt="img" />
+														<img src={item.image.url} width="48px" alt="img" />
 													</Col>
 													<Col
 														xs={{ span: 20 }}
@@ -150,7 +190,7 @@ const Membership = () => {
 														justify="center"
 													>
 														<div className={styles.contentMembership}>
-															{item.content}
+															{item.benefit}
 														</div>
 													</Col>
 												</Row>
@@ -163,14 +203,14 @@ const Membership = () => {
 							<h2>Our partners</h2>
 							{phone ? (
 								<Row align="middle" justify="center">
-									{BLBL.logos.map(item => (
+									{logos.map(item => (
 										<Parallax
 											animation={{ x: 0, opacity: 1, playScale: [-0.6, 0.8] }}
 											style={{ transform: 'translateX(-200px)', opacity: 0 }}
 										>
 											<div className="mx-1 mt-3">
 												<img
-													src={item.path}
+													src={item.url}
 													width={item.widthMobile}
 													alt="img"
 												/>
@@ -182,13 +222,13 @@ const Membership = () => {
 								</Row>
 							) : (
 								<Row align="middle" justify="center">
-									{BLBL.logos.map(item => (
+									{logos.map(item => (
 										<Parallax
 											animation={{ x: 0, opacity: 1, playScale: [-0.6, 0.8] }}
 											style={{ transform: 'translateX(-200px)', opacity: 0 }}
 										>
 											<div className="ml-5 mr-5 mu-2 md-2">
-												<img src={item.path} width={item.width} alt="img" />
+												<img src={item.url} width={item.width} alt="img" />
 											</div>
 											<div className={styles.discount}>{item.discount}</div>
 											<br></br>
