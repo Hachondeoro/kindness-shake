@@ -18,7 +18,6 @@ const Donate = () => {
 					align="middle"
 					justify="center"
 				>
-					
 					<form
 						action="https://www.paypal.com/donate"
 						method="post"
