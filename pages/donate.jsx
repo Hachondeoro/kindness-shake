@@ -15,34 +15,37 @@ const Donate = () => {
 					xs={{ span: 20 }}
 					lg={{ span: 8 }}
 					className="m-auto"
-					align="right"
-					justify="middle"
+					align="middle"
+					justify="center"
 				>
-					<div style={{ fontWeight: 'bold', textAlign: 'center' }}>
-						<br></br>
-						My gift to Kindness Shake
-						<br></br>
-						<br></br>
-					</div>
-					<script
-						src="https://donorbox.org/widget.js"
-						paypalExpress="false"
-					></script>
-					<iframe
-						allowpaymentrequest=""
-						frameborder="0"
-						height="600px"
-						name="donorbox"
-						scrolling="no"
-						seamless="seamless"
-						src="https://donorbox.org/embed/inthistogether-1?default_interval=o&hide_donation_meter=true"
-						style={{
-							maxWidth: '500px',
-							minWidth: '250px',
-							maxHeight: 'none!important'
-						}}
-						width="100%"
-					></iframe>
+					
+					<form
+						action="https://www.paypal.com/donate"
+						method="post"
+						target="_top"
+					>
+						<input
+							type="hidden"
+							name="hosted_button_id"
+							value="2HH49PTBMLK48"
+						/>
+						<input
+							type="image"
+							src="https://icon-library.com/images/paypal-donate-icon/paypal-donate-icon-0.jpg"
+							border="0"
+							name="submit"
+							title="PayPal - The safer, easier way to pay online!"
+							alt="Donate with PayPal button"
+							height="180em"
+						/>
+						<img
+							alt=""
+							border="0"
+							src="https://www.paypal.com/en_AU/i/scr/pixel.gif"
+							width="1"
+							height="1"
+						/>
+					</form>
 				</Col>
 				<Col
 					xs={{ span: 20 }}
