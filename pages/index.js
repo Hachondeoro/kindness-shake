@@ -18,6 +18,9 @@ export async function getStaticProps() {
 	)
 
 	// 6 times in total teammembers
+
+
+	
 	const { homes, socialmedias } = await graphcms.request(
 		`
 		{ 
