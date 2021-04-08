@@ -163,7 +163,7 @@ const SocialMedia = ({ socialmedias }) => {
 					/>
 				</a>
 			</Row>
-			<Row align="middle" justify="center">
+			<Row align="top" justify="center">
 				{socialmedias[0].jsoncontent.map(item => (
 					<Parallax
 						animation={[

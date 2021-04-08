@@ -14,16 +14,7 @@ import '@Static/css/less/antMotionStyle.css'
 import '@Static/css/custom.scss'
 
 export default class MyApp extends App {
-	static async getInitialProps({ Component, ctx }) {
-		return {
-			pageProps: {
-				...(Component.getInitialProps
-					? await Component.getInitialProps(ctx)
-					: {})
-			}
-		}
-	}
-
+	
 	componentDidMount() {
 		if (process.env.NODE_ENV !== 'production') {
 			const axe = require('react-axe')

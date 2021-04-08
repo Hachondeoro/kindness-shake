@@ -21,22 +21,25 @@ const MultiDropdownNavbar = () => {
 		display: 'flex',
 		justifyContent: 'center',
 		background: '#3E7678',
-		fontWeight:'bold',
-		color:'#FFFFFF'
+		fontWeight: 'bold',
+		color: '#FFFFFF',
+		fontSize: '1.2em',
+		height: '3em'
 	}
-	const menuStyle = {
-		// position: 'relative',
-		// display: 'flex',
-		// background:'#3E7678',
+	const MenuStyle = {
+		fontSize: '1em',
+		display: 'inline-flex',
+		alignItems: 'center',
+		marginTop: '20px'
 	}
 	const mobileStyle = {
 		background: '#3E7678',
-		fontWeight:'bold',
-		color:'#FFFFFF'
+		fontWeight: 'bold',
+		color: '#FFFFFF'
 	}
 	const submenuStyle = {
-		fontWeight:'normal',
-		color:'#FFFFFF'
+		fontWeight: 'normal',
+		color: '#FFFFFF'
 	}
 
 	return (
@@ -122,7 +125,7 @@ const MultiDropdownNavbar = () => {
 					</Menu>
 				</Drawer>
 			</div>
-			<div className="d-none d-lg-block">
+			<div className="d-none d-lg-block multidropdownmenu">
 				<Menu
 					onClick={e => setCurrent(e.key)}
 					selectedKeys={[current]}
@@ -130,12 +133,19 @@ const MultiDropdownNavbar = () => {
 					theme="dark"
 					style={centerStyle}
 				>
-					<Menu.Item key="home" icon={<HomeOutlined />}>
+					<Menu.Item
+						key="home"
+						icon={<HomeOutlined className="navItem" style={MenuStyle} />}
+					>
 						<Link id="navitem" href="/" passHref>
 							HOME
 						</Link>
 					</Menu.Item>
-					<SubMenu key="aboutus" icon={<TeamOutlined />} title="ABOUT US">
+					<SubMenu
+						key="aboutus"
+						icon={<TeamOutlined style={MenuStyle} />}
+						title="ABOUT US"
+					>
 						<Menu.Item key="story">
 							<Link href="/ourstory" passHref>
 								Our Story
@@ -162,24 +172,27 @@ const MultiDropdownNavbar = () => {
 								</Link>
 							</Menu.Item> */}
 					</SubMenu>
-					<Menu.Item key="socialmedia" icon={<InstagramOutlined />}>
+					<Menu.Item
+						key="socialmedia"
+						icon={<InstagramOutlined style={MenuStyle} />}
+					>
 						<Link href="/socialmedia" passHref>
 							OUR SOCIAL MEDIA
 						</Link>
 					</Menu.Item>
-					<Menu.Item key="volunteer" icon={<MailOutlined />}>
+					<Menu.Item key="volunteer" icon={<MailOutlined style={MenuStyle} />}>
 						<Link href="/volunteer" passHref>
 							VOLUNTEER
 						</Link>
 					</Menu.Item>
-					<Menu.Item key="donate" icon={<StarOutlined />}>
+					<Menu.Item key="donate" icon={<StarOutlined style={MenuStyle} />}>
 						<Link href="/donate" passHref>
 							DONATE
 						</Link>
 					</Menu.Item>
 					<SubMenu
 						key="Membership"
-						icon={<UsergroupAddOutlined />}
+						icon={<UsergroupAddOutlined style={MenuStyle} />}
 						title="MEMBERSHIP"
 					>
 						<Menu.Item key="becomemember">
@@ -193,7 +206,7 @@ const MultiDropdownNavbar = () => {
 							</Link>
 						</Menu.Item>
 					</SubMenu>
-					<Menu.Item key="contactus" icon={<MailOutlined />}>
+					<Menu.Item key="contactus" icon={<MailOutlined style={MenuStyle} />}>
 						<Link href="/contactus" passHref>
 							CONTACT US
 						</Link>

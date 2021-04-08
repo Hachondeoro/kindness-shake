@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Button } from 'antd'
 import { DownOutlined } from '@ant-design/icons'
 import TweenOne from 'rc-tween-one'
@@ -16,11 +16,6 @@ export async function getStaticProps() {
 	const graphcms = new GraphQLClient(
 		'https://api-ap-northeast-1.graphcms.com/v2/ckmmudchrs3z701z29a833h9s/master'
 	)
-
-	// 6 times in total teammembers
-
-
-	
 	const { homes, socialmedias } = await graphcms.request(
 		`
 		{ 
@@ -44,47 +39,57 @@ export async function getStaticProps() {
 }
 
 const Home = ({ homes, socialmedias }) => {
+	let imageRef = useRef(null)
+	let textRef = useRef(null)
+
+	useEffect(() => {
+		var tl = gsap.timeline()
+		tl.from(imageRef, { opacity: 0, scale: 0.2 }, 0.75).from(
+			textRef,
+			{ opacity: 0, scale: 0.2 },
+			1.5
+		)
+	}, [])
+
 	return (
 		<>
-			<div className="banner0">
-				<div
-					style={{
-						position: 'absolute',
-						left: '50%',
-						top: '50%',
-						transform: 'translate(-50%, -50%)'
-					}}
+			<div className="bannerHome">
+				<Col
+					xs={{ span: 24 }}
+					lg={{ span: 10 }}
+					className="m-auto"
+					align="middle"
+					justify="center"
 				>
-					<div
-						style={{
-							display: 'flex',
-							justifyContent: 'center'
-						}}
-					>
-						<Image
-							src="/static/img/ks-logo-transparent.png"
-							width="300"
-							height="300"
-							alt="img"
+					<div className="banner-logo">
+						<img
+							src="/static/img/banner/Web-banner-logo.png"
+							width="80%"
+							alt="ks-logo"
+							ref={img => (imageRef = img)}
 						/>
 					</div>
-					<div style={{ color: 'white', fontSize: 32 }}>
-						Welcome to #KindnessShake
+					<div className="banner-text">
+						<img
+							src="/static/img/banner/Web-banner-text.png"
+							width="80%"
+							alt="ks-text"
+							ref={img => (textRef = img)}
+						/>
 					</div>
-					<br></br>
-				</div>
-				<TweenOne
-					animation={{
-						y: '-=50',
-						yoyo: true,
-						repeat: -1,
-						duration: 1000
-					}}
-					className="banner0-icon"
-					key="icon"
-				>
-					<DownOutlined />
-				</TweenOne>
+					<TweenOne
+						animation={{
+							y: '-=50',
+							yoyo: true,
+							repeat: -1,
+							duration: 1000
+						}}
+						className="banner0-icon"
+						key="icon"
+					>
+						<DownOutlined style={{ color: 'white' }} />
+					</TweenOne>
+				</Col>
 			</div>
 			<Col
 				xs={{ span: 23 }}
@@ -108,34 +113,46 @@ const Home = ({ homes, socialmedias }) => {
 					</Link>
 				</Button>
 			</Col>
-			<Row justify="center">
-				<Col xs={{ span: 23 }} lg={{ span: 8 }} align="middle" justify="center">
-					<br></br>
-					<br></br>
-					<h1 className={styles.titleHome}>OUR VISION</h1>
-					<div className={styles.contentHome}>
-						{homes.find(p => p.title == 'OUR VISION').content}
-					</div>
-					<br></br>
-				</Col>
-				<Col xs={{ span: 23 }} lg={{ span: 8 }} align="middle" justify="center">
-					<br></br>
-					<br></br>
-					<h1 className={styles.titleHome}>OUR MISSION</h1>
-					<div className={styles.contentHome}>
-						{homes.find(p => p.title == 'OUR MISSION').content}
-					</div>
-					<br></br>
-				</Col>
-			</Row>
-			<Feature6
-				id="Feature6_0"
-				key="Feature6_0"
-				dataSource={Feature60DataSource}
-			/>
+			<div className="vision">
+				<Row justify="center">
+					<Col
+						xs={{ span: 23 }}
+						lg={{ span: 8 }}
+						align="middle"
+						justify="center"
+					>
+						<br></br>
+						<br></br>
+						<h1 className={styles.titleHome}>OUR VISION</h1>
+						<div className={styles.contentHome}>
+							{homes.find(p => p.title == 'OUR VISION').content}
+						</div>
+						<br></br>
+					</Col>
+					<Col
+						xs={{ span: 23 }}
+						lg={{ span: 8 }}
+						align="middle"
+						justify="center"
+					>
+						<br></br>
+						<br></br>
+						<h1 className={styles.titleHome}>OUR MISSION</h1>
+						<div className={styles.contentHome}>
+							{homes.find(p => p.title == 'OUR MISSION').content}
+						</div>
+						<br></br>
+					</Col>
+				</Row>
+				<Feature6
+					id="Feature6_0"
+					key="Feature6_0"
+					dataSource={Feature60DataSource}
+				/>
+			</div>
 			<div className="home-page-wrapper">
 				<h1 className="text-center m-3">Social Media</h1>
-				<Row align="middle" justify="center">
+				<Row align="top" justify="center">
 					{socialmedias[0].jsoncontent.slice(0, 3).map(item => (
 						<Parallax
 							animation={{ x: 0, opacity: 1, playScale: [0, 0.8] }}
@@ -148,6 +165,7 @@ const Home = ({ homes, socialmedias }) => {
 										url={item.post}
 										clientAccessToken="821751731773259|69972d556b438c02d3cd032878cfdbee"
 										maxWidth={450}
+										maxHeight={500}
 										hideCaption={true}
 										containerTagName="div"
 										protocol=""
@@ -173,25 +191,45 @@ const Home = ({ homes, socialmedias }) => {
 				<div className={styles.titleHome}>
 					<br></br>
 					Take part in empowering whole communities
+					<br></br>
+					<br></br>
 				</div>
 				<div>
-					<Button
-						type="primary"
-						shape="round"
-						ghost
-						style={{
-							borderColor: '#ccc',
-							fontSize: '40px',
-							fontWeight: '600',
-							minHeight: '70px',
-							marginTop: '2em',
-							marginBottom: '2em'
-						}}
+					<Col
+						xs={{ span: 20 }}
+						lg={{ span: 8 }}
+						className="m-auto"
+						align="middle"
+						justify="center"
 					>
-						<Link href="/donate" passHref>
-							DONATE NOW
-						</Link>
-					</Button>
+						<form
+							action="https://www.paypal.com/donate"
+							method="post"
+							target="_top"
+						>
+							<input
+								type="hidden"
+								name="hosted_button_id"
+								value="2HH49PTBMLK48"
+							/>
+							<input
+								type="image"
+								src="https://icon-library.com/images/paypal-donate-icon/paypal-donate-icon-0.jpg"
+								border="0"
+								name="submit"
+								title="PayPal - The safer, easier way to pay online!"
+								alt="Donate with PayPal button"
+								height="140em"
+							/>
+							<img
+								alt=""
+								border="0"
+								src="https://www.paypal.com/en_AU/i/scr/pixel.gif"
+								width="1"
+								height="1"
+							/>
+						</form>
+					</Col>
 					<br></br>
 					<br></br>
 				</div>
