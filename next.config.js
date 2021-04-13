@@ -37,7 +37,8 @@ module.exports = withOffline({
 	},
 	env: {
 		sheets_email: process.env.sheets_email,
-		sheets_privatekey: process.env.sheets_privatekey
+		sheets_privatekey: process.env.sheets_privatekey,
+		NEXT_DATOCMS_API_TOKEN: process.env.NEXT_DATOCMS_API_TOKEN
 	},
 	target: process.env.NEXT_TARGET || 'serverless',
 	images: {

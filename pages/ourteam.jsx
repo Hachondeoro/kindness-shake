@@ -5,45 +5,41 @@ import { Row, Col } from 'antd'
 import { Teaminfo } from '@Components/data.js'
 import { Parallax } from 'rc-scroll-anim'
 import styles from '@Components/Titles.module.css'
+import { request } from '@Components/DatoCMS/datocms'
 
-import { GraphQLClient } from 'graphql-request'
-import ReactMarkdown from 'react-markdown'
+const MYQUERY = `query MyQuery {
+	allTeammembers {
+		name
+		email
+		role
+		description
+		image {
+		  url
+		}
+	  }
+}
+`
+
 
 export async function getStaticProps() {
-	const graphcms = new GraphQLClient(
-		'https://api-ap-northeast-1.graphcms.com/v2/ckmmudchrs3z701z29a833h9s/master'
-	)
-
-	const { teammembers } = await graphcms.request(
-		`
-		{ 
-			teammembers {
-				info
-				image {
-				  url
-				}
-			  }
-		}
-	  `
-	)
+	const data = await request({
+	  query: MYQUERY,
+	});
 	return {
-		props: {
-			teammembers
-		}
-	}
-}
+	  props: { data },
+	  revalidate: 10,
+	};
+  }
 
-const Team = ({ teammembers }) => {
+const Team = ({ data }) => {
 	return (
 		<>
 			<div className="home-page-wrapper">
 				<h1 className="text-center m-5">OUR TEAM</h1>
 				<div className="teams3-wrapper">
-					<Row align="middle" justify="center">
-						{teammembers.map(item => (
-							
+					<Row align="top" justify="center">
+						{data.allTeammembers.map(item => (
 							<div className="markdown">
-								{/* <ReactMarkdown source={`${item.info.markdown}`} /> */}
 								<Parallax
 									animation={{ x: 0, opacity: 1, playScale: [0, 0.8] }}
 									style={{ transform: 'translateX(-300px)', opacity: 0 }}
@@ -58,12 +54,14 @@ const Team = ({ teammembers }) => {
 											/>
 										</div>
 
-										<div className="teams3-top-title">{item.info.name}</div>
+										<div className="teams3-top-title">{item.name}</div>
 										<div className={styles.TeamDepartments}>
-											{item.info.position}
+											{item.position}
 										</div>
-										<div className={styles.TeamEmails}>{item.info.email}</div>
-										<div className="teams3-top-content">{item.info.description}</div>
+										<div className={styles.TeamEmails}>{item.email}</div>
+										<div className="teams3-top-content">
+											{item.description}
+										</div>
 										<br></br>
 									</Col>
 								</Parallax>
