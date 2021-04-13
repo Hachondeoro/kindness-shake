@@ -20,7 +20,6 @@ const MYQUERY = `query MyQuery {
 }
 `
 
-
 export async function getStaticProps() {
 	const data = await request({
 	  query: MYQUERY,

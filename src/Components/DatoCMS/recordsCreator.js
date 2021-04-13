@@ -78,6 +78,7 @@ var Team = [
 	}
 ]
 
+
 async function createRecord(name, email, role, image, description) {
   const path = await client.createUploadPath(image);
   const upload = await client.uploads.create({ path });
@@ -98,6 +99,7 @@ Team.map((item) => {
 });
 
 // #endregion
+
 
 
 // node --experimental-modules  .\components\DatoCMS\test.js
