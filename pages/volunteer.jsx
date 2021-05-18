@@ -87,7 +87,9 @@ const VolunteerForm = props => {
 		values.user.availability = availability
 		const consent = values.user.consent ? 'Yes' : 'No'
 		values.user.consent = consent
+		values.user.date = new Date().toLocaleString()
 		setshowConfetti(true)
+		console.log(values.user)
 		sendEmail(values.user)
 		write_rows(values.user)
 		setOpen(true)

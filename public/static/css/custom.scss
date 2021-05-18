@@ -20,6 +20,11 @@
 	}
 }
 
+.newsletter{
+	font-size: 14px;
+	color: #919191;
+}
+
 @media only screen and (max-width: 600px) {
 	.bannerHome {
 		background-image: url('/static/img/banner/Web-banner.png');
@@ -42,3 +47,4 @@
 		height: 900px;
 	}
 }
+

@@ -233,6 +233,16 @@ const Home = ({ homes, socialmedias }) => {
 					<br></br>
 					<br></br>
 				</div>
+				<div className="newsletter">
+					<div className={styles.titleHome}>Subscribe to our Newsletter!</div>
+					<iframe
+						src="https://gem.godaddy.com/signups/6b71de08659344cd997ed1d6dd0c50f3/iframe"
+						scrolling="no"
+						frameborder="0"
+						height="412"
+						style={{ maxWidth: '400px', width: '100%' }}
+					></iframe>
+				</div>
 			</Col>
 		</>
 	)
