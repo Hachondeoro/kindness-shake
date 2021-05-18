@@ -10,7 +10,7 @@ class MyDocument extends Document {
 					<meta name="theme-color" content="#673ab7" />
 					<meta
 						name="Description"
-						content="You need a hand? We'll give you a #KindnessShake!"
+						content="You need a hand? We will give you a #KindnessShake!"
 					/>
 					<link rel="manifest" href="static/manifest.json" />
 					<link rel="icon" href="/favicon.ico" />
