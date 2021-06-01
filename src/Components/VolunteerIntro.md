@@ -51,8 +51,6 @@ For both positions you will be required to attend any required training sessions
 Fill out the form below to register your expression of interest to become a Volunteer with Kindness Shake and one of our team members will contact you shortly.
 &nbsp;  
 &nbsp;  
-If you have any questions related to volunteering with Kindness Shake,
-&nbsp;  
-please contact us at
+If you have any questions related to volunteering with Kindness Shake,please contact us at
 [volunteers@kindness-shake.com.au](mailto:volunteers@kindness-shake.com.au)
  
