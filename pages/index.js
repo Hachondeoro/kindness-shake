@@ -164,8 +164,8 @@ const Home = ({ homes, socialmedias }) => {
 									<InstagramEmbed
 										url={item.post}
 										clientAccessToken="821751731773259|69972d556b438c02d3cd032878cfdbee"
-										maxWidth={450}
-										maxHeight={500}
+										maxwidth={450}
+										maxheight={500}
 										hideCaption={true}
 										containerTagName="div"
 										protocol=""
@@ -238,7 +238,7 @@ const Home = ({ homes, socialmedias }) => {
 					<iframe
 						src="https://gem.godaddy.com/signups/6b71de08659344cd997ed1d6dd0c50f3/iframe"
 						scrolling="no"
-						frameborder="0"
+						frameBorder="0"
 						height="412"
 						style={{ maxWidth: '400px', width: '100%' }}
 					></iframe>

@@ -13,7 +13,7 @@ const OurProjects = () => {
 					{Projects.map(item => (
 						<Parallax
 							animation={{ x: 0, opacity: 1, playScale: [-0.2, 0.8] }}
-							style={{ transform: 'translateX(-100px)', opacity: 0 }}
+							style={{ transform: 'translateX(-100px)', opacity: 1 }}
 						>
 							<Row align="middle" justify="center">
 								<Col
@@ -29,7 +29,7 @@ const OurProjects = () => {
 											width="100%"
 											height="100%"
 											alt="img"
-                                            className="mt-5"
+                                            className="mt-1"
 										/>
 									</div>
 								</Col>
@@ -41,7 +41,6 @@ const OurProjects = () => {
 									justify="center"
 								>
 									<div className={styles.titleAwards}>{item.title}</div>
-									<br></br>
 									<div className={styles.contentAwards}>{item.description}</div>
 									<br></br>
 								</Col>

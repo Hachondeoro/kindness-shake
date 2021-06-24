@@ -12,7 +12,7 @@
 	font-size: 32px;
 	margin-bottom: 16px;
 	text-align: center;
-	color: #ccc;
+	color: #6f6f6f;
 }
 
 .subtitle {
@@ -67,12 +67,13 @@
 }
 
 .titleAwards {
-	font-size: 32px;
+	font-size: 26px;
 	margin-bottom: 5px;
 	text-align: left;
-	color: #ccc;
+	color: #6f6f6f;
 	white-space: pre-wrap;
 	text-transform: uppercase;
+	font-weight: 550;
 }
 
 .discount {
@@ -141,7 +142,7 @@
 	font-size: 24px;
 	/* margin-bottom: 16px; */
 	text-align: center;
-	color: #ccc;
+	color: #6f6f6f;
 }
 
 @media only screen and (max-width: 600px) {

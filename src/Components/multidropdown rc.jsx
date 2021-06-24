@@ -23,8 +23,8 @@ const MultiDropdownNavbar = () => {
 		background: '#3E7678',
 		fontWeight: 'bold',
 		color: '#FFFFFF',
-		fontSize: '1.2em',
-		height: '3em'
+		fontSize: '1em',
+		height: '3.5em'
 	}
 	const MenuStyle = {
 		fontSize: '1em',
@@ -70,6 +70,11 @@ const MultiDropdownNavbar = () => {
 									Our Team
 								</Link>
 							</Menu.Item>
+							<Menu.Item key="projects" style={submenuStyle} >
+								<Link href="/ourprojects" passHref>
+									Our Projects
+								</Link>
+							</Menu.Item>
 							<Menu.Item key="supporters" style={submenuStyle}>
 								<Link href="/oursupporters" passHref>
 									Our Supporters
@@ -80,12 +85,12 @@ const MultiDropdownNavbar = () => {
 									Our Achievements
 								</Link>
 							</Menu.Item>
-							{/* <Menu.Item key="projects">
-								<Link href="/ourprojects" passHref>
-									Our projects
-								</Link>
-							</Menu.Item> */}
 						</SubMenu>
+						<Menu.Item key="festival" icon={<StarOutlined />}>
+							<Link href="/festival" passHref>
+								KS FESTIVAL
+							</Link>
+						</Menu.Item>
 						<Menu.Item key="socialmedia" icon={<InstagramOutlined />}>
 							<Link href="/socialmedia" passHref>
 								OUR SOCIAL MEDIA
@@ -156,6 +161,11 @@ const MultiDropdownNavbar = () => {
 								Our Team
 							</Link>
 						</Menu.Item>
+						<Menu.Item key="projects">
+							<Link href="/ourprojects" passHref>
+								Our Projects
+							</Link>
+						</Menu.Item>
 						<Menu.Item key="supporters">
 							<Link href="/oursupporters" passHref>
 								Our Supporters
@@ -166,12 +176,12 @@ const MultiDropdownNavbar = () => {
 								Our Achievements
 							</Link>
 						</Menu.Item>
-						{/* <Menu.Item key="projects">
-								<Link href="/ourprojects" passHref>
-									Our projects
-								</Link>
-							</Menu.Item> */}
 					</SubMenu>
+					<Menu.Item key="festival" icon={<StarOutlined style={MenuStyle} />}>
+						<Link href="/festival" passHref>
+							KS FESTIVAL
+						</Link>
+					</Menu.Item>
 					<Menu.Item
 						key="socialmedia"
 						icon={<InstagramOutlined style={MenuStyle} />}

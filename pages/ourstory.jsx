@@ -29,51 +29,50 @@ export async function getStaticProps() {
 }
 
 const OurStory = ({ aboutuses }) => {
-		return (
-			<>
-				<div className="home-page-wrapper">
-					<h1 className="text-center m-5">OUR STORY</h1>
-					<div className="teams3-wrapper">
-						{aboutuses.map(item => (
-							<Parallax
-								animation={{ x: 0, opacity: 1, playScale: [-0.2, 0.8] }}
-								style={{ transform: 'translateX(-100px)', opacity: 0 }}
-							>
-								<Row align="middle" justify="center">
-									<Col
-										xs={{ span: 24 }}
-										lg={{ span: 12 }}
-										className="m-auto"
-										align="middle"
-										justify="center"
-									>
-										<div className="m-5">
-											<img
-												src={item.image.url}
-												width="100%"
-												height="100%"
-												alt="img"
-											/>
-										</div>
-									</Col>
-									<Col
-										xs={{ span: 20 }}
-										lg={{ span: 8 }}
-										className="m-auto"
-										align="left"
-										justify="left"
-									>
-										<div className={styles.subtitleStory}>{item.description}</div>
-									</Col>
-									<br></br>
-								</Row>
-							</Parallax>
-						))}
-					</div>
+	return (
+		<>
+			<div className="home-page-wrapper">
+				<h1 className="text-center m-5">OUR STORY</h1>
+				<div className="teams3-wrapper">
+					{aboutuses.map(item => (
+						<Parallax
+							animation={{ x: 0, opacity: 1, playScale: [-0.2, 0.8] }}
+							style={{ transform: 'translateX(-100px)', opacity: 1 }}
+						>
+							<Row align="middle" justify="center">
+								<Col
+									xs={{ span: 24 }}
+									lg={{ span: 12 }}
+									className="m-auto"
+									align="middle"
+									justify="center"
+								>
+									<div className="m-5">
+										<img
+											src={item.image.url}
+											width="100%"
+											height="100%"
+											alt="img"
+										/>
+									</div>
+								</Col>
+								<Col
+									xs={{ span: 20 }}
+									lg={{ span: 8 }}
+									className="m-auto"
+									align="left"
+									justify="left"
+								>
+									<div className={styles.subtitleStory}>{item.description}</div>
+								</Col>
+								<br></br>
+							</Row>
+						</Parallax>
+					))}
 				</div>
-			</>
-		)
-	}
-
+			</div>
+		</>
+	)
+}
 
 export default OurStory

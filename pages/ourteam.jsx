@@ -22,13 +22,13 @@ const MYQUERY = `query MyQuery {
 
 export async function getStaticProps() {
 	const data = await request({
-	  query: MYQUERY,
-	});
+		query: MYQUERY
+	})
 	return {
-	  props: { data },
-	  revalidate: 10,
-	};
-  }
+		props: { data },
+		revalidate: 10
+	}
+}
 
 const Team = ({ data }) => {
 	return (
@@ -40,8 +40,8 @@ const Team = ({ data }) => {
 						{data.allTeammembers.map(item => (
 							<div className="markdown">
 								<Parallax
-									animation={{ x: 0, opacity: 1, playScale: [0, 0.8] }}
-									style={{ transform: 'translateX(-300px)', opacity: 0 }}
+									animation={{ x: 0, opacity: 1, playScale: [-0.2, 0.8] }}
+									style={{ transform: 'translateX(-100px)', opacity: 1 }}
 								>
 									<Col span={8}>
 										<div className="teams3-top-image">
@@ -54,13 +54,9 @@ const Team = ({ data }) => {
 										</div>
 
 										<div className="teams3-top-title">{item.name}</div>
-										<div className={styles.TeamDepartments}>
-											{item.position}
-										</div>
+										<div className={styles.TeamDepartments}>{item.role}</div>
 										<div className={styles.TeamEmails}>{item.email}</div>
-										<div className="teams3-top-content">
-											{item.description}
-										</div>
+										<div className="teams3-top-content">{item.description}</div>
 										<br></br>
 									</Col>
 								</Parallax>

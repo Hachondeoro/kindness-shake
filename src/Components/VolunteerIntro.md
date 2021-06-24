@@ -1,5 +1,6 @@
 &nbsp;  
 &nbsp;  
+
 # Volunteering Expression of Interest
 
 Volunteering with Kindness Shake is a great opportunity to be involved in the support of the local community and to share your experience and knowledge with the community through various projects, events and more. Volunteering involves hands-on approach, and you&#39;ll benefit by developing your interpersonal, communication and leadership skills.
@@ -53,4 +54,3 @@ Fill out the form below to register your expression of interest to become a Volu
 &nbsp;  
 If you have any questions related to volunteering with Kindness Shake,please contact us at
 [volunteers@kindness-shake.com.au](mailto:volunteers@kindness-shake.com.au)
- 

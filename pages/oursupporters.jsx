@@ -57,8 +57,8 @@ const OurSupporters = ({ supporters }) => {
 				<Row align="middle" justify="center">
 					{logos.map(item => (
 						<Parallax
-							animation={{ x: 0, opacity: 1, playScale: [-0.6, 0.8] }}
-							style={{ transform: 'translateX(-200px)', opacity: 0 }}
+							animation={{ x: 0, opacity: 1, playScale: [-0.2, 0.8] }}
+							style={{ transform: 'translateX(-100px)', opacity: 1 }}
 						>
 							<div className="m-2 mt-3">
 								<img src={item.url} width={item.widthMobile} alt="img" />
@@ -70,8 +70,8 @@ const OurSupporters = ({ supporters }) => {
 				<Row align="middle" justify="center">
 					{logos.map(item => (
 						<Parallax
-							animation={{ x: 0, opacity: 1, playScale: [-0.6, 0.8] }}
-							style={{ transform: 'translateX(-200px)', opacity: 0 }}
+							animation={{ x: 0, opacity: 1, playScale: [-0.2, 0.8] }}
+							style={{ transform: 'translateX(-100px)', opacity: 1 }}
 						>
 							<Col span={4}>
 								<div className="ml-5 mr-5 mu-2 md-2">

@@ -12,7 +12,7 @@ export const Projects = [
 		image: '/static/img/projects/MEET A LOCAL.png'
 	},
 	{
-		title: 'Skill Up 2 Scale Up\nEmployability Program',
+		title: 'SkillUp2ScaleUp\nEmployability Program',
 		description:
 			'Series of employability webinars and networking events by the #KindnessShake and sponsored by the Northern Territory Government.\n\nThroughout the series, we help students and recent graduates improve their work-ready skills, enhance their employability, build networks and answer all their questions (online and in person). At our events you will be welcomed into our community of driven students and graduates who partnered with different local businesses and organisations, all seeking to improve the employability skills and brighten the futures of all attendees. ',
 		image: '/static/img/projects/SkillUp_main Fb post.png'

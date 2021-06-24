@@ -39,7 +39,7 @@ const OurAwards = ({ awards }) => {
 					{awards.map(item => (
 						<Parallax
 							animation={{ x: 0, opacity: 1, playScale: [-0.2, 0.8] }}
-							style={{ transform: 'translateX(-200px)', opacity: 0 }}
+							style={{ transform: 'translateX(-100px)', opacity: 1 }}
 						>
 							<Row align="middle" justify="center">
 								<Col
