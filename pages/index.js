@@ -113,6 +113,28 @@ const Home = ({ homes, socialmedias }) => {
 					</Link>
 				</Button>
 			</Col>
+			<br></br>
+			<Row  justify="center">
+				<div className="festivalbanner">
+					<img
+						src="/static/img/festival/ks-cover.png"
+						width="100%"
+						height="100%"
+						alt="img"
+					/>
+				</div>
+			<Button
+					type="primary"
+					shape="round"
+					size="large"
+					ghost
+					style={{ borderColor: '#ccc' }}
+				>
+					<Link href="/festival" passHref>
+						CHECKOUT THE KS FESTIVAL!
+					</Link>
+				</Button>
+			</Row>
 			<div className="vision">
 				<Row justify="center">
 					<Col
