@@ -24,6 +24,3 @@ _The Kindness Festival is brought to you thanks to the support of the Northern T
 
 **Any enquires about the festival, please contact us at festival@kindness-shake.com.au**
 [festival@kindness-shake.com.au](mailto:festival@kindness-shake.com.au)
-
-***REGISTER HERE LINK**
-[https://www.eventbrite.com.au/e/123964590427](https://www.eventbrite.com.au/e/123964590427/)

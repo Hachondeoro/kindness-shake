@@ -2,7 +2,7 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import VolunteerIntro from '@Components/Festival.md'
 
-import { Row, Col } from 'antd'
+import { Row, Col, Button } from 'antd'
 import { Projects } from '@Components/data.js'
 import { Parallax } from 'rc-scroll-anim'
 import styles from '@Components/Titles.module.css'
@@ -27,6 +27,20 @@ const OurProjects = () => {
 						justify="center"
 					>
 						<ReactMarkdown source={`${VolunteerIntro}`} />
+						<Button
+							type="primary"
+							shape="round"
+							size="large"
+							ghost
+							style={{ borderColor: '#ccc' }}
+						>
+							<a
+								href="https://www.eventbrite.com.au/e/123964590427"
+								target="_blank"
+							>
+								REGISTER HERE
+							</a>
+						</Button>
 					</Col>
 				</Row>
 			</div>
