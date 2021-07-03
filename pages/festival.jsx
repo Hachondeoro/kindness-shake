@@ -38,7 +38,37 @@ const OurProjects = () => {
 								href="https://www.eventbrite.com.au/e/123964590427"
 								target="_blank"
 							>
-								REGISTER HERE
+								ATTEENDEES REGISTRATION
+							</a>
+						</Button>
+						<br></br>
+						<Button
+							type="primary"
+							shape="round"
+							size="large"
+							ghost
+							style={{ borderColor: '#ccc' }}
+						>
+							<a
+								href="https://forms.office.com/r/qMrKDu6fu1"
+								target="_blank"
+							>
+								STALL HOLDERS REGISTRATION
+							</a>
+						</Button>
+						<br></br>
+						<Button
+							type="primary"
+							shape="round"
+							size="large"
+							ghost
+							style={{ borderColor: '#ccc' }}
+						>
+							<a
+								href="https://forms.office.com/r/qMrKDu6fu1"
+								target="_blank"
+							>
+								PERFORMERS REGISTRATION
 							</a>
 						</Button>
 					</Col>

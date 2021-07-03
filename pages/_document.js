@@ -8,6 +8,12 @@ class MyDocument extends Document {
 			<Html lang="en-GB">
 				<Head>
 					<meta name="theme-color" content="#673ab7" />
+					<meta property="og:title" content="Kindness Shake" />
+					<meta property="og:description" content="You need a hand? We'll give you a #KindnessShake" />
+					<meta property="og:image" content="https://kindness-shake.com.au/static/img/banner/Web-banner-logo.png"/>
+					<meta property="og:url" content="https://kindness-shake.com.au/"/>
+					<meta property="og:type" content="website" />
+
 					<meta
 						name="Description"
 						content="You need a hand? We will give you a #KindnessShake!"

@@ -1,5 +1,11 @@
 export const Projects = [
 	{
+		title: 'Meals Of Kindness',
+		description:
+			'Due to unexpected lockdown in the greater Darwin regions, Kindness Shake with Red Cross has provided free meals for international students and temporary visa holders in need.\n\nMeals of Kindness is brought to you by Kindness Shake and the Australian Red Cross, Northern Territory Government and Charles Darwin University. ',
+		image: '/static/img/projects/mealsofkindness.png'
+	},
+	{
 		title: 'LingoToMingle',
 		description:
 			'LingoToMingle is a monthly event where all international students in the NT will be welcomed to practice English or any other language they would like to improve, such as Korean, Vietnamese, Mandarin, Spanish, Hindi, Nepali and more. ',
