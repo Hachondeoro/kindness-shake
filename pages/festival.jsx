@@ -42,20 +42,8 @@ const OurProjects = () => {
 							</a>
 						</Button>
 						<br></br>
-						<Button
-							type="primary"
-							shape="round"
-							size="large"
-							ghost
-							style={{ borderColor: '#ccc' }}
-						>
-							<a
-								href="https://forms.office.com/r/qMrKDu6fu1"
-								target="_blank"
-							>
-								STALL HOLDERS REGISTRATION
-							</a>
-						</Button>
+						<br></br>
+						<strong>Want to have a stall at the Kindness Festival?</strong>
 						<br></br>
 						<Button
 							type="primary"
@@ -64,10 +52,25 @@ const OurProjects = () => {
 							ghost
 							style={{ borderColor: '#ccc' }}
 						>
-							<a
-								href="https://forms.office.com/r/qMrKDu6fu1"
-								target="_blank"
-							>
+							<a href="https://forms.office.com/r/qMrKDu6fu1" target="_blank">
+								STALL HOLDERS REGISTRATION
+							</a>
+						</Button>
+						<br></br>
+						<br></br>
+						<strong>
+							Want to perform or know someone who <br></br>should perform at the Kindness
+							Festival?
+						</strong>
+						<br></br>
+						<Button
+							type="primary"
+							shape="round"
+							size="large"
+							ghost
+							style={{ borderColor: '#ccc' }}
+						>
+							<a href="https://forms.office.com/r/ATxnQz3AHF" target="_blank">
 								PERFORMERS REGISTRATION
 							</a>
 						</Button>
