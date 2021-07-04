@@ -38,7 +38,7 @@ const OurProjects = () => {
 								href="https://www.eventbrite.com.au/e/123964590427"
 								target="_blank"
 							>
-								ATTEENDEES REGISTRATION
+								ATTENDEES REGISTRATION
 							</a>
 						</Button>
 						<br></br>
