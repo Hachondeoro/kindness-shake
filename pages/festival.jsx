@@ -68,10 +68,10 @@ const OurProjects = () => {
 							shape="round"
 							size="large"
 							ghost
-							style={{ borderColor: '#ccc' }}
+							style={{ borderColor: '#ccc', height:"auto" }}
 						>
 							<a href="https://forms.office.com/r/ATxnQz3AHF" target="_blank">
-								PERFORMERS REGISTRATION
+								ARTS, CULTURE & PERFORMANCES<br></br>EXPRESSIONS OF INTEREST
 							</a>
 						</Button>
 					</Col>
