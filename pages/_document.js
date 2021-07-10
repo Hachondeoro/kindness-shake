@@ -6,24 +6,17 @@ class MyDocument extends Document {
 		return (
 			<Html lang="en-GB">
 				<Head>
-					<meta name="theme-color" content="#673ab7" />
+					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          			<meta charSet="UTF-8"/>
+					<title>Kindness Shake</title>
 					<meta property="og:title" content="Kindness Shake" />
 					<meta property="og:description" content="You need a hand? We'll give you a #KindnessShake" />
+					<meta name="description" content="You need a hand? We will give you a #KindnessShake!"/>
 					<meta property="og:image" content="https://kindness-shake.com.au/webPreview.jpg"/>
 					<link property="image" href="https://kindness-shake.com.au/webPreview.jpg" />
-					{/* <meta property="og:url" content="https://kindness-shake.com.au/"/> */}
 					<meta property="og:type" content="website" />
-
-					<meta
-						name="Description"
-						content="You need a hand? We will give you a #KindnessShake!"
-					/>
-					<link rel="manifest" href="static/manifest.json" />
 					<link rel="icon" href="/favicon.ico" />
-					<link
-						rel="stylesheet"
-						href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-					/>
+					<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
 				</Head>
