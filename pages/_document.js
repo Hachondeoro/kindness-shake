@@ -6,7 +6,6 @@ class MyDocument extends Document {
 		return (
 			<Html lang="en-GB">
 				<Head>
-					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
           			<meta charSet="UTF-8"/>
 					<title>Kindness Shake</title>
 					<meta property="og:title" content="Kindness Shake" />

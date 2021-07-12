@@ -70,7 +70,7 @@ const MultiDropdownNavbar = () => {
 									Our Team
 								</Link>
 							</Menu.Item>
-							<Menu.Item key="projects" style={submenuStyle} >
+							<Menu.Item key="projects" style={submenuStyle}>
 								<Link href="/ourprojects" passHref>
 									Our Projects
 								</Link>
@@ -86,11 +86,23 @@ const MultiDropdownNavbar = () => {
 								</Link>
 							</Menu.Item>
 						</SubMenu>
-						<Menu.Item key="festival" icon={<StarOutlined />}>
-							<Link href="/festival" passHref>
-								KS FESTIVAL
-							</Link>
-						</Menu.Item>
+						<SubMenu key="festival" icon={<StarOutlined />} title="KS FESTIVAL">
+							<Menu.Item key="festivalpage" style={submenuStyle}>
+								<Link href="/festival" passHref>
+									Festival
+								</Link>
+							</Menu.Item>
+							<Menu.Item key="sponsorship" style={submenuStyle}>
+								<Link href="/festival/sponsorship" passHref>
+									Sponsorship
+								</Link>
+							</Menu.Item>
+							<Menu.Item key="volunteerfest" style={submenuStyle}>
+								<Link href="/festival/volunteering" passHref>
+									Volunteering
+								</Link>
+							</Menu.Item>
+						</SubMenu>
 						<Menu.Item key="socialmedia" icon={<InstagramOutlined />}>
 							<Link href="/socialmedia" passHref>
 								OUR SOCIAL MEDIA
@@ -177,11 +189,27 @@ const MultiDropdownNavbar = () => {
 							</Link>
 						</Menu.Item>
 					</SubMenu>
-					<Menu.Item key="festival" icon={<StarOutlined style={MenuStyle} />}>
-						<Link href="/festival" passHref>
-							KS FESTIVAL
-						</Link>
-					</Menu.Item>
+					<SubMenu
+						key="festival"
+						icon={<StarOutlined style={MenuStyle} />}
+						title="KS FESTIVAL"
+					>
+						<Menu.Item key="story">
+							<Link href="/festival" passHref>
+								Festival
+							</Link>
+						</Menu.Item>
+						<Menu.Item key="team">
+							<Link href="/festival/sponsorship" passHref>
+								Sponsorship
+							</Link>
+						</Menu.Item>
+						<Menu.Item key="projects">
+							<Link href="/festival/volunteering" passHref>
+								Volunteering
+							</Link>
+						</Menu.Item>
+					</SubMenu>
 					<Menu.Item
 						key="socialmedia"
 						icon={<InstagramOutlined style={MenuStyle} />}

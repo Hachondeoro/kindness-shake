@@ -30,6 +30,14 @@ module.exports = withOffline({
 						}
 					}
 				]
+			},
+			{
+				test: /\.(pdf)$/,
+				use: [
+					{
+						loader: 'file-loader',
+					}
+				]
 			}
 		)
 

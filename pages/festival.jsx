@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import VolunteerIntro from '@Components/Festival.md'
 
@@ -6,8 +6,34 @@ import { Row, Col, Button } from 'antd'
 import { Projects } from '@Components/data.js'
 import { Parallax } from 'rc-scroll-anim'
 import styles from '@Components/Titles.module.css'
+import { Document, Page, pdfjs } from 'react-pdf'
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
+import useWindowSize from 'react-use/lib/useWindowSize'
+
+// import filePDF from 'public/festivalsponsorship_Optimized.pdf'
 
 const OurProjects = () => {
+	const [numPages, setNumPages] = useState(null)
+	const [pageNumber, setPageNumber] = useState(1)
+	const { width, height } = useWindowSize()
+
+	function onDocumentLoadSuccess({ numPages }) {
+		setNumPages(numPages)
+		setPageNumber(1)
+	}
+
+	function changePage(offset) {
+		setPageNumber(prevPageNumber => prevPageNumber + offset)
+	}
+
+	function previousPage() {
+		changePage(-1)
+	}
+
+	function nextPage() {
+		changePage(1)
+	}
+
 	return (
 		<>
 			<div className="festivalbanner">
@@ -59,8 +85,8 @@ const OurProjects = () => {
 						<br></br>
 						<br></br>
 						<strong>
-							Want to perform or know someone who <br></br>should perform at the Kindness
-							Festival?
+							Want to perform or know someone who <br></br>should perform at the
+							Kindness Festival?
 						</strong>
 						<br></br>
 						<Button
@@ -68,7 +94,7 @@ const OurProjects = () => {
 							shape="round"
 							size="large"
 							ghost
-							style={{ borderColor: '#ccc', height:"auto" }}
+							style={{ borderColor: '#ccc', height: 'auto' }}
 						>
 							<a href="https://forms.office.com/r/ATxnQz3AHF" target="_blank">
 								ARTS, CULTURE & PERFORMANCES<br></br>EXPRESSIONS OF INTEREST
