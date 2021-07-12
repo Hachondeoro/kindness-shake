@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import VolunteerIntro from '@Components/Festival.md'
 
@@ -8,12 +8,17 @@ import { Parallax } from 'rc-scroll-anim'
 import styles from '@Components/Titles.module.css'
 import { Document, Page, pdfjs } from 'react-pdf'
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
-import useWindowSize from 'react-use/lib/useWindowSize'
+import { isMobile } from 'react-device-detect'
 
 const OurProjects = () => {
 	const [numPages, setNumPages] = useState(null)
 	const [pageNumber, setPageNumber] = useState(1)
-	const { width, height } = useWindowSize()
+	
+	const [phone, setPhone] = useState(false)
+
+	useEffect(() => {
+		setPhone(isMobile)
+	}, [])
 
 	function onDocumentLoadSuccess({ numPages }) {
 		setNumPages(numPages)
@@ -67,7 +72,7 @@ const OurProjects = () => {
 						file="/festivalsponsorship_Optimized.pdf"
 						onLoadSuccess={onDocumentLoadSuccess}
 					>
-						{width < 500 ? (
+						{phone? (
 							<Page pageNumber={pageNumber} width="360" />
 						) : (
 							<Page pageNumber={pageNumber} width="600" />
