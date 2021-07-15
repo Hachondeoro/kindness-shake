@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import VolunteerIntro from '@Components/Festival.md'
-
 import { Row, Col, Button } from 'antd'
 import { Projects } from '@Components/data.js'
 import { Parallax } from 'rc-scroll-anim'

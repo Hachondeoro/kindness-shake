@@ -537,7 +537,7 @@ h6 {
   }
 }
 .teams3-wrapper {
-  min-height: 446px;
+  /* min-height: 446px; */
   overflow: hidden;
 }
 .teams3-wrapper .teams3 {
@@ -573,7 +573,8 @@ h6 {
 .teams3-wrapper .teams3-top-job,
 .teams3-wrapper .teams3-top-content {
   width: 350px;
-  margin: 30px;
+  margin-left: 30px;
+  margin-top: 5px;
   line-height: 1.5;
 }
 .teams3-wrapper .teams3-top-image {
@@ -630,7 +631,7 @@ h6 {
 }
 @media screen and (max-width: 767px) {
   .teams3-wrapper {
-    min-height: 1440px;
+    /* min-height: 1440px; */
   }
   .teams3-wrapper .teams3.home-page {
     padding-bottom: 0;
