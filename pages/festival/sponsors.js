@@ -40,17 +40,17 @@ const Sponsors = ({ data }) => {
 				</h1>
 				<div className="teams3-wrapper">
 					<div className="markdown">
-						{data.allSponsors
-							.filter(d => d.class === 'Gold Sponsor')
-							.map(item => (
-								<Col
-									xs={{ span: 12 }}
-									lg={{ span: 8 }}
-									className="m-auto"
-									align="middle"
-									justify="center"
-								>
-									<Row align="middle" justify="center">
+						<Row align="middle" justify="center">
+							{data.allSponsors
+								.filter(d => d.class === 'Gold Sponsor')
+								.map(item => (
+									<Col
+										xs={{ span: 12 }}
+										lg={{ span: 8 }}
+										// className="m-auto"
+										align="middle"
+										justify="center"
+									>
 										<a
 											href={item.hyperlink}
 											rel="noopener noreferrer"
@@ -59,37 +59,34 @@ const Sponsors = ({ data }) => {
 											<img
 												src={item.image.url}
 												// width="100%"
-												height="180em"
+												width="90%"
 												style={{ margin: 'auto' }}
 												alt="img"
 											/>
 										</a>
 
-										<div className="teams3-top-title text-center">
+										<div className="font-weight-bold">
 											{item.title}
 										</div>
-										<div className="teams3-top-content text-center">
-											{item.description}
-										</div>
-									</Row>
-								</Col>
-							))}
+									</Col>
+								))}
+						</Row>
 					</div>
 				</div>
-				<h1 className="text-center m-5">Festival Partners</h1>
+				<h1 className="text-center m-5">Media Partners</h1>
 				<div className="teams3-wrapper">
 					<div className="markdown">
-						{data.allSponsors
-							.filter(d => d.class === 'Festival Partner')
-							.map(item => (
-								<Col
-									xs={{ span: 12 }}
-									lg={{ span: 8 }}
-									className="m-auto"
-									align="middle"
-									justify="center"
-								>
-									<Row align="middle" justify="center">
+						<Row align="middle" justify="center">
+							{data.allSponsors
+								.filter(d => d.class === 'Media Partner')
+								.map(item => (
+									<Col
+										xs={{ span: 12 }}
+										lg={{ span: 8 }}
+										// className="m-auto"
+										align="middle"
+										justify="center"
+									>
 										<a
 											href={item.hyperlink}
 											rel="noopener noreferrer"
@@ -98,21 +95,18 @@ const Sponsors = ({ data }) => {
 											<img
 												src={item.image.url}
 												// width="100%"
-												height="180em"
+												width="90%"
 												style={{ margin: 'auto' }}
 												alt="img"
 											/>
 										</a>
 
-										<div className="teams3-top-title text-center">
+										<div className="font-weight-bold">
 											{item.title}
 										</div>
-										<div className="teams3-top-content text-center">
-											{item.description}
-										</div>
-									</Row>
-								</Col>
-							))}
+									</Col>
+								))}
+						</Row>
 					</div>
 				</div>
 				<br></br>
