@@ -46,7 +46,7 @@ const Sponsors = ({ data }) => {
 				<h1 className="text-center m-5">OUR SPONSORS</h1>
 				<Col
 					xs={{ span: 24 }}
-					lg={{ span: 14 }}
+					lg={{ span: 16 }}
 					className="m-auto"
 					align="middle"
 					justify="center"
@@ -55,7 +55,7 @@ const Sponsors = ({ data }) => {
 						return (
 							<>
 								<h1
-									className="text-center m-5"
+									className="text-center mt-4 mb-2 mr-2 ml-2"
 									style={{ color: colorSponsors[index] }}
 								>
 									{sponsorType}s
