@@ -33,12 +33,13 @@ export async function getStaticProps() {
 const Sponsors = ({ data }) => {
 	// const sponsors = [...new Set(data.allSponsors.map(obj => obj.class))]
 	const sponsors = [
+		'Event Partner',
 		'Platinum Sponsor',
 		'Gold Sponsor',
 		'Silver Sponsor',
 		'Media Partner'
 	]
-	const colorSponsors = ['#CACED8', '#d4af37', '#C0C0C0', '#000']
+	const colorSponsors = ['#CACED8', '#CACED8', '#d4af37', '#C0C0C0', '#000']
 	// console.log(sponsors)
 	return (
 		<>
@@ -60,7 +61,6 @@ const Sponsors = ({ data }) => {
 								>
 									{sponsorType}s
 								</h1>
-								{console.log(colorSponsors[index])}
 								<div className="teams3-wrapper">
 									<div className="markdown">
 										<Row align="middle" justify="center">
@@ -85,7 +85,7 @@ const Sponsors = ({ data }) => {
 																alt="img"
 															/>
 														</a>
-														<div className="font-weight-bold">{item.title}</div>
+														{/* <div className="font-weight-bold">{item.title}</div> */}
 													</Col>
 												))}
 										</Row>

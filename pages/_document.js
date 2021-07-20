@@ -7,7 +7,7 @@ class MyDocument extends Document {
 			<Html lang="en-GB">
 				<Head>
           			<meta charSet="UTF-8"/>
-					<title>Kindness Shake</title>
+					{/* <title>Kindness Shake</title> */}
 					<meta property="og:title" content="Kindness Shake" />
 					<meta property="og:description" content="You need a hand? We'll give you a #KindnessShake" />
 					<meta name="description" content="You need a hand? We will give you a #KindnessShake!"/>
