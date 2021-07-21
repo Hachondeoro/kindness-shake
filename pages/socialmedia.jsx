@@ -3,7 +3,7 @@ import InstagramEmbed from 'react-instagram-embed'
 import { Parallax } from 'rc-scroll-anim'
 import { Row, Col } from 'antd'
 import { Modal } from 'antd'
-import { GraphQLClient } from 'graphql-request'
+import { request } from '@Components/DatoCMS/datocms'
 
 import Icon, {
 	FacebookFilled,
@@ -50,29 +50,25 @@ const VolunteerSVG = () => (
 	</svg>
 )
 
+const MYQUERY = `query MyQuery {
+	allInstagrams {
+		url
+	}
+}
+`
 
 export async function getStaticProps() {
-	const graphcms = new GraphQLClient(
-		'https://api-ap-northeast-1.graphcms.com/v2/ckmmudchrs3z701z29a833h9s/master'
-	)
-	const { socialmedias } = await graphcms.request(
-		`
-		{ 
-			socialmedias {
-				title
-				jsoncontent
-			  }
-		}
-	  `
-	)
+	const data = await request({
+		query: MYQUERY
+	})
 	return {
-		props: {
-			socialmedias
-		}
+		props: { data },
+		revalidate: 10
 	}
 }
 
-const SocialMedia = ({ socialmedias }) => {
+
+const SocialMedia = ({ data }) => {
 	const [isModalVisible, setIsModalVisible] = useState(false)
 	const showModal = () => {
 		setIsModalVisible(true)
@@ -164,7 +160,7 @@ const SocialMedia = ({ socialmedias }) => {
 				</a>
 			</Row>
 			<Row align="top" justify="center">
-				{socialmedias[0].jsoncontent.map(item => (
+				{data.allInstagrams.map(item => (
 					<Parallax
 						animation={[
 							{ x: 0, opacity: 1, playScale: [0, 0.8] },
@@ -180,7 +176,7 @@ const SocialMedia = ({ socialmedias }) => {
 						<Col span={8}>
 							<div className="m-5">
 								<InstagramEmbed
-									url={item.post}
+									url={item.url}
 									clientAccessToken="821751731773259|69972d556b438c02d3cd032878cfdbee"
 									maxWidth={450}
 									hideCaption={false}

@@ -7,38 +7,26 @@ import InstagramEmbed from 'react-instagram-embed'
 import { Parallax } from 'rc-scroll-anim'
 import { Row, Col } from 'antd'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Feature60DataSource } from '@Components/data.source'
 import styles from '@Components/Titles.module.css'
-import { GraphQLClient } from 'graphql-request'
+import { request } from '@Components/DatoCMS/datocms'
 
-export async function getStaticProps() {
-	const graphcms = new GraphQLClient(
-		'https://api-ap-northeast-1.graphcms.com/v2/ckmmudchrs3z701z29a833h9s/master'
-	)
-	const { homes, socialmedias } = await graphcms.request(
-		`
-		{ 
-			homes {
-				title
-				content
-			}
-			socialmedias {
-				title
-				jsoncontent
-			}
-		}
-	  `
-	)
-	return {
-		props: {
-			homes,
-			socialmedias
-		}
+const MYQUERY = `query MyQuery {
+	allInstagrams {
+		url
 	}
 }
-
-const Home = ({ homes, socialmedias }) => {
+`
+export async function getStaticProps() {
+	const data = await request({
+		query: MYQUERY
+	})
+	return {
+		props: { data },
+		revalidate: 10
+	}
+}
+const Home = ({ data }) => {
 	let imageRef = useRef(null)
 	let textRef = useRef(null)
 
@@ -99,7 +87,14 @@ const Home = ({ homes, socialmedias }) => {
 				justify="center"
 			>
 				<div className={styles.contentHome}>
-					{homes.find(p => p.title == 'INTRO').content}
+					The Kindness Shake (KS) is a community and student-led initiative,
+					launched during the outbreak of the COVID-19 pandemic. It supports and
+					focuses on international students, migrants, refugees, and temporary
+					visa holders who are experiencing financial difficulties. This
+					partnership between international student volunteers, education and
+					training providers, local businesses, multi-cultural groups, and
+					Governments, aims to ensure that no one in the NT affected by the
+					crisis goes to bed without a meal and a kind and genuine smile. 
 				</div>
 				<Button
 					type="primary"
@@ -114,7 +109,7 @@ const Home = ({ homes, socialmedias }) => {
 				</Button>
 			</Col>
 			<br></br>
-			<Row  justify="center">
+			<Row justify="center">
 				<div className="festivalbanner">
 					<img
 						src="/static/img/festival/ks-cover.png"
@@ -123,7 +118,7 @@ const Home = ({ homes, socialmedias }) => {
 						alt="img"
 					/>
 				</div>
-			<Button
+				<Button
 					type="primary"
 					shape="round"
 					size="large"
@@ -147,7 +142,11 @@ const Home = ({ homes, socialmedias }) => {
 						<br></br>
 						<h1 className={styles.titleHome}>OUR VISION</h1>
 						<div className={styles.contentHome}>
-							{homes.find(p => p.title == 'OUR VISION').content}
+							Enhancing the wellbeing of international students in the Northern
+							Territory through social and cultural engagement, humanitarian
+							services and employability improvement while showcasing the
+							importance of multiculturalism and international communities in
+							Australia.
 						</div>
 						<br></br>
 					</Col>
@@ -161,7 +160,11 @@ const Home = ({ homes, socialmedias }) => {
 						<br></br>
 						<h1 className={styles.titleHome}>OUR MISSION</h1>
 						<div className={styles.contentHome}>
-							{homes.find(p => p.title == 'OUR MISSION').content}
+							Our mission is to provide any form of support, not limited to free
+							meals and employability, but also social engagement and
+							welfare/well-being improvement of international students and
+							migrants in the Northern Territory. This will be achieved through
+							our current initiatives and future goals.
 						</div>
 						<br></br>
 					</Col>
@@ -175,7 +178,7 @@ const Home = ({ homes, socialmedias }) => {
 			<div className="home-page-wrapper">
 				<h1 className="text-center m-3">Social Media</h1>
 				<Row align="top" justify="center">
-					{socialmedias[0].jsoncontent.slice(0, 3).map(item => (
+					{data.allInstagrams.slice(0, 3).map(item => (
 						<Parallax
 							animation={{ x: 0, opacity: 1, playScale: [0, 0.8] }}
 							style={{ transform: 'translateX(-100px)', opacity: 0 }}
@@ -184,7 +187,7 @@ const Home = ({ homes, socialmedias }) => {
 							<Col span={8}>
 								<div className="m-2">
 									<InstagramEmbed
-										url={item.post}
+										url={item.url}
 										clientAccessToken="821751731773259|69972d556b438c02d3cd032878cfdbee"
 										maxwidth={450}
 										maxheight={500}
