@@ -22,9 +22,8 @@ export async function getStaticProps() {
 	  `
 	)
 	return {
-		props: {
-			aboutuses
-		}
+		props: {aboutuses},
+		revalidate: 10
 	}
 }
 
