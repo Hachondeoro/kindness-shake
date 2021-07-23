@@ -1,38 +1,27 @@
 import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
-import VolunteerIntro from '@Components/Festival.md'
 import { Row, Col, Button } from 'antd'
-import { Projects } from '@Components/data.js'
-import { Parallax } from 'rc-scroll-anim'
-import styles from '@Components/Titles.module.css'
-import { Document, Page, pdfjs } from 'react-pdf'
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
-import useWindowSize from 'react-use/lib/useWindowSize'
+import { request } from '@Components/DatoCMS/datocms'
 
 // import filePDF from 'public/festivalsponsorship_Optimized.pdf'
+const MYQUERY = `query MyQuery {
+	allFestivals {
+		content(markdown: false)
+	  }
+}
+`
 
-const OurProjects = () => {
-	const [numPages, setNumPages] = useState(null)
-	const [pageNumber, setPageNumber] = useState(1)
-	const { width, height } = useWindowSize()
-
-	function onDocumentLoadSuccess({ numPages }) {
-		setNumPages(numPages)
-		setPageNumber(1)
+export async function getStaticProps() {
+	const data = await request({
+		query: MYQUERY
+	})
+	return {
+		props: { data },
+		revalidate: 10
 	}
+}
 
-	function changePage(offset) {
-		setPageNumber(prevPageNumber => prevPageNumber + offset)
-	}
-
-	function previousPage() {
-		changePage(-1)
-	}
-
-	function nextPage() {
-		changePage(1)
-	}
-
+const OurProjects = ({ data }) => {
 	return (
 		<>
 			<div className="festivalbanner">
@@ -51,7 +40,8 @@ const OurProjects = () => {
 						align="middle"
 						justify="center"
 					>
-						<ReactMarkdown source={`${VolunteerIntro}`} />
+						<ReactMarkdown source={data.allFestivals[0].content} />
+						{/* <ReactMarkdown source={`${VolunteerIntro}`} /> */}
 						<Button
 							type="primary"
 							shape="round"
