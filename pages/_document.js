@@ -8,6 +8,7 @@ class MyDocument extends Document {
 				<Head>
           			<meta charSet="UTF-8"/>
 					{/* <title>Kindness Shake</title> */}
+					<meta name="google-site-verification" content="Bv9iyFbXb2x7cCU2h7S2kWSkNCkRw4RT_2KtVjwrM1w" />
 					<meta property="og:title" content="Kindness Shake" />
 					<meta property="og:description" content="You need a hand? We'll give you a #KindnessShake" />
 					<meta name="description" content="You need a hand? We will give you a #KindnessShake!"/>

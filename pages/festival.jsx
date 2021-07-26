@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Row, Col, Button } from 'antd'
 import { request } from '@Components/DatoCMS/datocms'
+import ReactPlayer from 'react-player'
 
 // import filePDF from 'public/festivalsponsorship_Optimized.pdf'
 const MYQUERY = `query MyQuery {
@@ -90,6 +91,18 @@ const OurProjects = ({ data }) => {
 							</a>
 						</Button>
 					</Col>
+				</Row>
+			</div>
+			<div className="my-3">
+				<Row align="middle" justify="center">
+					<ReactPlayer
+						url="https://www.youtube.com/embed/pyV1Z_Hfk4M"
+						config={{
+							youtube: {
+								playerVars: { modestbranding: 1, showinfo: 0 }
+							}
+						}}
+					/>
 				</Row>
 			</div>
 			<div className="markdown">
