@@ -4,6 +4,7 @@ import Head from 'next/head'
 import App from 'next/app'
 import MultiDropdownNavbar from '@Components/multidropdown rc.jsx'
 import Footer from '@Components/Footer.jsx'
+import TagManager from 'react-gtm-module';
 
 import 'react-tabs/style/react-tabs.css'
 import '@Static/css/main.scss'
@@ -13,6 +14,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import '@Static/css/less/antMotionStyle.css'
 import '@Static/css/custom.scss'
 
+const tagManagerArgs = {
+	gtmId: "GTM-N6Z6GCZ"
+  }
+
+
 export default class MyApp extends App {
 	
 	componentDidMount() {
@@ -20,6 +26,7 @@ export default class MyApp extends App {
 			const axe = require('react-axe')
 			axe(React, ReactDOM, 1000)
 		}
+		TagManager.initialize(tagManagerArgs);
 	}
 
 	render() {
@@ -41,3 +48,4 @@ export default class MyApp extends App {
 		)
 	}
 }
+
