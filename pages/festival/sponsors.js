@@ -8,7 +8,7 @@ import styles from '@Components/Titles.module.css'
 import { request } from '@Components/DatoCMS/datocms'
 
 const MYQUERY = `query MyQuery {
-	allSponsors {
+	allSponsors (first:30) {
 		class
 		title
 		description
