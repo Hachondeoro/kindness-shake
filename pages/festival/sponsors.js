@@ -50,9 +50,9 @@ const Sponsors = ({ data }) => {
 									{sponsorType}s
 								</h1>
 								<div className="teams3-wrapper">
-									<div className="markdown">
+									<div >
 										<Row align="middle" justify="center">
-											{data.allSponsors
+											{data.allFestivalSponsors
 												.filter(d => d.class === sponsorType)
 												.map(item => (
 													<Col

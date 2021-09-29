@@ -92,11 +92,6 @@ const MultiDropdownNavbar = () => {
 									Festival
 								</Link>
 							</Menu.Item>
-							<Menu.Item key="sponsorship" style={submenuStyle}>
-								<Link href="/festival/sponsorship" passHref>
-									Sponsorship
-								</Link>
-							</Menu.Item>
 							<Menu.Item key="volunteerfest" style={submenuStyle}>
 								<Link href="/festival/volunteering" passHref>
 									Volunteering
@@ -202,11 +197,6 @@ const MultiDropdownNavbar = () => {
 						<Menu.Item key="story">
 							<Link href="/festival" passHref>
 								Festival
-							</Link>
-						</Menu.Item>
-						<Menu.Item key="team">
-							<Link href="/festival/sponsorship" passHref>
-								Sponsorship
 							</Link>
 						</Menu.Item>
 						<Menu.Item key="projects">

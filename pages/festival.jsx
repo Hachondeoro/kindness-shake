@@ -4,11 +4,10 @@ import { Row, Col, Button } from 'antd'
 import { request } from '@Components/DatoCMS/datocms'
 import ReactPlayer from 'react-player'
 
-// import filePDF from 'public/festivalsponsorship_Optimized.pdf'
 const MYQUERY = `query MyQuery {
-	allFestivalContents {
-		content(markdown: false)
-	  }
+	festivalContent {
+    content
+  }
 }
 `
 
@@ -41,7 +40,7 @@ const OurProjects = ({ data }) => {
 						align="middle"
 						justify="center"
 					>
-						<ReactMarkdown source={data.allFestivals[0].content} />
+						<ReactMarkdown source={data.festivalContent.content} />
 						{/* <ReactMarkdown source={`${VolunteerIntro}`} /> */}
 						<Button
 							type="primary"
@@ -105,9 +104,9 @@ const OurProjects = ({ data }) => {
 					/>
 				</Row>
 			</div>
-			<div className="markdown">
+			<div>
 				<Row align="middle" justify="center">
-					<h1>Proudly sponsored by</h1>
+					<h2>Proudly sponsored by</h2>
 				</Row>
 				<Row align="middle" justify="center">
 					<br></br>

@@ -31,8 +31,10 @@
 		text-align: left;
 		color: #6f6f6f;
 	}
-	img {
-		width: 2em;
+	&.membershipbenefits {
+		img {
+			width: 2em;
+		}
 	}
 }
 
@@ -105,4 +107,3 @@
 		height: 60vh;
 	}
 }
-

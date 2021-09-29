@@ -6,11 +6,7 @@ import { Row, Col, Button } from 'antd'
 import { Projects } from '@Components/data.js'
 import { Parallax } from 'rc-scroll-anim'
 import styles from '@Components/Titles.module.css'
-import { Document, Page, pdfjs } from 'react-pdf'
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 import useWindowSize from 'react-use/lib/useWindowSize'
-
-// import filePDF from 'public/festivalsponsorship_Optimized.pdf'
 
 const OurProjects = () => {
 	const [numPages, setNumPages] = useState(null)
