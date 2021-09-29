@@ -39,7 +39,7 @@ const MultiDropdownNavbar = () => {
 	}
 	const submenuStyle = {
 		fontWeight: 'normal',
-		color: '#FFFFFF'
+		color: '#FFFFFF',
 	}
 
 	return (

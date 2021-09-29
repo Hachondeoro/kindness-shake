@@ -20,6 +20,7 @@
 		font-size: 14px;
 		color: #6f6f6f;
 		text-align: left;
+		// color:#00959d
 		// white-space: pre-wrap;
 	}
 	h3 {
@@ -30,6 +31,9 @@
 		text-align: left;
 		color: #6f6f6f;
 	}
+	img {
+		width: 2em;
+	}
 }
 
 .newsletter {
@@ -39,7 +43,7 @@
 
 @media only screen and (max-width: 600px) {
 	.bannerHome {
-		background-image: url('/static/img/banner/Web-banner.png');
+		background-image: url("/static/img/banner/Web-banner.png");
 		background-attachment: fixed;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -74,11 +78,14 @@
 		width: 80%;
 		margin: auto;
 	}
+	.socialbox {
+		height: 60vh;
+	}
 }
 
 @media only screen and (min-width: 601px) {
 	.bannerHome {
-		background-image: url('/static/img/banner/Web-banner.png');
+		background-image: url("/static/img/banner/Web-banner.png");
 		// background-attachment: fixed;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -94,4 +101,8 @@
 		width: 250px;
 		margin-bottom: 20px;
 	}
+	.socialbox {
+		height: 60vh;
+	}
 }
+

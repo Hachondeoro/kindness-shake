@@ -1,7 +1,7 @@
 /* 详细页图片或框框的样式;
 */
 #multidropdown {
-  background-color: #0d1a26;
+  background-color: #0084ff;
   display: flex;
   justify-content: center;
 }
@@ -11,7 +11,7 @@
 .footer {
   font-size: 14px;
   color: #919191;
-  background-color: #001529;
+  background-color: #4799e6;
 }
 .footer h1 {
   color: #919191;

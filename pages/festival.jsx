@@ -6,7 +6,7 @@ import ReactPlayer from 'react-player'
 
 // import filePDF from 'public/festivalsponsorship_Optimized.pdf'
 const MYQUERY = `query MyQuery {
-	allFestivals {
+	allFestivalContents {
 		content(markdown: false)
 	  }
 }
