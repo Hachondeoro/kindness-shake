@@ -1,10 +1,12 @@
 import { HomeOutlined, IdcardOutlined, UserOutlined } from "@ant-design/icons";
 import { request } from "@Components/DatoCMS/datocms";
-import { FadeInImageGrid } from "@Components/gsap/gsapComponents";
+import { fadeinImages } from "@Components/gsap/gsapComponents";
 import styles from "@Components/Titles.module.css";
 import { Button, Col, Row } from "antd";
+// import { ScrollTrigger } from "gsap/dist/ScrollTrigger"; // pure gsap
 import React, { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
+import { Tween, ScrollTrigger} from "react-gsap";
 import ReactMarkdown from "react-markdown";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
@@ -59,6 +61,12 @@ const Membership = ({ data }) => {
 		setPhone(isMobile);
 	}, []);
 
+	// useEffect(() => {
+	// 	fadeinImages(".box");
+	// 	ScrollTrigger.refresh(true);
+	// 	// ScrollTrigger.getAll().forEach(t => t.kill());
+	// }, []);
+
 	return (
 		<div style={navmenu}>
 			<Tabs selectedIndex={tabIndex} onSelect={index => setTabIndex(index)}>
@@ -87,7 +95,13 @@ const Membership = ({ data }) => {
 								</div>
 								<br></br>
 								<Row align="middle" justify="center">
-									<Col xs={{ span: 20 }} sm={{ span: 16 }} lg={{ span: 8 }} className="m-2" align="middle" justify="center">
+									<Col
+										xs={{ span: 20 }}
+										sm={{ span: 16 }}
+										lg={{ span: 8 }}
+										className="m-2"
+										align="middle"
+										justify="center">
 										<img
 											src="/static/img/front-card.jpeg"
 											alt="frontcard"
@@ -96,7 +110,13 @@ const Membership = ({ data }) => {
 											className="my-2"
 										/>
 									</Col>
-									<Col xs={{ span: 20 }} sm={{ span: 16 }} lg={{ span: 8 }} className="m-2" align="middle" justify="center">
+									<Col
+										xs={{ span: 20 }}
+										sm={{ span: 16 }}
+										lg={{ span: 8 }}
+										className="m-2"
+										align="middle"
+										justify="center">
 										<img
 											src="/static/img/back-card-blank.jpeg"
 											alt="backcard"
@@ -115,7 +135,7 @@ const Membership = ({ data }) => {
 								<br></br>
 								<h2>Membership benefits</h2>
 								<div className="m-auto" style={{ whiteSpace: "pre-wrap" }}>
-									<Col xs={{ span: 22 }} sm={{ span: 16 }} className="m-auto" align="middle" justify="center">
+									<Col xs={{ span: 22 }} sm={{ span: 8 }} className="m-auto" align="middle" justify="center">
 										<div className="markdown membershipbenefits">
 											<ReactMarkdown source={`${data.membershipContent.content}`} />
 										</div>
@@ -125,16 +145,18 @@ const Membership = ({ data }) => {
 							</div>
 							<h2>Our partners</h2>
 							<Col xs={{ span: 24 }} lg={{ span: 16 }} className="m-auto" align="middle" justify="center">
-								<Row align="middle" justify="center">
-									{data.allBelocalbuylocalSponsors.map(item => (
-										<FadeInImageGrid>
-											<div className="mx-1 mt-3 box">
-												<img src={item.logo.url} width="120em" alt="img" style={{ borderRadius: "10%" }} />
-												<div className={styles.discount}>{item.discount} discount</div>
-											</div>
-										</FadeInImageGrid>
-									))}
-								</Row>
+								<ScrollTrigger start="top bottom-=100px" scrub={0.5}>
+									<div class="container">
+										<Tween from={{ y: "100px", opacity:0}} stagger={0.2} ease="elastic.out(0.2, 0.1)">
+											{data.allBelocalbuylocalSponsors.map(item => (
+												<div className="mx-1 mt-3 box ">
+													<img src={item.logo.url} width="100em" alt="img" style={{ borderRadius: "10%" }} />
+													<div className={styles.discount}>{item.discount} discount</div>
+												</div>
+											))}
+										</Tween>
+									</div>
+								</ScrollTrigger>
 							</Col>
 						</div>
 					</div>

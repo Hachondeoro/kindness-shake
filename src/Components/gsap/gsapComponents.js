@@ -36,24 +36,43 @@ export const FadeInImageGrid = ({ children }) => {
 		ScrollTrigger.batch(".box", {
 			//interval: 0.1, // time window (in seconds) for batching to occur.
 			//batchMax: 3,   // maximum batch size (targets)
-			onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: { each: 0.15 }, overwrite: true }),
-			onLeave: batch => gsap.set(batch, { opacity: 0, y: -100, overwrite: true }),
-			onEnterBack: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, overwrite: true }),
-			onLeaveBack: batch => gsap.set(batch, { opacity: 0, y: 100, overwrite: true }),
+			onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, overwrite: true }),
+			// onLeave: batch => gsap.set(batch, { opacity: 0, y: -100, overwrite: true }),
+			// onEnterBack: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, overwrite: true }),
+			onLeaveBack: batch => gsap.set(batch, { opacity: 0, y: 100, stagger: 0.1, overwrite: true }),
 			// you can also define things like start, end, etc.
-			start:"-450px center",
+			// start: "-350px center",
+			start: "top bottom-=100px",
 			// end:"+=300",
 		});
+		ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".box", { y: -100, opacity: 0 }));
+		ScrollTrigger.refresh();
 	}, []);
 
 	return <div className="box">{children}</div>;
 };
+
+export const fadeinImages = classAnimation => {
+	if (typeof window !== "undefined") {
+		gsap.registerPlugin(ScrollTrigger);
+	}
+	gsap.defaults({ ease: "power3" });
+	gsap.set(classAnimation, { y: 100 });
+
+	ScrollTrigger.batch(classAnimation, {
+		start: "top bottom-=100px",
+		onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, backgroundSize: "100%", stagger: 0.15 }),
+		onLeaveBack: batch => gsap.to(batch, { opacity: 0, y: 100, backgroundSize: "0%", stagger: 0.1 }),
+	});
+	ScrollTrigger.addEventListener("refreshInit", () => gsap.set(classAnimation, { y: 100, opacity: 0 }));
+};
+
 export const FadeInImageSocialMedia = ({ children }) => {
 	useEffect(() => {
 		if (typeof window !== "undefined") {
 			gsap.registerPlugin(ScrollTrigger);
 		}
-		gsap.to(".socialbox", { y: 100, opacity:0 });
+		gsap.to(".socialbox", { y: 100, opacity: 0 });
 		ScrollTrigger.batch(".socialbox", {
 			onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: { each: 0.15 }, overwrite: true }),
 			// onLeave: batch => gsap.set(batch, { opacity: 0, y: -100, overwrite: true }),
@@ -63,11 +82,7 @@ export const FadeInImageSocialMedia = ({ children }) => {
 		});
 	}, []);
 
-	return (
-		<div className="socialbox">
-			{children}
-		</div>
-	);
+	return <div className="socialbox">{children}</div>;
 };
 
 export const RepeatTilt = ({ children }) => (
