@@ -1,65 +1,82 @@
-import React, { useEffect, useState } from 'react'
-import { Layout, Menu, Button } from 'antd'
+import React, { useEffect, useState } from "react";
+import { Layout, Menu } from "antd";
+import {Button} from "react-bootstrap"
 import {
 	MailOutlined,
 	HomeOutlined,
 	TeamOutlined,
 	InstagramOutlined,
 	UsergroupAddOutlined,
-	StarOutlined
-} from '@ant-design/icons'
-import Link from 'next/link'
-import Drawer from 'rc-drawer'
-import styles from '@Components/Titles.module.css'
+	StarOutlined,
+	MenuUnfoldOutlined,
+	MenuFoldOutlined,
+} from "@ant-design/icons";
+import Link from "next/link";
 
-const SubMenu = Menu.SubMenu
+const SubMenu = Menu.SubMenu;
 
 const MultiDropdownNavbar = () => {
-	const [current, setCurrent] = useState('mail')
+	const [current, setCurrent] = useState("");
+	const [currentMobile, setcurrentMobile] = useState("");
+	const [showMobileMenu, setshowMobileMenu] = useState(false);
+	const setMobileTab = e => {
+		setcurrentMobile(e.key);
+		setshowMobileMenu(!showMobileMenu);
+	};
+
 	const centerStyle = {
-		position: 'relative',
-		display: 'flex',
-		justifyContent: 'center',
-		background: '#3E7678',
-		fontWeight: 'bold',
-		color: '#FFFFFF',
-		fontSize: '1em',
-		height: '3.5em'
-	}
+		position: "relative",
+		display: "flex",
+		justifyContent: "center",
+		background: "#3E7678",
+		fontWeight: "bold",
+		color: "#FFFFFF",
+		fontSize: "1em",
+		height: "3.5em",
+	};
 	const MenuStyle = {
-		fontSize: '1em',
-		display: 'inline-flex',
-		alignItems: 'center',
-		marginTop: '20px'
-	}
+		fontSize: "1em",
+		display: "inline-flex",
+		alignItems: "center",
+		marginTop: "20px",
+	};
 	const mobileStyle = {
-		background: '#3E7678',
-		fontWeight: 'bold',
-		color: '#FFFFFF'
-	}
+		background: "#3E7678",
+		fontWeight: "bold",
+		color: "#FFFFFF",
+		// width:"30px",
+		position: "fixed",
+		zIndex: "999",
+	};
 	const submenuStyle = {
-		fontWeight: 'normal',
-		color: '#FFFFFF',
-	}
+		fontWeight: "normal",
+		color: "#FFFFFF",
+	};
 
 	return (
 		<>
 			<div className="d-lg-none">
-				<Drawer width="250px" className="d-lg-none">
+				<Button
+					type="primary"
+					className="buttonMobileMenu"
+					onClick={() => setshowMobileMenu(!showMobileMenu)}
+					style={{ marginBottom: 16 }}>
+					{React.createElement(showMobileMenu ? MenuFoldOutlined: MenuUnfoldOutlined)}
+				</Button>
+				{showMobileMenu ? (
 					<Menu
-						style={{ height: '200%', width: 'calc(100% - 1px)' }}
-						defaultSelectedKeys={['1']}
-						defaultOpenKeys={['sub1', 'sub2']}
+						onClick={e => setMobileTab(e.key)}
+						selectedKeys={[currentMobile]}
 						mode="inline"
 						theme="dark"
-						style={mobileStyle}
-					>
+						defaultOpenKeys={['membership']}
+						style={mobileStyle}>
 						<Menu.Item key="home" icon={<HomeOutlined />}>
 							<Link id="navitem" href="/" passHref>
 								HOME
 							</Link>
 						</Menu.Item>
-						<SubMenu key="sub1" icon={<TeamOutlined />} title="ABOUT US">
+						<SubMenu key="aboutus" icon={<TeamOutlined />} title="ABOUT US">
 							<Menu.Item key="story" style={submenuStyle}>
 								<Link href="/ourstory" passHref>
 									Our Story
@@ -92,12 +109,12 @@ const MultiDropdownNavbar = () => {
 									Festival
 								</Link>
 							</Menu.Item>
-							<Menu.Item key="volunteerfest" style={submenuStyle}>
+							<Menu.Item key="volunteeringFestival" style={submenuStyle}>
 								<Link href="/festival/volunteering" passHref>
 									Volunteering
 								</Link>
 							</Menu.Item>
-							<Menu.Item key="sponsors" style={submenuStyle}>
+							<Menu.Item key="sponsorsFestival" style={submenuStyle}>
 								<Link href="/festival/sponsors" passHref>
 									Sponsors
 								</Link>
@@ -118,11 +135,7 @@ const MultiDropdownNavbar = () => {
 								DONATE
 							</Link>
 						</Menu.Item>
-						<SubMenu
-							key="sub2"
-							icon={<UsergroupAddOutlined />}
-							title="MEMBERSHIP"
-						>
+						<SubMenu key="membership" icon={<UsergroupAddOutlined />} title="MEMBERSHIP">
 							<Menu.Item key="becomemember" style={submenuStyle}>
 								<Link href="/becomeamember" passHref>
 									Become a Member
@@ -140,7 +153,7 @@ const MultiDropdownNavbar = () => {
 							</Link>
 						</Menu.Item>
 					</Menu>
-				</Drawer>
+				) : null}
 			</div>
 			<div className="d-none d-lg-block multidropdownmenu">
 				<Menu
@@ -148,21 +161,13 @@ const MultiDropdownNavbar = () => {
 					selectedKeys={[current]}
 					mode="horizontal"
 					theme="dark"
-					style={centerStyle}
-				>
-					<Menu.Item
-						key="home"
-						icon={<HomeOutlined className="navItem" style={MenuStyle} />}
-					>
+					style={centerStyle}>
+					<Menu.Item key="home" icon={<HomeOutlined className="navItem" style={MenuStyle} />}>
 						<Link id="navitem" href="/" passHref>
 							HOME
 						</Link>
 					</Menu.Item>
-					<SubMenu
-						key="aboutus"
-						icon={<TeamOutlined style={MenuStyle} />}
-						title="ABOUT US"
-					>
+					<SubMenu key="aboutus" icon={<TeamOutlined style={MenuStyle} />} title="ABOUT US">
 						<Menu.Item key="story">
 							<Link href="/ourstory" passHref>
 								Our Story
@@ -189,31 +194,24 @@ const MultiDropdownNavbar = () => {
 							</Link>
 						</Menu.Item>
 					</SubMenu>
-					<SubMenu
-						key="festival"
-						icon={<StarOutlined style={MenuStyle} />}
-						title="KS FESTIVAL"
-					>
-						<Menu.Item key="story">
+					<SubMenu key="festival" icon={<StarOutlined style={MenuStyle} />} title="KS FESTIVAL">
+						<Menu.Item key="festival">
 							<Link href="/festival" passHref>
 								Festival
 							</Link>
 						</Menu.Item>
-						<Menu.Item key="projects">
+						<Menu.Item key="volunteeringFestival">
 							<Link href="/festival/volunteering" passHref>
 								Volunteering
 							</Link>
 						</Menu.Item>
-						<Menu.Item key="sponsors">
+						<Menu.Item key="sponsorsFestival">
 							<Link href="/festival/sponsors" passHref>
 								Sponsors
 							</Link>
 						</Menu.Item>
 					</SubMenu>
-					<Menu.Item
-						key="socialmedia"
-						icon={<InstagramOutlined style={MenuStyle} />}
-					>
+					<Menu.Item key="socialmedia" icon={<InstagramOutlined style={MenuStyle} />}>
 						<Link href="/socialmedia" passHref>
 							OUR SOCIAL MEDIA
 						</Link>
@@ -228,11 +226,7 @@ const MultiDropdownNavbar = () => {
 							DONATE
 						</Link>
 					</Menu.Item>
-					<SubMenu
-						key="Membership"
-						icon={<UsergroupAddOutlined style={MenuStyle} />}
-						title="MEMBERSHIP"
-					>
+					<SubMenu key="membership" icon={<UsergroupAddOutlined style={MenuStyle} />} title="MEMBERSHIP">
 						<Menu.Item key="becomemember">
 							<Link href="/becomeamember" passHref>
 								Become a Member
@@ -252,7 +246,7 @@ const MultiDropdownNavbar = () => {
 				</Menu>
 			</div>
 		</>
-	)
-}
+	);
+};
 
-export default MultiDropdownNavbar
+export default MultiDropdownNavbar;

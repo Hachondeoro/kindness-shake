@@ -1,14 +1,14 @@
 import { HomeOutlined, IdcardOutlined, UserOutlined } from "@ant-design/icons";
 import { request } from "@Components/DatoCMS/datocms";
+import { FadeInImageGrid } from "@Components/gsap/gsapComponents";
 import { fadeinImages } from "@Components/gsap/gsapComponents";
 import styles from "@Components/Titles.module.css";
 import { Button, Col, Row } from "antd";
-// import { ScrollTrigger } from "gsap/dist/ScrollTrigger"; // pure gsap
 import React, { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
-import { Tween, ScrollTrigger} from "react-gsap";
 import ReactMarkdown from "react-markdown";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+
 
 const navmenu = {
 	fontFamily: '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
@@ -55,17 +55,10 @@ const Membership = ({ data }) => {
 
 	const [iosdevice, setIosdevice] = useState(true);
 	const [phone, setPhone] = useState(false);
-
 	useEffect(() => {
 		setIosdevice(iOS());
 		setPhone(isMobile);
 	}, []);
-
-	// useEffect(() => {
-	// 	fadeinImages(".box");
-	// 	ScrollTrigger.refresh(true);
-	// 	// ScrollTrigger.getAll().forEach(t => t.kill());
-	// }, []);
 
 	return (
 		<div style={navmenu}>
@@ -145,18 +138,16 @@ const Membership = ({ data }) => {
 							</div>
 							<h2>Our partners</h2>
 							<Col xs={{ span: 24 }} lg={{ span: 16 }} className="m-auto" align="middle" justify="center">
-								<ScrollTrigger start="top bottom-=100px" scrub={0.5}>
+								<FadeInImageGrid>
 									<div class="container">
-										<Tween from={{ y: "100px", opacity:0}} stagger={0.2} ease="elastic.out(0.2, 0.1)">
-											{data.allBelocalbuylocalSponsors.map(item => (
-												<div className="mx-1 mt-3 box ">
-													<img src={item.logo.url} width="100em" alt="img" style={{ borderRadius: "10%" }} />
-													<div className={styles.discount}>{item.discount} discount</div>
-												</div>
-											))}
-										</Tween>
+										{data.allBelocalbuylocalSponsors.map(item => (
+											<div className="mx-1 mt-3 box">
+												<img src={item.logo.url} width="100em" alt="img" style={{ borderRadius: "10%" }} />
+												<div className={styles.discount}>{item.discount} discount</div>
+											</div>
+										))}
 									</div>
-								</ScrollTrigger>
+								</FadeInImageGrid>
 							</Col>
 						</div>
 					</div>

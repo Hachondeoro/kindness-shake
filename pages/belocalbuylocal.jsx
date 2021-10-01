@@ -49,7 +49,7 @@ const OurSupporters = ({ data }) => {
 				<Row align="middle" justify="center">
 					{data.allBelocalbuylocalSponsors.map(item => (
 						<FadeInImageGrid>
-							<div className="mx-1 mt-3 box">
+							<div className="mx-1 mt-3 boxNew">
 								<img src={item.logo.url} width="120em" alt="img" style={{ borderRadius: "10%" }} />
 								<div className={styles.discount}>{item.discount} discount</div>
 							</div>
