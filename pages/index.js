@@ -1,18 +1,18 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
-import { DownOutlined } from "@ant-design/icons";
-import { Feature60DataSource } from "@Components/data.source";
-import { request } from "@Components/DatoCMS/datocms";
+import {DownOutlined} from "@ant-design/icons";
+import {Feature60DataSource} from "@Components/data.source";
+import {request} from "@Components/DatoCMS/datocms";
 import Feature6 from "@Components/Feature6";
 import styles from "@Components/Titles.module.css";
-import { Col, Row } from "antd";
-import { gsap } from "gsap"; // pure gsap
+import {Col, Row} from "antd";
+import {gsap} from "gsap"; // pure gsap
 import Link from "next/link";
 import TweenOne from "rc-tween-one";
-import React, { useEffect, useRef, useState } from "react";
-import { Button } from "react-bootstrap";
+import React, {useEffect, useRef, useState} from "react";
+import {Button} from "react-bootstrap";
 import Confetti from "react-confetti";
 import useWindowSize from "react-use/lib/useWindowSize";
-import { Alert } from "reactstrap";
+import {Alert} from "reactstrap";
 
 const MYQUERY = `query MyQuery {
 	allInstagrams {
@@ -207,9 +207,8 @@ const Home = ({ data }) => {
 							method="post"
 							id="mc-embedded-subscribe-form"
 							name="mc-embedded-subscribe-form"
-							class="validate"
+							className="validate"
 							// target="_blank"
-							novalidate
 							onSubmit={e => {
 								onFinish(e);
 							}}>

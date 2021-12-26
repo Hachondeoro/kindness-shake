@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Layout, Menu } from "antd";
-import {Button} from "react-bootstrap"
+import { Button } from "react-bootstrap";
 import {
 	MailOutlined,
 	HomeOutlined,
@@ -10,6 +10,7 @@ import {
 	StarOutlined,
 	MenuUnfoldOutlined,
 	MenuFoldOutlined,
+	ShopOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
 
@@ -61,7 +62,7 @@ const MultiDropdownNavbar = () => {
 					className="buttonMobileMenu"
 					onClick={() => setshowMobileMenu(!showMobileMenu)}
 					style={{ marginBottom: 16 }}>
-					{React.createElement(showMobileMenu ? MenuFoldOutlined: MenuUnfoldOutlined)}
+					{React.createElement(showMobileMenu ? MenuFoldOutlined : MenuUnfoldOutlined)}
 				</Button>
 				{showMobileMenu ? (
 					<Menu
@@ -69,7 +70,7 @@ const MultiDropdownNavbar = () => {
 						selectedKeys={[currentMobile]}
 						mode="inline"
 						theme="dark"
-						defaultOpenKeys={['membership']}
+						defaultOpenKeys={["membership"]}
 						style={mobileStyle}>
 						<Menu.Item key="home" icon={<HomeOutlined />}>
 							<Link id="navitem" href="/" passHref>
@@ -123,6 +124,11 @@ const MultiDropdownNavbar = () => {
 						<Menu.Item key="socialmedia" icon={<InstagramOutlined />}>
 							<Link href="/socialmedia" passHref>
 								OUR SOCIAL MEDIA
+							</Link>
+						</Menu.Item>
+						<Menu.Item key="store" icon={<ShopOutlined />}>
+							<Link href="/store" passHref>
+								KINDNESS STORE
 							</Link>
 						</Menu.Item>
 						<Menu.Item key="volunteer" icon={<MailOutlined />}>
@@ -214,6 +220,11 @@ const MultiDropdownNavbar = () => {
 					<Menu.Item key="socialmedia" icon={<InstagramOutlined style={MenuStyle} />}>
 						<Link href="/socialmedia" passHref>
 							OUR SOCIAL MEDIA
+						</Link>
+					</Menu.Item>
+					<Menu.Item key="store" icon={<ShopOutlined style={MenuStyle} />}>
+						<Link href="/store" passHref>
+							KINDNESS STORE
 						</Link>
 					</Menu.Item>
 					<Menu.Item key="volunteer" icon={<MailOutlined style={MenuStyle} />}>
