@@ -44,7 +44,8 @@
     ".babelrc",
     "bundles",
     "coverage",
-    "test/*"
+    "test/*",
+		"src/Components/ecommerce snipcart"
   ],
   "include": ["next-env.d.ts", "**/*.js", "**/*.jsx"]
 }

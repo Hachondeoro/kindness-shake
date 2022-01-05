@@ -1,4 +1,4 @@
-const withOffline = require('next-offline')
+const withOffline = require("next-offline");
 
 module.exports = withOffline({
 	webpack: (config, options) => {
@@ -6,79 +6,79 @@ module.exports = withOffline({
 			// Some libraries import Node modules but don't use them in the browser.
 			// Tell Webpack to provide empty mocks for them so importing them works.
 			...config.node,
-			fs: 'empty',
-			child_process: 'empty',
-			net: 'empty',
-			tls: 'empty'
-		}
+			fs: "empty",
+			child_process: "empty",
+			net: "empty",
+			tls: "empty",
+		};
 		config.module.rules.push(
 			{
 				test: /\.md$/,
-				use: 'raw-loader'
+				use: "raw-loader",
 			},
 			{
 				test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
 				use: [
 					{
-						loader: 'babel-loader'
+						loader: "babel-loader",
 					},
 					{
-						loader: '@svgr/webpack',
+						loader: "@svgr/webpack",
 						options: {
 							babel: false,
-							icon: true
-						}
-					}
-				]
+							icon: true,
+						},
+					},
+				],
 			},
 			{
 				test: /\.(pdf)$/,
 				use: [
 					{
-						loader: 'file-loader',
-					}
-				]
-			}
-		)
+						loader: "file-loader",
+					},
+				],
+			},
+		);
 
-		return config
+		return config;
 	},
 	env: {
 		sheets_email: process.env.sheets_email,
 		sheets_privatekey: process.env.sheets_privatekey,
-		NEXT_DATOCMS_API_TOKEN: process.env.NEXT_DATOCMS_API_TOKEN
+		NEXT_DATOCMS_API_TOKEN: process.env.NEXT_DATOCMS_API_TOKEN,
 	},
-	target: process.env.NEXT_TARGET || 'serverless',
+	target: process.env.NEXT_TARGET || "serverless",
 	images: {
-		domains: ['gw.alipayobjects.com']
+		domains: ["gw.alipayobjects.com", "www.datocms-assets.com"],
 	},
 	workboxOpts: {
-		swDest: 'static/service-worker.js',
+		swDest: "static/service-worker.js",
 		runtimeCaching: [
 			{
 				urlPattern: /[.](png|jpg|ico|css)/,
-				handler: 'CacheFirst',
+				handler: "CacheFirst",
 				options: {
-					cacheName: 'assets-cache',
+					cacheName: "assets-cache",
 					cacheableResponse: {
-						statuses: [0, 200]
-					}
-				}
+						statuses: [0, 200],
+					},
+				},
 			},
 			{
 				urlPattern: /^https:\/\/code\.getmdl\.io.*/,
-				handler: 'CacheFirst',
+				handler: "CacheFirst",
 				options: {
-					cacheName: 'lib-cache'
-				}
+					cacheName: "lib-cache",
+				},
 			},
 			{
 				urlPattern: /^http.*/,
-				handler: 'NetworkFirst',
+				handler: "NetworkFirst",
 				options: {
-					cacheName: 'http-cache'
-				}
-			}
-		]
-	}
-})
+					cacheName: "http-cache",
+				},
+			},
+		],
+	},
+});

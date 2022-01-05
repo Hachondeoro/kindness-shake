@@ -20,8 +20,7 @@
 		font-size: 14px;
 		color: #6f6f6f;
 		text-align: left;
-
-		// white-space: pre-wrap;
+		display: block;
 	}
 	h3 {
 		font-size: 18px;
@@ -109,22 +108,22 @@
 }
 
 .container {
-  max-width: 800px;
-  margin: auto;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+	max-width: 800px;
+	margin: auto;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
-.buttonMobileMenu{
-	position:fixed;
+.buttonMobileMenu {
+	position: fixed;
 	z-index: 999;
-	top:5vh;
+	top: 5vh;
 	color: "#ffffff";
-	background:#3E7678;
-	border-color: #3E7678;
+	background: #3e7678;
+	border-color: #3e7678;
 	font-size: 30px;
 	display: flex;
 	align-items: center;

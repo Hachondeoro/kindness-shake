@@ -11,21 +11,13 @@ import "@Static/css/main.scss";
 import "@Static/css/antd.css";
 import "react-tabs/style/react-tabs.css";
 import "@Static/css/custom.scss";
-import withReduxStore from "@Components/ecommerce redux/common/withReduxStore";
-// import FetchInitData from "@Components/ecommerce redux/other/FetchInitData";
-// import { Provider } from "react-redux";
-// import "@Components/ecommerce redux/styles/styles.scss";
 
 const tagManagerArgs = {
 	gtmId: "GTM-N6Z6GCZ",
 };
 
-const App = ({ Component, pageProps, reduxStore }) => {
+const App = ({ Component, pageProps }) => {
 	useEffect(() => {
-		if (process.env.NODE_ENV !== "production") {
-			const axe = require("react-axe");
-			axe(React, ReactDOM, 1000);
-		}
 		TagManager.initialize(tagManagerArgs);
 	}, []);
 
@@ -42,4 +34,4 @@ const App = ({ Component, pageProps, reduxStore }) => {
 	);
 };
 
-export default withReduxStore(App);
+export default App;
