@@ -13,6 +13,7 @@ import { Button } from "react-bootstrap";
 import Confetti from "react-confetti";
 import useWindowSize from "react-use/lib/useWindowSize";
 import { Alert } from "reactstrap";
+import Layout from "@Components/Layout";
 
 const MYQUERY = `query MyQuery {
 	allInstagrams {
@@ -53,7 +54,10 @@ const Home = ({ data }) => {
 	}, []);
 
 	return (
-		<>
+		<Layout
+			pageTitle="Home"
+			pageDescription="Our mission is to provide any form of support, not limited to free meals and employability, but also social engagement and welfare/well-being improvement of international students and migrants in the Northern Territory. This will be achieved through our current initiatives and future goals."
+			keyWords="charity, international student, darwin">
 			<div className="bannerHome">
 				<Col xs={{ span: 24 }} lg={{ span: 10 }} className="m-auto" align="middle" justify="center">
 					<div className="banner-logo">
@@ -92,83 +96,40 @@ const Home = ({ data }) => {
 					<Button type="primary">LEARN MORE</Button>
 				</Link>
 			</Col>
-			<br></br>
-			{/* <Row justify="center">
-				<div className="festivalbanner">
-					<img src="/static/img/festival/ks-cover.png" width="100%" height="100%" alt="img" />
-				</div>
-				<Button
-					type="primary"
-					shape="round"
-					size="large"
-					ghost
-					style={{
-						borderColor: "#ccc",
-					}}>
-					<Link href="/festival" passHref>
-						CHECKOUT THE KS FESTIVAL!
-					</Link>
-				</Button>
-			</Row> */}
+			<br />
 			<div className="vision">
 				<Row justify="center">
 					<Col xs={{ span: 23 }} lg={{ span: 8 }} align="middle" justify="center">
-						<br></br>
-						<br></br>
+						<br />
+						<br />
 						<h1 className={styles.titleHome}>OUR VISION</h1>
 						<div className={styles.contentHome}>
 							Enhancing the wellbeing of international students in the Northern Territory through social and cultural
 							engagement, humanitarian services and employability improvement while showcasing the importance of
 							multiculturalism and international communities in Australia.
 						</div>
-						<br></br>
+						<br />
 					</Col>
 					<Col xs={{ span: 23 }} lg={{ span: 8 }} align="middle" justify="center">
-						<br></br>
-						<br></br>
+						<br />
+						<br />
 						<h1 className={styles.titleHome}>OUR MISSION</h1>
 						<div className={styles.contentHome}>
 							Our mission is to provide any form of support, not limited to free meals and employability, but also
 							social engagement and welfare/well-being improvement of international students and migrants in the
 							Northern Territory. This will be achieved through our current initiatives and future goals.
 						</div>
-						<br></br>
+						<br />
 					</Col>
 				</Row>
 				<Feature6 id="Feature6_0" key="Feature6_0" dataSource={Feature60DataSource} />
 			</div>
-			{/* <div className="home-page-wrapper">
-				<h1 className="text-center m-3">Social Media</h1>
-				<Col xs={{ span: 20 }} lg={{ span: 16 }} className="m-auto" align="middle" justify="center">
-					<Row align="top" justify="center">
-						{data.allInstagrams.slice(0, 3).map(item => (
-							<FadeInImageSocialMedia>
-								<div key={item.post}>
-									<InstagramEmbed
-										url={item.url}
-										clientAccessToken="821751731773259|69972d556b438c02d3cd032878cfdbee"
-										maxWidth={420}
-										hideCaption={true}
-										containerTagName="div"
-										protocol=""
-										injectScript
-										onLoading={() => {}}
-										onSuccess={() => {}}
-										onAfterRender={() => {}}
-										onFailure={() => {}}
-									/>
-								</div>
-							</FadeInImageSocialMedia>
-						))}
-					</Row>
-				</Col>
-			</div> */}
 			<Col xs={{ span: 20 }} lg={{ span: 12 }} className="m-auto" align="middle" justify="center">
 				<div className={styles.titleHome}>
-					<br></br>
+					<br />
 					Take part in empowering whole communities
-					<br></br>
-					<br></br>
+					<br />
+					<br />
 				</div>
 				<div>
 					<Col xs={{ span: 20 }} lg={{ span: 8 }} className="m-auto" align="middle" justify="center">
@@ -186,8 +147,8 @@ const Home = ({ data }) => {
 							<img alt="" border="0" src="https://www.paypal.com/en_AU/i/scr/pixel.gif" width="1" height="1" />
 						</form>
 					</Col>
-					<br></br>
-					<br></br>
+					<br />
+					<br />
 				</div>
 				{showConfetti ? (
 					<Confetti
@@ -207,36 +168,36 @@ const Home = ({ data }) => {
 							method="post"
 							id="mc-embedded-subscribe-form"
 							name="mc-embedded-subscribe-form"
-							class="validate"
+							className="validate"
 							// target="_blank"
-							novalidate
+							noValidate
 							onSubmit={e => {
 								onFinish(e);
 							}}>
 							<div id="mc_embed_signup_scroll" className="my-2">
-								<br></br>
+								<br />
 								<input
 									type="text"
 									name="FNAME"
-									class="form-control"
+									className="form-control"
 									style={{ width: "20em" }}
 									placeholder="First Name"
 									required
 								/>
-								<br></br>
+								<br />
 								<input
 									type="text"
 									name="LNAME"
-									class="form-control"
+									className="form-control"
 									style={{ width: "20em" }}
 									placeholder="Last Name"
 									required
 								/>
-								<br></br>
+								<br />
 								<input
 									type="email"
 									name="EMAIL"
-									class="form-control"
+									className="form-control"
 									id="mce-EMAIL"
 									style={{ width: "20em" }}
 									placeholder="Email Address"
@@ -253,7 +214,7 @@ const Home = ({ data }) => {
 					</div>
 				</div>
 			</Col>
-		</>
+		</Layout>
 	);
 };
 

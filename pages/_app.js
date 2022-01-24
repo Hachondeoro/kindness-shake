@@ -19,10 +19,6 @@ const tagManagerArgs = {
 
 export default class MyApp extends App {
 	componentDidMount() {
-		if (process.env.NODE_ENV !== "production") {
-			const axe = require("react-axe");
-			axe(React, ReactDOM, 1000);
-		}
 		TagManager.initialize(tagManagerArgs);
 	}
 

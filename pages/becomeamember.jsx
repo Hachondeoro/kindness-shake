@@ -1,14 +1,13 @@
 import { HomeOutlined, IdcardOutlined, UserOutlined } from "@ant-design/icons";
 import { request } from "@Components/DatoCMS/datocms";
 import { FadeInImageGrid } from "@Components/gsap/gsapComponents";
-import { fadeinImages } from "@Components/gsap/gsapComponents";
 import styles from "@Components/Titles.module.css";
 import { Button, Col, Row } from "antd";
 import React, { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 import ReactMarkdown from "react-markdown";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-
+import Layout from "@Components/Layout";
 
 const navmenu = {
 	fontFamily: '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
@@ -61,152 +60,157 @@ const Membership = ({ data }) => {
 	}, []);
 
 	return (
-		<div style={navmenu}>
-			<Tabs selectedIndex={tabIndex} onSelect={index => setTabIndex(index)}>
-				<TabList>
-					<Tab>
-						<HomeOutlined /> Home
-					</Tab>
-					<Tab>
-						<IdcardOutlined /> Join us
-					</Tab>
-					<Tab>
-						<UserOutlined /> Login
-					</Tab>
-				</TabList>
-				<TabPanel>
-					<div style={membershiphome}>
-						<div className="home-page-wrapper">
-							<div>
-								<br></br>
-								<br></br>
-								<br></br>
-								<h2>Be a part of Kindness Shake in 2021!</h2>
-								<br></br>
-								<div className={styles.subtitle}>
-									To have access to membership card please sign up to this website and complete the payment.
-								</div>
-								<br></br>
-								<Row align="middle" justify="center">
-									<Col
-										xs={{ span: 20 }}
-										sm={{ span: 16 }}
-										lg={{ span: 8 }}
-										className="m-2"
-										align="middle"
-										justify="center">
-										<img
-											src="/static/img/front-card.jpeg"
-											alt="frontcard"
-											width="100%"
-											height="100%"
-											className="my-2"
-										/>
-									</Col>
-									<Col
-										xs={{ span: 20 }}
-										sm={{ span: 16 }}
-										lg={{ span: 8 }}
-										className="m-2"
-										align="middle"
-										justify="center">
-										<img
-											src="/static/img/back-card-blank.jpeg"
-											alt="backcard"
-											width="100%"
-											height="100%"
-											className="my-2"
-										/>
-									</Col>
-								</Row>
-								<br></br>
-								<br></br>
-								<Button onClick={index => setTabIndex(1)} type="primary" shape="round" size="large">
-									Register now!
-								</Button>
-								<br></br>
-								<br></br>
-								<h2>Membership benefits</h2>
-								<div className="m-auto" style={{ whiteSpace: "pre-wrap" }}>
-									<Col xs={{ span: 22 }} sm={{ span: 8 }} className="m-auto" align="middle" justify="center">
-										<div className="markdown membershipbenefits">
-											<ReactMarkdown source={`${data.membershipContent.content}`} />
-										</div>
-									</Col>
-								</div>
-								<br></br>
-							</div>
-							<h2>Our partners</h2>
-							<Col xs={{ span: 24 }} lg={{ span: 16 }} className="m-auto" align="middle" justify="center">
-								<FadeInImageGrid>
-									<div class="container">
-										{data.allBelocalbuylocalSponsors.map(item => (
-											<div className="mx-1 mt-3 box">
-												<img src={item.logo.url} width="100em" alt="img" style={{ borderRadius: "10%" }} />
-												<div className={styles.discount}>{item.discount} discount</div>
-											</div>
-										))}
+		<Layout
+			pageTitle="Become a member"
+			pageDescription="Become a member of this highly successful charity located in Darwin, Northern Territory. With this membership you will have access to countless benefits and you will be supporting the local business and communities"
+			keyWords="charity, international student, darwin">
+			<div style={navmenu}>
+				<Tabs selectedIndex={tabIndex} onSelect={index => setTabIndex(index)}>
+					<TabList>
+						<Tab>
+							<HomeOutlined /> Home
+						</Tab>
+						<Tab>
+							<IdcardOutlined /> Join us
+						</Tab>
+						<Tab>
+							<UserOutlined /> Login
+						</Tab>
+					</TabList>
+					<TabPanel>
+						<div style={membershiphome}>
+							<div className="home-page-wrapper">
+								<div>
+									<br/>
+									<br/>
+									<br/>
+									<h2>Be a part of Kindness Shake in 2021!</h2>
+									<br/>
+									<div className={styles.subtitle}>
+										To have access to membership card please sign up to this website and complete the payment.
 									</div>
-								</FadeInImageGrid>
-							</Col>
-						</div>
-					</div>
-				</TabPanel>
-				<TabPanel>
-					<div style={membershiphome}>
-						{iosdevice ? (
-							<div>
-								<div className="mb-6">
-									<br></br>
-									<br></br>
-									<br></br>
-									<br></br>
-									Our membership page is powered by Wild Apricot membership system
-								</div>
-								<Col xs={{ span: 20 }} md={{ span: 12 }} className="m-auto" align="middle" justify="center">
-									<img
-										src="/static/img/wild-apricot-logo.png"
-										alt="wildapricotlogo"
-										width="100%"
-										height="100%"
-										className="mt-5"
-									/>
-								</Col>
-								<br></br>
-								<div className="m-5">Please press the following button to submit an application form</div>
-								<a href="https://ksi.wildapricot.org/widget/membership" rel="noopener noreferrer" target="_blank">
-									<Button type="primary" shape="round" size="large">
-										{" "}
-										Membership Application form{" "}
+									<br/>
+									<Row align="middle" justify="center">
+										<Col
+											xs={{ span: 20 }}
+											sm={{ span: 16 }}
+											lg={{ span: 8 }}
+											className="m-2"
+											align="middle"
+											justify="center">
+											<img
+												src="/static/img/front-card.jpeg"
+												alt="frontcard"
+												width="100%"
+												height="100%"
+												className="my-2"
+											/>
+										</Col>
+										<Col
+											xs={{ span: 20 }}
+											sm={{ span: 16 }}
+											lg={{ span: 8 }}
+											className="m-2"
+											align="middle"
+											justify="center">
+											<img
+												src="/static/img/back-card-blank.jpeg"
+												alt="backcard"
+												width="100%"
+												height="100%"
+												className="my-2"
+											/>
+										</Col>
+									</Row>
+									<br/>
+									<br/>
+									<Button onClick={index => setTabIndex(1)} type="primary" shape="round" size="large">
+										Register now!
 									</Button>
-								</a>
-								<br></br>
-								<br></br>
+									<br/>
+									<br/>
+									<h2>Membership benefits</h2>
+									<div className="m-auto" style={{ whiteSpace: "pre-wrap" }}>
+										<Col xs={{ span: 22 }} sm={{ span: 8 }} className="m-auto" align="middle" justify="center">
+											<div className="markdown membershipbenefits">
+												<ReactMarkdown source={`${data.membershipContent.content}`} />
+											</div>
+										</Col>
+									</div>
+									<br/>
+								</div>
+								<h2>Our partners</h2>
+								<Col xs={{ span: 24 }} lg={{ span: 16 }} className="m-auto" align="middle" justify="center">
+									<FadeInImageGrid>
+										<div class="container">
+											{data.allBelocalbuylocalSponsors.map(item => (
+												<div className="mx-1 mt-3 box">
+													<img src={item.logo.url} width="100em" alt="img" style={{ borderRadius: "10%" }} />
+													<div className={styles.discount}>{item.discount} discount</div>
+												</div>
+											))}
+										</div>
+									</FadeInImageGrid>
+								</Col>
 							</div>
-						) : (
-							<div>
-								<iframe
-									width="100%"
-									height="1000px"
-									frameBorder="no"
-									src="https://ksi.wildapricot.org/widget/membership"></iframe>
-								<br></br>
-								<br></br>
-							</div>
-						)}
-					</div>
-				</TabPanel>
-				<TabPanel>
-					<div style={membershiphome}>
-						<iframe
-							width="100%"
-							height="1000px"
-							frameBorder="no"
-							src="https://ksi.wildapricot.org/widget/Sys/Profile"></iframe>
-					</div>
-				</TabPanel>
-			</Tabs>
-		</div>
+						</div>
+					</TabPanel>
+					<TabPanel>
+						<div style={membershiphome}>
+							{iosdevice ? (
+								<div>
+									<div className="mb-6">
+										<br/>
+										<br/>
+										<br/>
+										<br/>
+										Our membership page is powered by Wild Apricot membership system
+									</div>
+									<Col xs={{ span: 20 }} md={{ span: 12 }} className="m-auto" align="middle" justify="center">
+										<img
+											src="/static/img/wild-apricot-logo.png"
+											alt="wildapricotlogo"
+											width="100%"
+											height="100%"
+											className="mt-5"
+										/>
+									</Col>
+									<br/>
+									<div className="m-5">Please press the following button to submit an application form</div>
+									<a href="https://ksi.wildapricot.org/widget/membership" rel="noopener noreferrer" target="_blank">
+										<Button type="primary" shape="round" size="large">
+											{" "}
+											Membership Application form{" "}
+										</Button>
+									</a>
+									<br/>
+									<br/>
+								</div>
+							) : (
+								<div>
+									<iframe
+										width="100%"
+										height="1000px"
+										frameBorder="no"
+										src="https://ksi.wildapricot.org/widget/membership"></iframe>
+									<br/>
+									<br/>
+								</div>
+							)}
+						</div>
+					</TabPanel>
+					<TabPanel>
+						<div style={membershiphome}>
+							<iframe
+								width="100%"
+								height="1000px"
+								frameBorder="no"
+								src="https://ksi.wildapricot.org/widget/Sys/Profile"></iframe>
+						</div>
+					</TabPanel>
+				</Tabs>
+			</div>
+		</Layout>
 	);
 };
 

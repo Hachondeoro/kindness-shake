@@ -1,16 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState, useEffect } from "react";
-import { Form, Select } from "antd";
+import React from "react";
+import { Col, Form, Row, Select } from "antd";
 import { Button } from "reactstrap";
-import { Row, Col } from "antd";
-import Snackbar from "@material-ui/core/Snackbar";
-import MuiAlert from "@material-ui/lab/Alert";
 import ReactMarkdown from "react-markdown";
 import VolunteerIntro from "@Components/VolunteerIntro.md";
-import Confetti from "react-confetti";
 import useWindowSize from "react-use/lib/useWindowSize";
-import * as emailjs from "emailjs-com";
-import { Container } from "reactstrap";
+import Layout from "@Components/Layout";
 
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 
@@ -52,7 +47,10 @@ const VolunteerForm = props => {
 	const { width, height } = useWindowSize();
 
 	return (
-		<>
+		<Layout
+			pageTitle="Volunteer with us"
+			pageDescription="Volunteering with Kindness Shake is a great opportunity to be involved in the support of the local community and to share your experience and knowledge with the community through various projects, events and more. Volunteering involves hands-on approach, and you'll benefit by developing your interpersonal, communication and leadership skills.  "
+			keyWords="charity, international student, darwin">
 			<div className="home-page-wrapper">
 				<Row align="middle" justify="center">
 					<Col xs={{ span: 20 }} lg={{ span: 8 }} className="m-2" align="left" justify="center">
@@ -83,7 +81,7 @@ const VolunteerForm = props => {
 					</Col>
 				</Row>
 			</div>
-		</>
+		</Layout>
 	);
 };
 
