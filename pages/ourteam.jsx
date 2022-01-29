@@ -1,11 +1,8 @@
-import React from 'react'
-import { enquireScreen } from 'enquire-js'
-import { Card } from 'antd'
-import { Row, Col } from 'antd'
-import { Teaminfo } from '@Components/data.js'
-import { Parallax } from 'rc-scroll-anim'
-import styles from '@Components/Titles.module.css'
-import { request } from '@Components/DatoCMS/datocms'
+import React from "react";
+import { Col, Row } from "antd";
+import { Parallax } from "rc-scroll-anim";
+import styles from "@Components/Titles.module.css";
+import { request } from "@Components/DatoCMS/datocms";
 
 const MYQUERY = `query MyQuery {
 	allTeammembers {
@@ -18,16 +15,16 @@ const MYQUERY = `query MyQuery {
 		}
 	  }
 }
-`
+`;
 
 export async function getStaticProps() {
 	const data = await request({
-		query: MYQUERY
-	})
+		query: MYQUERY,
+	});
 	return {
 		props: { data },
-		revalidate: 10
-	}
+		revalidate: 10,
+	};
 }
 
 const Team = ({ data }) => {
@@ -41,23 +38,17 @@ const Team = ({ data }) => {
 							<div className="markdown">
 								<Parallax
 									animation={{ x: 0, opacity: 1, playScale: [-0.2, 0.8] }}
-									style={{ transform: 'translateX(-100px)', opacity: 1 }}
-								>
+									style={{ transform: "translateX(-100px)", opacity: 1 }}>
 									<Col span={8}>
 										<div className="teams3-top-image">
-											<img
-												src={item.image.url}
-												width="100%"
-												height="100%"
-												alt="img"
-											/>
+											<img src={item.image.url} width="100%" height="100%" alt="img" />
 										</div>
 
 										<div className="teams3-top-title">{item.name}</div>
 										<div className={styles.TeamDepartments}>{item.role}</div>
 										<div className={styles.TeamEmails}>{item.email}</div>
 										<div className="teams3-top-content">{item.description}</div>
-										<br></br>
+										<br />
 									</Col>
 								</Parallax>
 							</div>
@@ -66,7 +57,7 @@ const Team = ({ data }) => {
 				</div>
 			</div>
 		</>
-	)
-}
+	);
+};
 
-export default Team
+export default Team;

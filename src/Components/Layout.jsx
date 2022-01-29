@@ -28,7 +28,7 @@ const Layout = ({ pageTitle, pageDescription, keyWords, children }) => {
 				<meta name="twitter:description" content={pageDescription} />
 				<meta name="twitter:image" content={`${baseUrl}/webPreview.jpg`} />
 
-				<meta property="og:locale" name="" content="en_AU" />
+				<meta property="og:locale" content="en_AU" />
 				<meta name="apple-mobile-web-app-capable" content="yes" />
 				<meta name="apple-mobile-web-app-title" content={pageTitle} />
 				<meta name="mobile-web-app-capable" content="yes" />
