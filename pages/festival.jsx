@@ -25,56 +25,56 @@ const OurProjects = ({ data }) => {
 	return (
 		<>
 			<div className="festivalbanner">
-				<img src="/static/img/festival/ks-cover.png" width="100%" height="100%" alt="img" />
+				<img src="/static/img/festival/2022/social_covers_Linkedin.png" width="100%" height="100%" alt="img" />
 			</div>
 			<div className="markdown  mx-3">
 				<Row align="middle" justify="center">
 					<Col xs={{ span: 24 }} lg={{ span: 12 }} align="middle" justify="center">
 						<ReactMarkdown source={data.festivalContent.content} />
 						{/* <ReactMarkdown source={`${VolunteerIntro}`} /> */}
-						<Button type="primary" shape="round" size="large" ghost style={{ borderColor: "#ccc" }}>
-							<a href="https://www.eventbrite.com.au/e/123964590427" target="_blank">
-								ATTENDEES REGISTRATION
-							</a>
-						</Button>
-						<br />
-						<br />
-						<strong>Want to have a stall at the Kindness Festival?</strong>
-						<br />
-						<Button type="primary" shape="round" size="large" ghost style={{ borderColor: "#ccc" }}>
-							<a href="https://forms.office.com/r/qMrKDu6fu1" target="_blank">
-								STALL HOLDERS REGISTRATION
-							</a>
-						</Button>
-						<br />
-						<br />
-						<strong>
-							Want to perform or know someone who <br />
-							should perform at the Kindness Festival?
-						</strong>
-						<br />
-						<Button type="primary" shape="round" size="large" ghost style={{ borderColor: "#ccc", height: "auto" }}>
-							<a href="https://forms.office.com/r/ATxnQz3AHF" target="_blank">
-								ARTS, CULTURE & PERFORMANCES
-								<br />
-								EXPRESSIONS OF INTEREST
-							</a>
-						</Button>
+						{/*<Button type="primary" shape="round" size="large" ghost style={{ borderColor: "#ccc" }}>*/}
+						{/*	<a href="https://www.eventbrite.com.au/e/123964590427" target="_blank">*/}
+						{/*		ATTENDEES REGISTRATION*/}
+						{/*	</a>*/}
+						{/*</Button>*/}
+						{/*<br />*/}
+						{/*<br />*/}
+						{/*<strong>Want to have a stall at the Kindness Festival?</strong>*/}
+						{/*<br />*/}
+						{/*<Button type="primary" shape="round" size="large" ghost style={{ borderColor: "#ccc" }}>*/}
+						{/*	<a href="https://forms.office.com/r/qMrKDu6fu1" target="_blank">*/}
+						{/*		STALL HOLDERS REGISTRATION*/}
+						{/*	</a>*/}
+						{/*</Button>*/}
+						{/*<br />*/}
+						{/*<br />*/}
+						{/*<strong>*/}
+						{/*	Want to perform or know someone who <br />*/}
+						{/*	should perform at the Kindness Festival?*/}
+						{/*</strong>*/}
+						{/*<br />*/}
+						{/*<Button type="primary" shape="round" size="large" ghost style={{ borderColor: "#ccc", height: "auto" }}>*/}
+						{/*	<a href="https://forms.office.com/r/ATxnQz3AHF" target="_blank">*/}
+						{/*		ARTS, CULTURE & PERFORMANCES*/}
+						{/*		<br />*/}
+						{/*		EXPRESSIONS OF INTEREST*/}
+						{/*	</a>*/}
+						{/*</Button>*/}
 					</Col>
 				</Row>
 			</div>
-			<div className="my-3">
-				<Row align="middle" justify="center">
-					<ReactPlayer
-						url="https://www.youtube.com/embed/pyV1Z_Hfk4M"
-						config={{
-							youtube: {
-								playerVars: { modestbranding: 1, showinfo: 0 },
-							},
-						}}
-					/>
-				</Row>
-			</div>
+			{/*<div className="my-3">*/}
+			{/*	<Row align="middle" justify="center">*/}
+			{/*		<ReactPlayer*/}
+			{/*			url="https://www.youtube.com/embed/pyV1Z_Hfk4M"*/}
+			{/*			config={{*/}
+			{/*				youtube: {*/}
+			{/*					playerVars: { modestbranding: 1, showinfo: 0 },*/}
+			{/*				},*/}
+			{/*			}}*/}
+			{/*		/>*/}
+			{/*	</Row>*/}
+			{/*</div>*/}
 			<div>
 				<Row align="middle" justify="center">
 					<h2>Proudly sponsored by</h2>

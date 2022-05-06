@@ -14,7 +14,6 @@ export default function PDFreader({ pdffile }) {
 	function changePage(offset) {
 		setPageNumber(prevPageNumber => prevPageNumber + offset);
 	}
-
 	function previousPage() {
 		changePage(-1);
 	}
