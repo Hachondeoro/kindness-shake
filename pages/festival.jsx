@@ -95,7 +95,5 @@ const OurProjects = ({ data }) => {
 	);
 };
 
-// CSS to focus on the img on mobile
-// CSS to use another footer on laptop
 
 export default OurProjects;

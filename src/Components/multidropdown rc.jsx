@@ -110,14 +110,24 @@ const MultiDropdownNavbar = () => {
 									Festival
 								</Link>
 							</Menu.Item>
-							{/*<Menu.Item key="volunteeringFestival" style={submenuStyle}>*/}
-							{/*	<Link href="/festival/volunteering" passHref>*/}
-							{/*		Volunteering*/}
-							{/*	</Link>*/}
-							{/*</Menu.Item>*/}
+							<Menu.Item key="volunteeringFestival" style={submenuStyle}>
+								<Link href="/festival/volunteer" passHref>
+									Volunteer
+								</Link>
+							</Menu.Item>
 							<Menu.Item key="sponsorsFestival" style={submenuStyle}>
 								<Link href="/festival/sponsors" passHref>
 									Sponsors
+								</Link>
+							</Menu.Item>
+							<Menu.Item key="media" style={submenuStyle}>
+								<Link href="/festival/media" passHref>
+									Media
+								</Link>
+							</Menu.Item>
+							<Menu.Item key="stalls" style={submenuStyle}>
+								<Link href="/festival/stalls" passHref>
+									Stalls
 								</Link>
 							</Menu.Item>
 						</SubMenu>
@@ -206,14 +216,24 @@ const MultiDropdownNavbar = () => {
 								Festival
 							</Link>
 						</Menu.Item>
-						{/*<Menu.Item key="volunteeringFestival">*/}
-						{/*	<Link href="/festival/volunteering" passHref>*/}
-						{/*		Volunteering*/}
-						{/*	</Link>*/}
-						{/*</Menu.Item>*/}
+						<Menu.Item key="volunteeringFestival">
+							<Link href="/festival/volunteer" passHref>
+								Volunteer
+							</Link>
+						</Menu.Item>
 						<Menu.Item key="sponsorsFestival">
 							<Link href="/festival/sponsors" passHref>
 								Sponsors
+							</Link>
+						</Menu.Item>
+						<Menu.Item key="media">
+							<Link href="/festival/media" passHref>
+								Media
+							</Link>
+						</Menu.Item>
+						<Menu.Item key="stalls">
+							<Link href="/festival/stalls" passHref>
+								Stalls
 							</Link>
 						</Menu.Item>
 					</SubMenu>

@@ -27,13 +27,7 @@ export async function getStaticProps() {
 
 const Sponsors = ({ data }) => {
 	// const sponsors = [...new Set(data.allSponsors.map(obj => obj.class))]
-	const sponsors = [
-		"Event Partner",
-		"Platinum Sponsor",
-		"Gold Sponsor",
-		"Silver Sponsor",
-		"Media Partner",
-	];
+	const sponsors = ["Event Partner", "Platinum Sponsor", "Gold Sponsor", "Silver Sponsor", "Media Partner"];
 	const colorSponsors = ["#CACED8", "#CACED8", "#d4af37", "#C0C0C0", "#000"];
 	// console.log(sponsors)
 	return (
@@ -44,13 +38,11 @@ const Sponsors = ({ data }) => {
 					{sponsors.map((sponsorType, index) => {
 						return (
 							<>
-								<h1
-									className="text-center mt-4 mb-2 mr-2 ml-2"
-									style={{ color: colorSponsors[index] }}>
+								<h1 className="text-center mt-4 mb-2 mr-2 ml-2" style={{ color: colorSponsors[index] }}>
 									{sponsorType}s
 								</h1>
 								<div className="teams3-wrapper">
-									<div >
+									<div>
 										<Row align="middle" justify="center">
 											{data.allFestivalSponsors
 												.filter(d => d.class === sponsorType)
