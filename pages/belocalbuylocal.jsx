@@ -5,16 +5,14 @@ import { Col, Row } from "antd";
 import Texty from "rc-texty";
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import parse from "html-react-parser";
 
 export async function getStaticProps() {
 	const data = await request({
 		query: `query MyQuery {
-			allBelocalbuylocalSponsors {
-				discount
-				logo {
-					url
-				}
-			}
+			belocalbuylocalSponsor {
+   		 content
+  		}
 			belocalbuylocalContent {
 				content
 			}
@@ -46,16 +44,11 @@ const OurSupporters = ({ data }) => {
 			</Col>
 
 			<Col xs={{ span: 24 }} lg={{ span: 16 }} className="m-auto" align="middle" justify="center">
-				<Row align="middle" justify="center">
-					{data.allBelocalbuylocalSponsors.map(item => (
-						<FadeInImageGrid>
-							<div className="mx-1 mt-3 boxNew">
-								<img src={item.logo.url} width="120em" alt="img" style={{ borderRadius: "10%" }} />
-								<div className={styles.discount}>{item.discount} discount</div>
-							</div>
-						</FadeInImageGrid>
-					))}
-				</Row>
+				<FadeInImageGrid>
+					<div className="container">
+						{parse(data.belocalbuylocalSponsor.content)}
+					</div>
+				</FadeInImageGrid>
 			</Col>
 		</div>
 	);

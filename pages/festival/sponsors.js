@@ -1,23 +1,18 @@
+import React, { useState } from "react";
+import ReactMarkdown from "react-markdown";
+import { Row, Col, Button } from "antd";
 import { request } from "@Components/DatoCMS/datocms";
-import { Col, Row } from "antd";
-import React from "react";
-
-const MYQUERY = `query MyQuery {
-	allFestivalSponsors (first:30) {
-		class
-		title
-		description
-		image {
-		  url
-		}
-		hyperlink
-	  }
-}
-`;
+import ReactPlayer from "react-player";
+import parse from "html-react-parser";
 
 export async function getStaticProps() {
 	const data = await request({
-		query: MYQUERY,
+		query: `
+		query MyQuery {
+			festivalSponsor {
+    		content
+  		}
+		}`,
 	});
 	return {
 		props: { data },
@@ -25,51 +20,41 @@ export async function getStaticProps() {
 	};
 }
 
-const Sponsors = ({ data }) => {
-	// const sponsors = [...new Set(data.allSponsors.map(obj => obj.class))]
-	const sponsors = ["Event Partner", "Platinum Sponsor", "Gold Sponsor", "Silver Sponsor", "Media Partner"];
-	const colorSponsors = ["#CACED8", "#CACED8", "#d4af37", "#C0C0C0", "#000"];
-	// console.log(sponsors)
+const Stalls = ({ data }) => {
 	return (
 		<>
-			<div className="home-page-wrapper">
-				<h1 className="text-center m-5">OUR SPONSORS</h1>
-				<Col xs={{ span: 24 }} lg={{ span: 16 }} className="m-auto" align="middle" justify="center">
-					{sponsors.map((sponsorType, index) => {
-						return (
-							<>
-								<h1 className="text-center mt-4 mb-2 mr-2 ml-2" style={{ color: colorSponsors[index] }}>
-									{sponsorType}s
-								</h1>
-								<div className="teams3-wrapper">
-									<div>
-										<Row align="middle" justify="center">
-											{data.allFestivalSponsors
-												.filter(d => d.class === sponsorType)
-												.map(item => (
-													<Col
-														xs={{ span: 12 }}
-														lg={{ span: 8 }}
-														// className="m-auto"
-														align="middle"
-														justify="center">
-														<a href={item.hyperlink} rel="noopener noreferrer" target="_blank">
-															<img src={item.image.url} className="sponsorImages" alt="img" />
-														</a>
-														{/* <div className="font-weight-bold">{item.title}</div> */}
-													</Col>
-												))}
-										</Row>
-									</div>
-								</div>
-							</>
-						);
-					})}
-				</Col>
-				<br></br>
+			<div className="festivalbanner">
+				<img src="/static/img/festival/2022/social_covers_Linkedin.png" width="100%" height="100%" alt="img" />
+			</div>
+			<div className="markdown  mx-3">
+				<Row align="middle" justify="center">
+					<Col xs={{ span: 24 }} lg={{ span: 20 }} align="middle" justify="center">
+						{parse(data.festivalSponsor.content)}
+					</Col>
+				</Row>
+			</div>
+			<div>
+				<Row align="middle" justify="center">
+					<h2>Proudly sponsored by</h2>
+				</Row>
+				<Row align="middle" justify="center">
+					<br />
+					<Col xs={{ span: 12 }} lg={{ span: 6 }} align="middle" justify="center">
+						<img src="/static/img/festival/bottomBanner/darwin-waterfront.png" width="100%" alt="darwinwaterfront" />
+					</Col>
+					<Col xs={{ span: 12 }} lg={{ span: 6 }} align="middle" justify="center">
+						<img src="/static/img/festival/bottomBanner/ntevents.png" width="100%" alt="ntg-logo" />
+					</Col>
+					<Col xs={{ span: 12 }} lg={{ span: 6 }} align="middle" justify="center">
+						<img src="/static/img/festival/bottomBanner/ntg.png" width="100%" alt="ntg-logo" />
+					</Col>
+					<Col xs={{ span: 12 }} lg={{ span: 6 }} align="middle" justify="center">
+						<img src="/static/img/festival/bottomBanner/studynt.png" width="100%" alt="ntg-logo" />
+					</Col>
+				</Row>
 			</div>
 		</>
 	);
 };
 
-export default Sponsors;
+export default Stalls;

@@ -8,6 +8,7 @@ import { isMobile } from "react-device-detect";
 import ReactMarkdown from "react-markdown";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import Layout from "@Components/Layout";
+import parse from "html-react-parser";
 
 const navmenu = {
 	fontFamily: '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
@@ -25,12 +26,9 @@ const membershiphome = {
 export async function getStaticProps() {
 	const data = await request({
 		query: `query MyQuery {
-			allBelocalbuylocalSponsors {
-				discount
-				logo {
-					url
-				}
-			}
+			belocalbuylocalSponsor {
+   		 content
+  		}
 			membershipContent {
 				content
 			}
@@ -81,15 +79,12 @@ const Membership = ({ data }) => {
 						<div style={membershiphome}>
 							<div className="home-page-wrapper">
 								<div>
-									<br/>
-									<br/>
-									<br/>
 									<h2>Be a part of Kindness Shake in 2021!</h2>
-									<br/>
+
 									<div className={styles.subtitle}>
 										To have access to membership card please sign up to this website and complete the payment.
 									</div>
-									<br/>
+
 									<Row align="middle" justify="center">
 										<Col
 											xs={{ span: 20 }}
@@ -122,13 +117,9 @@ const Membership = ({ data }) => {
 											/>
 										</Col>
 									</Row>
-									<br/>
-									<br/>
-									<Button onClick={index => setTabIndex(1)} type="primary" shape="round" size="large">
+									<Button onClick={index => setTabIndex(1)} type="primary" shape="round" size="large" className="mb-4">
 										Register now!
 									</Button>
-									<br/>
-									<br/>
 									<h2>Membership benefits</h2>
 									<div className="m-auto" style={{ whiteSpace: "pre-wrap" }}>
 										<Col xs={{ span: 22 }} sm={{ span: 8 }} className="m-auto" align="middle" justify="center">
@@ -137,19 +128,11 @@ const Membership = ({ data }) => {
 											</div>
 										</Col>
 									</div>
-									<br/>
 								</div>
-								<h2>Our partners</h2>
+								<h2 className="mt-4">Our partners</h2>
 								<Col xs={{ span: 24 }} lg={{ span: 16 }} className="m-auto" align="middle" justify="center">
 									<FadeInImageGrid>
-										<div class="container">
-											{data.allBelocalbuylocalSponsors.map(item => (
-												<div className="mx-1 mt-3 box">
-													<img src={item.logo.url} width="100em" alt="img" style={{ borderRadius: "10%" }} />
-													<div className={styles.discount}>{item.discount} discount</div>
-												</div>
-											))}
-										</div>
+										<div class="container">{parse(data.belocalbuylocalSponsor.content)}</div>
 									</FadeInImageGrid>
 								</Col>
 							</div>
@@ -159,13 +142,7 @@ const Membership = ({ data }) => {
 						<div style={membershiphome}>
 							{iosdevice ? (
 								<div>
-									<div className="mb-6">
-										<br/>
-										<br/>
-										<br/>
-										<br/>
-										Our membership page is powered by Wild Apricot membership system
-									</div>
+									<div className="mb-6">Our membership page is powered by Wild Apricot membership system</div>
 									<Col xs={{ span: 20 }} md={{ span: 12 }} className="m-auto" align="middle" justify="center">
 										<img
 											src="/static/img/wild-apricot-logo.png"
@@ -175,7 +152,7 @@ const Membership = ({ data }) => {
 											className="mt-5"
 										/>
 									</Col>
-									<br/>
+
 									<div className="m-5">Please press the following button to submit an application form</div>
 									<a href="https://ksi.wildapricot.org/widget/membership" rel="noopener noreferrer" target="_blank">
 										<Button type="primary" shape="round" size="large">
@@ -183,8 +160,6 @@ const Membership = ({ data }) => {
 											Membership Application form{" "}
 										</Button>
 									</a>
-									<br/>
-									<br/>
 								</div>
 							) : (
 								<div>
@@ -193,8 +168,6 @@ const Membership = ({ data }) => {
 										height="1000px"
 										frameBorder="no"
 										src="https://ksi.wildapricot.org/widget/membership"></iframe>
-									<br/>
-									<br/>
 								</div>
 							)}
 						</div>
