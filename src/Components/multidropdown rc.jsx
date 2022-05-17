@@ -126,8 +126,8 @@ const MultiDropdownNavbar = () => {
 								</Link>
 							</Menu.Item>
 							<Menu.Item key="stalls" style={submenuStyle}>
-								<Link href="/festival/sponsorshipandexhibition" passHref>
-									Sponsorship and Exhibition
+								<Link href="/festival/performanceandstalls" passHref>
+									Performance & Stalls
 								</Link>
 							</Menu.Item>
 						</SubMenu>
@@ -232,8 +232,8 @@ const MultiDropdownNavbar = () => {
 							</Link>
 						</Menu.Item>
 						<Menu.Item key="stalls">
-							<Link href="/festival/sponsorshipandexhibition" passHref>
-								Sponsorship and Exhibition
+							<Link href="/festival/performanceandstalls" passHref>
+								Performance & Stalls
 							</Link>
 						</Menu.Item>
 					</SubMenu>
