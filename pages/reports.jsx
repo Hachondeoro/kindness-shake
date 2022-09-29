@@ -34,7 +34,7 @@ const Reports = ({ data }) => {
 					<Row align="top" justify="center">
 						{data.allPublications.map(item => (
 							<div className="markdown">
-								<Col span={8} >
+								<Col span={8}>
 									<div className="teams3-top-title">{item.title}</div>
 									<PDFreader pdffile={item.publication.url} />
 									<br />

@@ -11,7 +11,8 @@ import Layout from "@Components/Layout";
 import parse from "html-react-parser";
 
 const navmenu = {
-	fontFamily: '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
+	fontFamily:
+		'-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
 	textAlign: "center",
 	background: "#001529",
 	color: "white",
@@ -44,7 +45,14 @@ const Membership = ({ data }) => {
 	const [tabIndex, setTabIndex] = useState(0);
 	function iOS() {
 		return (
-			["iPad Simulator", "iPhone Simulator", "iPod Simulator", "iPad", "iPhone", "iPod"].includes(navigator.platform) ||
+			[
+				"iPad Simulator",
+				"iPhone Simulator",
+				"iPod Simulator",
+				"iPad",
+				"iPhone",
+				"iPod",
+			].includes(navigator.platform) ||
 			// iPad on iOS 13 detection
 			(navigator.userAgent.includes("Mac") && "ontouchend" in document)
 		);
@@ -82,7 +90,8 @@ const Membership = ({ data }) => {
 									<h2>Be a part of Kindness Shake in 2021!</h2>
 
 									<div className={styles.subtitle}>
-										To have access to membership card please sign up to this website and complete the payment.
+										To have access to membership card please sign up to this
+										website and complete the payment.
 									</div>
 
 									<Row align="middle" justify="center">
@@ -117,22 +126,41 @@ const Membership = ({ data }) => {
 											/>
 										</Col>
 									</Row>
-									<Button onClick={index => setTabIndex(1)} type="primary" shape="round" size="large" className="mb-4">
+									<Button
+										onClick={index => setTabIndex(1)}
+										type="primary"
+										shape="round"
+										size="large"
+										className="mb-4">
 										Register now!
 									</Button>
 									<h2>Membership benefits</h2>
 									<div className="m-auto" style={{ whiteSpace: "pre-wrap" }}>
-										<Col xs={{ span: 22 }} sm={{ span: 8 }} className="m-auto" align="middle" justify="center">
+										<Col
+											xs={{ span: 22 }}
+											sm={{ span: 8 }}
+											className="m-auto"
+											align="middle"
+											justify="center">
 											<div className="markdown membershipbenefits">
-												<ReactMarkdown source={`${data.membershipContent.content}`} />
+												<ReactMarkdown
+													source={`${data.membershipContent.content}`}
+												/>
 											</div>
 										</Col>
 									</div>
 								</div>
 								<h2 className="mt-4">Our partners</h2>
-								<Col xs={{ span: 24 }} lg={{ span: 16 }} className="m-auto" align="middle" justify="center">
+								<Col
+									xs={{ span: 24 }}
+									lg={{ span: 16 }}
+									className="m-auto"
+									align="middle"
+									justify="center">
 									<FadeInImageGrid>
-										<div class="container">{parse(data.belocalbuylocalSponsor.content)}</div>
+										<div class="container">
+											{parse(data.belocalbuylocalSponsor.content)}
+										</div>
 									</FadeInImageGrid>
 								</Col>
 							</div>
@@ -142,8 +170,16 @@ const Membership = ({ data }) => {
 						<div style={membershiphome}>
 							{iosdevice ? (
 								<div>
-									<div className="mb-6">Our membership page is powered by Wild Apricot membership system</div>
-									<Col xs={{ span: 20 }} md={{ span: 12 }} className="m-auto" align="middle" justify="center">
+									<div className="mb-6">
+										Our membership page is powered by Wild Apricot membership
+										system
+									</div>
+									<Col
+										xs={{ span: 20 }}
+										md={{ span: 12 }}
+										className="m-auto"
+										align="middle"
+										justify="center">
 										<img
 											src="/static/img/wild-apricot-logo.png"
 											alt="wildapricotlogo"
@@ -153,8 +189,14 @@ const Membership = ({ data }) => {
 										/>
 									</Col>
 
-									<div className="m-5">Please press the following button to submit an application form</div>
-									<a href="https://ksi.wildapricot.org/widget/membership" rel="noopener noreferrer" target="_blank">
+									<div className="m-5">
+										Please press the following button to submit an application
+										form
+									</div>
+									<a
+										href="https://ksi.wildapricot.org/widget/membership"
+										rel="noopener noreferrer"
+										target="_blank">
 										<Button type="primary" shape="round" size="large">
 											{" "}
 											Membership Application form{" "}
