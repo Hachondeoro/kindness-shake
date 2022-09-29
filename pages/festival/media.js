@@ -20,6 +20,8 @@ export async function getStaticProps() {
 	};
 }
 
+
+
 const Stalls = ({ data }) => {
 	return (
 		<>

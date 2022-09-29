@@ -53,48 +53,21 @@ const VolunteerForm = props => {
 			keyWords="charity, international student, darwin">
 			<div className="home-page-wrapper">
 				<Row align="middle" justify="center">
-					<Col
-						xs={{ span: 20 }}
-						lg={{ span: 8 }}
-						className="m-2"
-						align="left"
-						justify="center">
+					<Col xs={{ span: 20 }} lg={{ span: 8 }} className="m-2" align="left" justify="center">
 						<div className="markdown">
 							<ReactMarkdown source={`${VolunteerIntro}`} />
 						</div>
 						<br></br>
 						<br></br>
 					</Col>
-					<Col
-						xs={{ span: 20 }}
-						lg={{ span: 8 }}
-						className="m-2 volunteerImages"
-						align="middle"
-						justify="center">
-						<img
-							src="/static/img/volunteer/volunteer1.jpg"
-							alt="volunteer1"
-							className="mt-2"
-						/>
-						<img
-							src="/static/img/volunteer/volunteer2.jpg"
-							alt="volunteer2"
-							className="mt-2"
-						/>
-						<img
-							src="/static/img/volunteer/volunteer3.jpg"
-							alt="volunteer3"
-							className="mt-2 mb-4"
-						/>
+					<Col xs={{ span: 20 }} lg={{ span: 8 }} className="m-2 volunteerImages" align="middle" justify="center">
+						<img src="/static/img/volunteer/volunteer1.jpg" alt="volunteer1" className="mt-2" />
+						<img src="/static/img/volunteer/volunteer2.jpg" alt="volunteer2" className="mt-2" />
+						<img src="/static/img/volunteer/volunteer3.jpg" alt="volunteer3" className="mt-2 mb-4" />
 					</Col>
 				</Row>
 				<Row>
-					<Col
-						xs={{ span: 20 }}
-						lg={{ span: 20 }}
-						className="m-auto"
-						align="center"
-						justify="center">
+					<Col xs={{ span: 20 }} lg={{ span: 20 }} className="m-auto" align="center" justify="center">
 						<Button
 							style={{
 								fontSize: "3.5em",

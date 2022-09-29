@@ -12,6 +12,8 @@ import Icon, {
 	LinkedinFilled
 } from '@ant-design/icons'
 
+const AccessToken = `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN_SECONDARY}`
+
 const EventbriteSVG = () => (
 	<svg
 		t="1615897317877"
@@ -81,6 +83,7 @@ const SocialMedia = ({ data }) => {
 	return (
 		<div className="home-page-wrapper">
 			<h1 className="text-center m-5">SOCIAL MEDIA</h1>
+			{console.log(AccessToken)}
 			<Row align="middle" justify="center">
 				<a
 					href="https://www.facebook.com/KindnessShakeNT"
