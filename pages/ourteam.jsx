@@ -36,9 +36,7 @@ const Team = ({ data }) => {
 					<Row align="top" justify="center">
 						{data.allTeammembers.map(item => (
 							<div className="markdown">
-								<Parallax
-									animation={{ x: 0, opacity: 1, playScale: [-0.2, 0.8] }}
-									style={{ transform: "translateX(-100px)", opacity: 1 }}>
+								<Parallax animation={{ x: 0, opacity: 1, playScale: [-0.2, 0.8] }} style={{ transform: "translateX(-100px)", opacity: 1 }}>
 									<Col span={8}>
 										<div className="teams3-top-image">
 											<img src={item.image.url} width="100%" height="100%" alt="img" />

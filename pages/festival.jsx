@@ -23,20 +23,11 @@ const OurProjects = ({ data }) => {
 	return (
 		<>
 			<div className="festivalbanner">
-				<img
-					src="/static/img/festival/2022/social_covers_Linkedin.png"
-					width="100%"
-					height="100%"
-					alt="img"
-				/>
+				<img src="/static/img/festival/2022/social_covers_Linkedin.png" width="100%" height="100%" alt="img" />
 			</div>
 			<div className="markdown  mx-3">
 				<Row align="middle" justify="center">
-					<Col
-						xs={{ span: 24 }}
-						lg={{ span: 12 }}
-						align="middle"
-						justify="center">
+					<Col xs={{ span: 24 }} lg={{ span: 12 }} align="middle" justify="center">
 						{parse(data.festivalContent.content)}
 					</Col>
 				</Row>
@@ -47,49 +38,17 @@ const OurProjects = ({ data }) => {
 				</Row>
 				<Row align="middle" justify="center">
 					<br />
-					<Col
-						xs={{ span: 12 }}
-						lg={{ span: 6 }}
-						align="middle"
-						justify="center">
-						<img
-							src="/static/img/festival/bottomBanner/darwin-waterfront.png"
-							width="100%"
-							alt="darwinwaterfront"
-						/>
+					<Col xs={{ span: 12 }} lg={{ span: 6 }} align="middle" justify="center">
+						<img src="/static/img/festival/bottomBanner/darwin-waterfront.png" width="100%" alt="darwinwaterfront" />
 					</Col>
-					<Col
-						xs={{ span: 12 }}
-						lg={{ span: 6 }}
-						align="middle"
-						justify="center">
-						<img
-							src="/static/img/festival/bottomBanner/ntevents.png"
-							width="100%"
-							alt="ntg-logo"
-						/>
+					<Col xs={{ span: 12 }} lg={{ span: 6 }} align="middle" justify="center">
+						<img src="/static/img/festival/bottomBanner/ntevents.png" width="100%" alt="ntg-logo" />
 					</Col>
-					<Col
-						xs={{ span: 12 }}
-						lg={{ span: 6 }}
-						align="middle"
-						justify="center">
-						<img
-							src="/static/img/festival/bottomBanner/ntg.png"
-							width="100%"
-							alt="ntg-logo"
-						/>
+					<Col xs={{ span: 12 }} lg={{ span: 6 }} align="middle" justify="center">
+						<img src="/static/img/festival/bottomBanner/ntg.png" width="100%" alt="ntg-logo" />
 					</Col>
-					<Col
-						xs={{ span: 12 }}
-						lg={{ span: 6 }}
-						align="middle"
-						justify="center">
-						<img
-							src="/static/img/festival/bottomBanner/studynt.png"
-							width="100%"
-							alt="ntg-logo"
-						/>
+					<Col xs={{ span: 12 }} lg={{ span: 6 }} align="middle" justify="center">
+						<img src="/static/img/festival/bottomBanner/studynt.png" width="100%" alt="ntg-logo" />
 					</Col>
 				</Row>
 			</div>
