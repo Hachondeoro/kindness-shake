@@ -19,20 +19,32 @@ const tagManagerArgs = {
 
 export default class MyApp extends App {
 	componentDidMount() {
-		TagManager.initialize(tagManagerArgs);
+		TagManager.initialize(
+			tagManagerArgs,
+		);
 	}
 
 	render() {
-		const { Component, pageProps } = this.props;
+		const {
+			Component,
+			pageProps,
+		} = this.props;
 
 		return (
 			<>
 				<Head>
-					<title>Kindness Shake</title>
-					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+					<title>
+						Kindness Shake
+					</title>
+					<meta
+						name="viewport"
+						content="width=device-width, initial-scale=1.0"
+					/>
 				</Head>
 				<MultiDropdownNavbar />
-				<Component {...pageProps} />
+				<Component
+					{...pageProps}
+				/>
 				<Footer />
 			</>
 		);

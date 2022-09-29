@@ -31,28 +31,79 @@ const Team = ({ data }) => {
 	return (
 		<>
 			<div className="home-page-wrapper">
-				<h1 className="text-center m-5">OUR TEAM</h1>
+				<h1 className="text-center m-5">
+					OUR TEAM
+				</h1>
 				<div className="teams3-wrapper">
-					<Row align="top" justify="center">
-						{data.allTeammembers.map(item => (
-							<div className="markdown">
-								<Parallax
-									animation={{ x: 0, opacity: 1, playScale: [-0.2, 0.8] }}
-									style={{ transform: "translateX(-100px)", opacity: 1 }}>
-									<Col span={8}>
-										<div className="teams3-top-image">
-											<img src={item.image.url} width="100%" height="100%" alt="img" />
-										</div>
+					<Row
+						align="top"
+						justify="center">
+						{data.allTeammembers.map(
+							item => (
+								<div className="markdown">
+									<Parallax
+										animation={{
+											x: 0,
+											opacity: 1,
+											playScale: [
+												-0.2,
+												0.8,
+											],
+										}}
+										style={{
+											transform:
+												"translateX(-100px)",
+											opacity: 1,
+										}}>
+										<Col
+											span={
+												8
+											}>
+											<div className="teams3-top-image">
+												<img
+													src={
+														item
+															.image
+															.url
+													}
+													width="100%"
+													height="100%"
+													alt="img"
+												/>
+											</div>
 
-										<div className="teams3-top-title">{item.name}</div>
-										<div className={styles.TeamDepartments}>{item.role}</div>
-										<div className={styles.TeamEmails}>{item.email}</div>
-										<div className="teams3-top-content">{item.description}</div>
-										<br />
-									</Col>
-								</Parallax>
-							</div>
-						))}
+											<div className="teams3-top-title">
+												{
+													item.name
+												}
+											</div>
+											<div
+												className={
+													styles.TeamDepartments
+												}>
+												{
+													item.role
+												}
+											</div>
+											<div
+												className={
+													styles.TeamEmails
+												}>
+												{
+													item.email
+												}
+											</div>
+											<div className="teams3-top-content">
+												{
+													item.description
+												}
+											</div>
+											<br />
+										</Col>
+									</Parallax>
+								</div>
+							),
+						)}
 					</Row>
 				</div>
 			</div>

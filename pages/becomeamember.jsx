@@ -1,4 +1,8 @@
-import { HomeOutlined, IdcardOutlined, UserOutlined } from "@ant-design/icons";
+import {
+	HomeOutlined,
+	IdcardOutlined,
+	UserOutlined,
+} from "@ant-design/icons";
 import { request } from "@Components/DatoCMS/datocms";
 import { FadeInImageGrid } from "@Components/gsap/gsapComponents";
 import styles from "@Components/Titles.module.css";
@@ -54,7 +58,8 @@ const Membership = ({ data }) => {
 				"iPod",
 			].includes(navigator.platform) ||
 			// iPad on iOS 13 detection
-			(navigator.userAgent.includes("Mac") && "ontouchend" in document)
+			(navigator.userAgent.includes("Mac") &&
+				"ontouchend" in document)
 		);
 	}
 
@@ -71,7 +76,9 @@ const Membership = ({ data }) => {
 			pageDescription="Become a member of this highly successful charity located in Darwin, Northern Territory. With this membership you will have access to countless benefits and you will be supporting the local business and communities"
 			keyWords="charity, international student, darwin">
 			<div style={navmenu}>
-				<Tabs selectedIndex={tabIndex} onSelect={index => setTabIndex(index)}>
+				<Tabs
+					selectedIndex={tabIndex}
+					onSelect={index => setTabIndex(index)}>
 					<TabList>
 						<Tab>
 							<HomeOutlined /> Home
@@ -87,11 +94,14 @@ const Membership = ({ data }) => {
 						<div style={membershiphome}>
 							<div className="home-page-wrapper">
 								<div>
-									<h2>Be a part of Kindness Shake in 2021!</h2>
+									<h2>
+										Be a part of Kindness Shake in 2021!
+									</h2>
 
 									<div className={styles.subtitle}>
-										To have access to membership card please sign up to this
-										website and complete the payment.
+										To have access to membership card please
+										sign up to this website and complete the
+										payment.
 									</div>
 
 									<Row align="middle" justify="center">
@@ -135,7 +145,9 @@ const Membership = ({ data }) => {
 										Register now!
 									</Button>
 									<h2>Membership benefits</h2>
-									<div className="m-auto" style={{ whiteSpace: "pre-wrap" }}>
+									<div
+										className="m-auto"
+										style={{ whiteSpace: "pre-wrap" }}>
 										<Col
 											xs={{ span: 22 }}
 											sm={{ span: 8 }}
@@ -159,7 +171,9 @@ const Membership = ({ data }) => {
 									justify="center">
 									<FadeInImageGrid>
 										<div class="container">
-											{parse(data.belocalbuylocalSponsor.content)}
+											{parse(
+												data.belocalbuylocalSponsor.content,
+											)}
 										</div>
 									</FadeInImageGrid>
 								</Col>
@@ -171,8 +185,8 @@ const Membership = ({ data }) => {
 							{iosdevice ? (
 								<div>
 									<div className="mb-6">
-										Our membership page is powered by Wild Apricot membership
-										system
+										Our membership page is powered by Wild
+										Apricot membership system
 									</div>
 									<Col
 										xs={{ span: 20 }}
@@ -190,14 +204,17 @@ const Membership = ({ data }) => {
 									</Col>
 
 									<div className="m-5">
-										Please press the following button to submit an application
-										form
+										Please press the following button to
+										submit an application form
 									</div>
 									<a
 										href="https://ksi.wildapricot.org/widget/membership"
 										rel="noopener noreferrer"
 										target="_blank">
-										<Button type="primary" shape="round" size="large">
+										<Button
+											type="primary"
+											shape="round"
+											size="large">
 											{" "}
 											Membership Application form{" "}
 										</Button>

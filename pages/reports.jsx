@@ -29,18 +29,38 @@ const Reports = ({ data }) => {
 	return (
 		<>
 			<div className="home-page-wrapper">
-				<h1 className="text-center m-5">KINDNESS SHAKE REPORTS</h1>
+				<h1 className="text-center m-5">
+					KINDNESS SHAKE
+					REPORTS
+				</h1>
 				<div className="teams3-wrapper">
-					<Row align="top" justify="center">
-						{data.allPublications.map(item => (
-							<div className="markdown">
-								<Col span={8}>
-									<div className="teams3-top-title">{item.title}</div>
-									<PDFreader pdffile={item.publication.url} />
-									<br />
-								</Col>
-							</div>
-						))}
+					<Row
+						align="top"
+						justify="center">
+						{data.allPublications.map(
+							item => (
+								<div className="markdown">
+									<Col
+										span={
+											8
+										}>
+										<div className="teams3-top-title">
+											{
+												item.title
+											}
+										</div>
+										<PDFreader
+											pdffile={
+												item
+													.publication
+													.url
+											}
+										/>
+										<br />
+									</Col>
+								</div>
+							),
+						)}
 					</Row>
 				</div>
 			</div>
